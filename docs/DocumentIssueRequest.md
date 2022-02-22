@@ -1,0 +1,16 @@
+# DocumentIssueRequest
+
+## Properties
+
+Name | Type | Description | Notes
+------------ | ------------- | ------------- | -------------
+**document_type_id** | **String** |  | 
+**document_identifier** | **String** |  | 
+**description** | **String** |  | 
+**receiver** | [**crate::models::DocumentReceiver**](DocumentReceiver.md) |  | 
+**expires_at_utc** | Option<**String**> |  | [optional]
+**metadata** | Option<**::std::collections::HashMap<String, String>**> |  | [optional]
+
+[[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
+
+
