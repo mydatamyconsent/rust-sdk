@@ -14,6 +14,7 @@
 
 #[derive(Clone, Debug, PartialEq, Default, Serialize, Deserialize)]
 pub struct CreateOrganizationDataConsentRequest {
+    /// Consent template id
     #[serde(rename = "consentTemplateId", skip_serializing_if = "Option::is_none")]
     pub consent_template_id: Option<String>,
     #[serde(rename = "receiver")]

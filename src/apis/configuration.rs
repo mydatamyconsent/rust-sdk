@@ -40,7 +40,7 @@ impl Configuration {
 impl Default for Configuration {
     fn default() -> Self {
         Configuration {
-            base_path: "http://localhost".to_owned(),
+            base_path: "https://api.mydatamyconsent.com".to_owned(),
             user_agent: Some("MDMC-Rust-SDK".to_owned()),
             client: reqwest::Client::new(),
             basic_auth: None,

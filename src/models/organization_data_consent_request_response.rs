@@ -14,16 +14,21 @@
 
 #[derive(Clone, Debug, PartialEq, Default, Serialize, Deserialize)]
 pub struct OrganizationDataConsentRequestResponse {
+    /// Consent request id
     #[serde(rename = "id", skip_serializing_if = "Option::is_none")]
     pub id: Option<String>,
+    /// Consent request template id
     #[serde(rename = "templateId", skip_serializing_if = "Option::is_none")]
     pub template_id: Option<String>,
+    /// Requested date time in utc zone
     #[serde(rename = "requestedAtUtc", skip_serializing_if = "Option::is_none")]
     pub requested_at_utc: Option<String>,
+    /// Request expires date time in utc zone
     #[serde(rename = "requestExpiresAtUtc", skip_serializing_if = "Option::is_none")]
     pub request_expires_at_utc: Option<String>,
     #[serde(rename = "status", skip_serializing_if = "Option::is_none")]
     pub status: Option<crate::models::DataConsentStatus>,
+    /// Requested transaction id
     #[serde(rename = "transactionId", skip_serializing_if = "Option::is_none")]
     pub transaction_id: Option<String>,
 }
