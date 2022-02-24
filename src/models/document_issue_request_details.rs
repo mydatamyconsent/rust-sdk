@@ -14,12 +14,17 @@
 
 #[derive(Clone, Debug, PartialEq, Default, Serialize, Deserialize)]
 pub struct DocumentIssueRequestDetails {
+    /// Request Id.
+    #[serde(rename = "id")]
+    pub id: String,
     #[serde(rename = "documentTypeId")]
     pub document_type_id: String,
     #[serde(rename = "documentTypeName")]
     pub document_type_name: String,
     #[serde(rename = "documentIdentifier")]
     pub document_identifier: String,
+    #[serde(rename = "status", skip_serializing_if = "Option::is_none")]
+    pub status: Option<crate::models::DocumentIssueRequestStatus>,
     #[serde(rename = "description")]
     pub description: String,
     #[serde(rename = "receiver")]
@@ -34,11 +39,13 @@ pub struct DocumentIssueRequestDetails {
 
 impl DocumentIssueRequestDetails {
     /// Document issue request details.
-    pub fn new(document_type_id: String, document_type_name: String, document_identifier: String, description: String, receiver: Option<serde_json::Value>, created_at_utc: String) -> DocumentIssueRequestDetails {
+    pub fn new(id: String, document_type_id: String, document_type_name: String, document_identifier: String, description: String, receiver: Option<serde_json::Value>, created_at_utc: String) -> DocumentIssueRequestDetails {
         DocumentIssueRequestDetails {
+            id,
             document_type_id,
             document_type_name,
             document_identifier,
+            status: None,
             description,
             receiver,
             expires_at_utc: None,

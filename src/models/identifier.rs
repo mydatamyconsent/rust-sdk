@@ -9,46 +9,29 @@
  */
 
 
-/// 
-#[derive(Clone, Copy, Debug, Eq, PartialEq, Ord, PartialOrd, Hash, Serialize, Deserialize)]
-pub enum Identifier {
-    #[serde(rename = "Email")]
-    Email,
-    #[serde(rename = "PermanentAccountNumber")]
-    PermanentAccountNumber,
-    #[serde(rename = "AadhaarNumber")]
-    AadhaarNumber,
-    #[serde(rename = "MobileNumber")]
-    MobileNumber,
-    #[serde(rename = "CorporateIdentificationNumber")]
-    CorporateIdentificationNumber,
-    #[serde(rename = "TaxDeductionAccountNumber")]
-    TaxDeductionAccountNumber,
-    #[serde(rename = "GoodsAndServicesTaxIdentificationNumber")]
-    GoodsAndServicesTaxIdentificationNumber,
 
+
+#[derive(Clone, Debug, PartialEq, Default, Serialize, Deserialize)]
+pub struct Identifier {
+    #[serde(rename = "key", skip_serializing_if = "Option::is_none")]
+    pub key: Option<String>,
+    #[serde(rename = "name", skip_serializing_if = "Option::is_none")]
+    pub name: Option<String>,
+    #[serde(rename = "description", skip_serializing_if = "Option::is_none")]
+    pub description: Option<String>,
+    #[serde(rename = "exampleValue", skip_serializing_if = "Option::is_none")]
+    pub example_value: Option<String>,
 }
 
-impl ToString for Identifier {
-    fn to_string(&self) -> String {
-        match self {
-            Self::Email => String::from("Email"),
-            Self::PermanentAccountNumber => String::from("PermanentAccountNumber"),
-            Self::AadhaarNumber => String::from("AadhaarNumber"),
-            Self::MobileNumber => String::from("MobileNumber"),
-            Self::CorporateIdentificationNumber => String::from("CorporateIdentificationNumber"),
-            Self::TaxDeductionAccountNumber => String::from("TaxDeductionAccountNumber"),
-            Self::GoodsAndServicesTaxIdentificationNumber => String::from("GoodsAndServicesTaxIdentificationNumber"),
+impl Identifier {
+    pub fn new() -> Identifier {
+        Identifier {
+            key: None,
+            name: None,
+            description: None,
+            example_value: None,
         }
     }
 }
-
-impl Default for Identifier {
-    fn default() -> Identifier {
-        Self::Email
-    }
-}
-
-
 
 

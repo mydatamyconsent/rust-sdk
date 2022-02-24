@@ -19,13 +19,14 @@ use super::{Error, configuration};
 #[derive(Debug, Clone, Serialize, Deserialize)]
 #[serde(untagged)]
 pub enum GetAllSupportedIdentifiersError {
-    Status404(crate::models::ProblemDetails),
-    DefaultResponse(crate::models::ProblemDetails),
+    Status404(serde_json::Value),
+    Status500(serde_json::Value),
     UnknownValue(serde_json::Value),
 }
 
 
-pub async fn get_all_supported_identifiers(configuration: &configuration::Configuration, country_iso2_code: &str) -> Result<crate::models::SupportedIdentifiersByCountry, Error<GetAllSupportedIdentifiersError>> {
+/// Get all supported identifiers by country.
+pub async fn get_all_supported_identifiers(configuration: &configuration::Configuration, country_iso2_code: &str) -> Result<crate::models::SupportedIdentifier, Error<GetAllSupportedIdentifiersError>> {
     let local_var_configuration = configuration;
 
     let local_var_client = &local_var_configuration.client;

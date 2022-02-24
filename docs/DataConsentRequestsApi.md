@@ -76,12 +76,14 @@ No authorization required
 > crate::models::IndividualDataConsentRequestResponse create_individual_data_consent_request(create_individual_data_consent_request)
 Create a individual data consent request.
 
+Create a individual data consent request.
+
 ### Parameters
 
 
 Name | Type | Description  | Required | Notes
 ------------- | ------------- | ------------- | ------------- | -------------
-**create_individual_data_consent_request** | [**CreateIndividualDataConsentRequest**](CreateIndividualDataConsentRequest.md) | M:MyDataMyConsent.DeveloperApi.Controllers.DataConsentRequestsController.CreateIndividualDataConsentRequest(MyDataMyConsent.DeveloperApi.Models.CreateIndividualDataConsentRequest). | [required] |
+**create_individual_data_consent_request** | [**CreateIndividualDataConsentRequest**](CreateIndividualDataConsentRequest.md) | The Individual data consent request payload | [required] |
 
 ### Return type
 
@@ -102,6 +104,8 @@ No authorization required
 ## create_organization_data_consent_request
 
 > crate::models::OrganizationDataConsentRequestResponse create_organization_data_consent_request(create_organization_data_consent_request)
+Create a organization data consent request.
+
 Create a organization data consent request.
 
 ### Parameters

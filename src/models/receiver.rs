@@ -18,7 +18,7 @@ pub struct Receiver {
     pub _type: Option<crate::models::ReceiverType>,
     /// Consent request receiver identifiers
     #[serde(rename = "identifiers", skip_serializing_if = "Option::is_none")]
-    pub identifiers: Option<Vec<crate::models::IdentifierStringKeyValuePair>>,
+    pub identifiers: Option<Vec<crate::models::StringStringKeyValuePair>>,
     #[serde(rename = "identificationStrategy", skip_serializing_if = "Option::is_none")]
     pub identification_strategy: Option<crate::models::IdentificationStrategy>,
 }

@@ -19,10 +19,9 @@ use super::{Error, configuration};
 #[derive(Debug, Clone, Serialize, Deserialize)]
 #[serde(untagged)]
 pub enum GetIssuedDocumentByIdError {
-    Status500(),
-    Status400(crate::models::ProblemDetails),
-    Status404(crate::models::ProblemDetails),
-    DefaultResponse(crate::models::ProblemDetails),
+    Status500(serde_json::Value),
+    Status400(serde_json::Value),
+    Status404(serde_json::Value),
     UnknownValue(serde_json::Value),
 }
 
@@ -30,9 +29,8 @@ pub enum GetIssuedDocumentByIdError {
 #[derive(Debug, Clone, Serialize, Deserialize)]
 #[serde(untagged)]
 pub enum GetIssuedDocumentsError {
-    Status500(),
-    Status400(crate::models::ProblemDetails),
-    DefaultResponse(crate::models::ProblemDetails),
+    Status500(serde_json::Value),
+    Status400(serde_json::Value),
     UnknownValue(serde_json::Value),
 }
 
@@ -40,9 +38,8 @@ pub enum GetIssuedDocumentsError {
 #[derive(Debug, Clone, Serialize, Deserialize)]
 #[serde(untagged)]
 pub enum GetRegisteredDocumentTypesError {
-    Status500(),
-    Status400(crate::models::ProblemDetails),
-    DefaultResponse(crate::models::ProblemDetails),
+    Status500(serde_json::Value),
+    Status400(serde_json::Value),
     UnknownValue(serde_json::Value),
 }
 
@@ -50,9 +47,9 @@ pub enum GetRegisteredDocumentTypesError {
 #[derive(Debug, Clone, Serialize, Deserialize)]
 #[serde(untagged)]
 pub enum IssueDocumentToIndividualError {
-    Status400(crate::models::ProblemDetails),
-    Status500(),
-    DefaultResponse(crate::models::ProblemDetails),
+    Status400(serde_json::Value),
+    Status404(serde_json::Value),
+    Status500(serde_json::Value),
     UnknownValue(serde_json::Value),
 }
 
@@ -60,8 +57,9 @@ pub enum IssueDocumentToIndividualError {
 #[derive(Debug, Clone, Serialize, Deserialize)]
 #[serde(untagged)]
 pub enum IssueDocumentToOrganizationError {
-    Status400(crate::models::ProblemDetails),
-    Status500(),
+    Status400(serde_json::Value),
+    Status404(serde_json::Value),
+    Status500(serde_json::Value),
     DefaultResponse(crate::models::ProblemDetails),
     UnknownValue(serde_json::Value),
 }
@@ -70,9 +68,8 @@ pub enum IssueDocumentToOrganizationError {
 #[derive(Debug, Clone, Serialize, Deserialize)]
 #[serde(untagged)]
 pub enum UploadDocumentForIndividualError {
-    Status400(crate::models::ProblemDetails),
-    Status500(),
-    DefaultResponse(crate::models::ProblemDetails),
+    Status400(serde_json::Value),
+    Status500(serde_json::Value),
     UnknownValue(serde_json::Value),
 }
 
@@ -80,9 +77,8 @@ pub enum UploadDocumentForIndividualError {
 #[derive(Debug, Clone, Serialize, Deserialize)]
 #[serde(untagged)]
 pub enum UploadDocumentForOrganizationError {
-    Status400(crate::models::ProblemDetails),
-    Status500(),
-    DefaultResponse(crate::models::ProblemDetails),
+    Status400(serde_json::Value),
+    Status500(serde_json::Value),
     UnknownValue(serde_json::Value),
 }
 

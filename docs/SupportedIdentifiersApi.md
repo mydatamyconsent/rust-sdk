@@ -10,7 +10,9 @@ Method | HTTP request | Description
 
 ## get_all_supported_identifiers
 
-> crate::models::SupportedIdentifiersByCountry get_all_supported_identifiers(country_iso2_code)
+> crate::models::SupportedIdentifier get_all_supported_identifiers(country_iso2_code)
+Get all supported identifiers by country.
+
 Get all supported identifiers by country.
 
 ### Parameters
@@ -22,7 +24,7 @@ Name | Type | Description  | Required | Notes
 
 ### Return type
 
-[**crate::models::SupportedIdentifiersByCountry**](SupportedIdentifiersByCountry.md)
+[**crate::models::SupportedIdentifier**](SupportedIdentifier.md)
 
 ### Authorization
 

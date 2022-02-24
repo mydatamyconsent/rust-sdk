@@ -4,10 +4,10 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**key** | Option<**String**> |  | [optional]
+**iso2** | Option<**String**> |  | [optional]
 **name** | Option<**String**> |  | [optional]
-**description** | Option<**String**> |  | [optional]
-**example_value** | Option<**String**> |  | [optional]
+**individual_identifiers** | Option<[**Vec<crate::models::Identifier>**](Identifier.md)> |  | [optional]
+**organization_identifiers** | Option<[**Vec<crate::models::Identifier>**](Identifier.md)> |  | [optional]
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

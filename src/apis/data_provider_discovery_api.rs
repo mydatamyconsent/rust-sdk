@@ -19,10 +19,9 @@ use super::{Error, configuration};
 #[derive(Debug, Clone, Serialize, Deserialize)]
 #[serde(untagged)]
 pub enum GetDataProviderByIdError {
-    Status500(),
-    Status400(crate::models::ProblemDetails),
-    Status404(crate::models::ProblemDetails),
-    DefaultResponse(crate::models::ProblemDetails),
+    Status500(serde_json::Value),
+    Status400(serde_json::Value),
+    Status404(serde_json::Value),
     UnknownValue(serde_json::Value),
 }
 
@@ -30,9 +29,8 @@ pub enum GetDataProviderByIdError {
 #[derive(Debug, Clone, Serialize, Deserialize)]
 #[serde(untagged)]
 pub enum GetDataProvidersError {
-    Status500(),
-    Status400(crate::models::ProblemDetails),
-    DefaultResponse(crate::models::ProblemDetails),
+    Status500(serde_json::Value),
+    Status400(serde_json::Value),
     UnknownValue(serde_json::Value),
 }
 

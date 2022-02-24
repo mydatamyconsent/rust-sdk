@@ -4,6 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
+**country_iso2_code** | **String** |  | 
 **identifiers** | [**Vec<crate::models::StringStringKeyValuePair>**](StringStringKeyValuePair.md) |  | 
 **identification_strategy** | [**crate::models::IdentificationStrategy**](IdentificationStrategy.md) |  | 
 

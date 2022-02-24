@@ -1,4 +1,4 @@
-# CollectibleTypes
+# DocumentIssueRequestStatus
 
 ## Properties
 

@@ -13,6 +13,8 @@
 
 #[derive(Clone, Debug, PartialEq, Default, Serialize, Deserialize)]
 pub struct DocumentReceiver {
+    #[serde(rename = "countryIso2Code")]
+    pub country_iso2_code: String,
     #[serde(rename = "identifiers")]
     pub identifiers: Vec<crate::models::StringStringKeyValuePair>,
     #[serde(rename = "identificationStrategy")]
@@ -20,8 +22,9 @@ pub struct DocumentReceiver {
 }
 
 impl DocumentReceiver {
-    pub fn new(identifiers: Vec<crate::models::StringStringKeyValuePair>, identification_strategy: crate::models::IdentificationStrategy) -> DocumentReceiver {
+    pub fn new(country_iso2_code: String, identifiers: Vec<crate::models::StringStringKeyValuePair>, identification_strategy: crate::models::IdentificationStrategy) -> DocumentReceiver {
         DocumentReceiver {
+            country_iso2_code,
             identifiers,
             identification_strategy,
         }

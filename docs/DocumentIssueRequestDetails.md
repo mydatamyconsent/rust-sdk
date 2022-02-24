@@ -4,9 +4,11 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
+**id** | **String** | Request Id. | 
 **document_type_id** | **String** |  | 
 **document_type_name** | **String** |  | 
 **document_identifier** | **String** |  | 
+**status** | Option<[**crate::models::DocumentIssueRequestStatus**](DocumentIssueRequestStatus.md)> |  | [optional]
 **description** | **String** |  | 
 **receiver** | Option<[**serde_json::Value**](.md)> |  | 
 **expires_at_utc** | Option<**String**> |  | [optional]

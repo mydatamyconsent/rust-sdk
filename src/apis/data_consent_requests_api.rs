@@ -19,9 +19,8 @@ use super::{Error, configuration};
 #[derive(Debug, Clone, Serialize, Deserialize)]
 #[serde(untagged)]
 pub enum CancelIndividualDataConsentRequestError {
-    Status500(),
-    Status404(crate::models::ProblemDetails),
-    DefaultResponse(crate::models::ProblemDetails),
+    Status500(serde_json::Value),
+    Status404(serde_json::Value),
     UnknownValue(serde_json::Value),
 }
 
@@ -29,9 +28,8 @@ pub enum CancelIndividualDataConsentRequestError {
 #[derive(Debug, Clone, Serialize, Deserialize)]
 #[serde(untagged)]
 pub enum CancelOrganizationDataConsentRequestError {
-    Status500(),
-    Status404(crate::models::ProblemDetails),
-    DefaultResponse(crate::models::ProblemDetails),
+    Status500(serde_json::Value),
+    Status404(serde_json::Value),
     UnknownValue(serde_json::Value),
 }
 
@@ -39,10 +37,9 @@ pub enum CancelOrganizationDataConsentRequestError {
 #[derive(Debug, Clone, Serialize, Deserialize)]
 #[serde(untagged)]
 pub enum CreateIndividualDataConsentRequestError {
-    Status500(),
-    Status404(crate::models::ProblemDetails),
-    Status400(crate::models::ProblemDetails),
-    DefaultResponse(crate::models::ProblemDetails),
+    Status500(serde_json::Value),
+    Status404(serde_json::Value),
+    Status400(serde_json::Value),
     UnknownValue(serde_json::Value),
 }
 
@@ -50,10 +47,9 @@ pub enum CreateIndividualDataConsentRequestError {
 #[derive(Debug, Clone, Serialize, Deserialize)]
 #[serde(untagged)]
 pub enum CreateOrganizationDataConsentRequestError {
-    Status500(),
-    Status404(crate::models::ProblemDetails),
-    Status400(crate::models::ProblemDetails),
-    DefaultResponse(crate::models::ProblemDetails),
+    Status500(serde_json::Value),
+    Status404(serde_json::Value),
+    Status400(serde_json::Value),
     UnknownValue(serde_json::Value),
 }
 
@@ -61,8 +57,7 @@ pub enum CreateOrganizationDataConsentRequestError {
 #[derive(Debug, Clone, Serialize, Deserialize)]
 #[serde(untagged)]
 pub enum GetAllConsentRequestsToIndividualsError {
-    Status500(),
-    DefaultResponse(crate::models::ProblemDetails),
+    Status500(serde_json::Value),
     UnknownValue(serde_json::Value),
 }
 
@@ -70,8 +65,7 @@ pub enum GetAllConsentRequestsToIndividualsError {
 #[derive(Debug, Clone, Serialize, Deserialize)]
 #[serde(untagged)]
 pub enum GetAllConsentRequestsToOrganizationsError {
-    Status500(),
-    DefaultResponse(crate::models::ProblemDetails),
+    Status500(serde_json::Value),
     UnknownValue(serde_json::Value),
 }
 
@@ -79,8 +73,7 @@ pub enum GetAllConsentRequestsToOrganizationsError {
 #[derive(Debug, Clone, Serialize, Deserialize)]
 #[serde(untagged)]
 pub enum GetIndividualConsentRequestByIdError {
-    Status500(),
-    DefaultResponse(crate::models::ProblemDetails),
+    Status500(serde_json::Value),
     UnknownValue(serde_json::Value),
 }
 
@@ -88,8 +81,7 @@ pub enum GetIndividualConsentRequestByIdError {
 #[derive(Debug, Clone, Serialize, Deserialize)]
 #[serde(untagged)]
 pub enum GetOrganizationConsentRequestByIdError {
-    Status500(),
-    DefaultResponse(crate::models::ProblemDetails),
+    Status500(serde_json::Value),
     UnknownValue(serde_json::Value),
 }
 
@@ -148,6 +140,7 @@ pub async fn cancel_organization_data_consent_request(configuration: &configurat
     }
 }
 
+/// Create a individual data consent request.
 pub async fn create_individual_data_consent_request(configuration: &configuration::Configuration, create_individual_data_consent_request: crate::models::CreateIndividualDataConsentRequest) -> Result<crate::models::IndividualDataConsentRequestResponse, Error<CreateIndividualDataConsentRequestError>> {
     let local_var_configuration = configuration;
 
@@ -176,6 +169,7 @@ pub async fn create_individual_data_consent_request(configuration: &configuratio
     }
 }
 
+/// Create a organization data consent request.
 pub async fn create_organization_data_consent_request(configuration: &configuration::Configuration, create_organization_data_consent_request: crate::models::CreateOrganizationDataConsentRequest) -> Result<crate::models::OrganizationDataConsentRequestResponse, Error<CreateOrganizationDataConsentRequestError>> {
     let local_var_configuration = configuration;
 

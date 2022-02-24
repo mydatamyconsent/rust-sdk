@@ -11,29 +11,32 @@
 
 /// 
 #[derive(Clone, Copy, Debug, Eq, PartialEq, Ord, PartialOrd, Hash, Serialize, Deserialize)]
-pub enum CollectibleTypes {
-    #[serde(rename = "PersonalDetails")]
-    PersonalDetails,
-    #[serde(rename = "Documents")]
-    Documents,
-    #[serde(rename = "Financials")]
-    Financials,
+pub enum DocumentIssueRequestStatus {
+    #[serde(rename = "Created")]
+    Created,
+    #[serde(rename = "Issued")]
+    Issued,
+    #[serde(rename = "Accepted")]
+    Accepted,
+    #[serde(rename = "Rejected")]
+    Rejected,
 
 }
 
-impl ToString for CollectibleTypes {
+impl ToString for DocumentIssueRequestStatus {
     fn to_string(&self) -> String {
         match self {
-            Self::PersonalDetails => String::from("PersonalDetails"),
-            Self::Documents => String::from("Documents"),
-            Self::Financials => String::from("Financials"),
+            Self::Created => String::from("Created"),
+            Self::Issued => String::from("Issued"),
+            Self::Accepted => String::from("Accepted"),
+            Self::Rejected => String::from("Rejected"),
         }
     }
 }
 
-impl Default for CollectibleTypes {
-    fn default() -> CollectibleTypes {
-        Self::PersonalDetails
+impl Default for DocumentIssueRequestStatus {
+    fn default() -> DocumentIssueRequestStatus {
+        Self::Created
     }
 }
 

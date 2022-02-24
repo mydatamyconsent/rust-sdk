@@ -12,18 +12,21 @@
 
 
 #[derive(Clone, Debug, PartialEq, Default, Serialize, Deserialize)]
-pub struct IdentifierStringKeyValuePair {
-    #[serde(rename = "key", skip_serializing_if = "Option::is_none")]
-    pub key: Option<crate::models::Identifier>,
-    #[serde(rename = "value", skip_serializing_if = "Option::is_none")]
-    pub value: Option<String>,
+pub struct JsonSchema {
+    #[serde(rename = "keywords", skip_serializing_if = "Option::is_none")]
+    pub keywords: Option<Vec<serde_json::Value>>,
+    #[serde(rename = "otherData", skip_serializing_if = "Option::is_none")]
+    pub other_data: Option<::std::collections::HashMap<String, serde_json::Value>>,
+    #[serde(rename = "boolValue", skip_serializing_if = "Option::is_none")]
+    pub bool_value: Option<bool>,
 }
 
-impl IdentifierStringKeyValuePair {
-    pub fn new() -> IdentifierStringKeyValuePair {
-        IdentifierStringKeyValuePair {
-            key: None,
-            value: None,
+impl JsonSchema {
+    pub fn new() -> JsonSchema {
+        JsonSchema {
+            keywords: None,
+            other_data: None,
+            bool_value: None,
         }
     }
 }

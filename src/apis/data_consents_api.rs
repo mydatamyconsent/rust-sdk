@@ -19,8 +19,7 @@ use super::{Error, configuration};
 #[derive(Debug, Clone, Serialize, Deserialize)]
 #[serde(untagged)]
 pub enum DownloadConsentedDocumentByIdError {
-    Status500(),
-    DefaultResponse(crate::models::ProblemDetails),
+    Status500(serde_json::Value),
     UnknownValue(serde_json::Value),
 }
 
@@ -28,8 +27,7 @@ pub enum DownloadConsentedDocumentByIdError {
 #[derive(Debug, Clone, Serialize, Deserialize)]
 #[serde(untagged)]
 pub enum DownloadOrgConsentedDocumentByIdError {
-    Status500(),
-    DefaultResponse(crate::models::ProblemDetails),
+    Status500(serde_json::Value),
     UnknownValue(serde_json::Value),
 }
 
@@ -37,8 +35,7 @@ pub enum DownloadOrgConsentedDocumentByIdError {
 #[derive(Debug, Clone, Serialize, Deserialize)]
 #[serde(untagged)]
 pub enum GetAllConsentedDocumentsError {
-    Status500(),
-    DefaultResponse(crate::models::ProblemDetails),
+    Status500(serde_json::Value),
     UnknownValue(serde_json::Value),
 }
 
@@ -46,8 +43,7 @@ pub enum GetAllConsentedDocumentsError {
 #[derive(Debug, Clone, Serialize, Deserialize)]
 #[serde(untagged)]
 pub enum GetAllConsentedFinancialAccountsError {
-    Status500(),
-    DefaultResponse(crate::models::ProblemDetails),
+    Status500(serde_json::Value),
     UnknownValue(serde_json::Value),
 }
 
@@ -55,8 +51,7 @@ pub enum GetAllConsentedFinancialAccountsError {
 #[derive(Debug, Clone, Serialize, Deserialize)]
 #[serde(untagged)]
 pub enum GetAllOrganizationConsentedDocumentsError {
-    Status500(),
-    DefaultResponse(crate::models::ProblemDetails),
+    Status500(serde_json::Value),
     UnknownValue(serde_json::Value),
 }
 
@@ -64,8 +59,7 @@ pub enum GetAllOrganizationConsentedDocumentsError {
 #[derive(Debug, Clone, Serialize, Deserialize)]
 #[serde(untagged)]
 pub enum GetConsentDetailsByIdError {
-    Status500(),
-    DefaultResponse(crate::models::ProblemDetails),
+    Status500(serde_json::Value),
     UnknownValue(serde_json::Value),
 }
 
@@ -73,8 +67,7 @@ pub enum GetConsentDetailsByIdError {
 #[derive(Debug, Clone, Serialize, Deserialize)]
 #[serde(untagged)]
 pub enum GetConsentFinancialAccountsError {
-    Status500(),
-    DefaultResponse(crate::models::ProblemDetails),
+    Status500(serde_json::Value),
     UnknownValue(serde_json::Value),
 }
 
@@ -82,8 +75,7 @@ pub enum GetConsentFinancialAccountsError {
 #[derive(Debug, Clone, Serialize, Deserialize)]
 #[serde(untagged)]
 pub enum GetConsentedAccountByIdError {
-    Status500(),
-    DefaultResponse(crate::models::ProblemDetails),
+    Status500(serde_json::Value),
     UnknownValue(serde_json::Value),
 }
 
@@ -91,8 +83,7 @@ pub enum GetConsentedAccountByIdError {
 #[derive(Debug, Clone, Serialize, Deserialize)]
 #[serde(untagged)]
 pub enum GetConsentedDocumentByIdError {
-    Status500(),
-    DefaultResponse(crate::models::ProblemDetails),
+    Status500(serde_json::Value),
     UnknownValue(serde_json::Value),
 }
 
@@ -100,8 +91,7 @@ pub enum GetConsentedDocumentByIdError {
 #[derive(Debug, Clone, Serialize, Deserialize)]
 #[serde(untagged)]
 pub enum GetConsentedFinancialAccountError {
-    Status500(),
-    DefaultResponse(crate::models::ProblemDetails),
+    Status500(serde_json::Value),
     UnknownValue(serde_json::Value),
 }
 
@@ -109,8 +99,7 @@ pub enum GetConsentedFinancialAccountError {
 #[derive(Debug, Clone, Serialize, Deserialize)]
 #[serde(untagged)]
 pub enum GetConsentedFinancialAccountTransactionsError {
-    Status500(),
-    DefaultResponse(crate::models::ProblemDetails),
+    Status500(serde_json::Value),
     UnknownValue(serde_json::Value),
 }
 
@@ -118,8 +107,7 @@ pub enum GetConsentedFinancialAccountTransactionsError {
 #[derive(Debug, Clone, Serialize, Deserialize)]
 #[serde(untagged)]
 pub enum GetConsentsForOrganizationsError {
-    Status500(),
-    DefaultResponse(crate::models::ProblemDetails),
+    Status500(serde_json::Value),
     UnknownValue(serde_json::Value),
 }
 
@@ -127,8 +115,7 @@ pub enum GetConsentsForOrganizationsError {
 #[derive(Debug, Clone, Serialize, Deserialize)]
 #[serde(untagged)]
 pub enum GetConsentsSentToIndividualsError {
-    Status500(),
-    DefaultResponse(crate::models::ProblemDetails),
+    Status500(serde_json::Value),
     UnknownValue(serde_json::Value),
 }
 
@@ -136,8 +123,7 @@ pub enum GetConsentsSentToIndividualsError {
 #[derive(Debug, Clone, Serialize, Deserialize)]
 #[serde(untagged)]
 pub enum GetOrgConsentedAccountTransactionsError {
-    Status500(),
-    DefaultResponse(crate::models::ProblemDetails),
+    Status500(serde_json::Value),
     UnknownValue(serde_json::Value),
 }
 
@@ -145,8 +131,7 @@ pub enum GetOrgConsentedAccountTransactionsError {
 #[derive(Debug, Clone, Serialize, Deserialize)]
 #[serde(untagged)]
 pub enum GetOrganizationConsentDetailsByIdError {
-    Status500(),
-    DefaultResponse(crate::models::ProblemDetails),
+    Status500(serde_json::Value),
     UnknownValue(serde_json::Value),
 }
 
@@ -154,8 +139,7 @@ pub enum GetOrganizationConsentDetailsByIdError {
 #[derive(Debug, Clone, Serialize, Deserialize)]
 #[serde(untagged)]
 pub enum GetOrganizationConsentedDocumentByIdError {
-    Status500(),
-    DefaultResponse(crate::models::ProblemDetails),
+    Status500(serde_json::Value),
     UnknownValue(serde_json::Value),
 }
 

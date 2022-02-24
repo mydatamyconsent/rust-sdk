@@ -13,23 +13,23 @@
 
 #[derive(Clone, Debug, PartialEq, Default, Serialize, Deserialize)]
 pub struct SupportedIdentifier {
-    #[serde(rename = "key", skip_serializing_if = "Option::is_none")]
-    pub key: Option<String>,
+    #[serde(rename = "iso2", skip_serializing_if = "Option::is_none")]
+    pub iso2: Option<String>,
     #[serde(rename = "name", skip_serializing_if = "Option::is_none")]
     pub name: Option<String>,
-    #[serde(rename = "description", skip_serializing_if = "Option::is_none")]
-    pub description: Option<String>,
-    #[serde(rename = "exampleValue", skip_serializing_if = "Option::is_none")]
-    pub example_value: Option<String>,
+    #[serde(rename = "individualIdentifiers", skip_serializing_if = "Option::is_none")]
+    pub individual_identifiers: Option<Vec<crate::models::Identifier>>,
+    #[serde(rename = "organizationIdentifiers", skip_serializing_if = "Option::is_none")]
+    pub organization_identifiers: Option<Vec<crate::models::Identifier>>,
 }
 
 impl SupportedIdentifier {
     pub fn new() -> SupportedIdentifier {
         SupportedIdentifier {
-            key: None,
+            iso2: None,
             name: None,
-            description: None,
-            example_value: None,
+            individual_identifiers: None,
+            organization_identifiers: None,
         }
     }
 }
