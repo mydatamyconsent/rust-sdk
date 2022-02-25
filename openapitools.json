@@ -25,7 +25,7 @@
               "developerOrganizationUrl": "https://mydatamyconsent.com",
               "artifactDescription": "My Data My Consent Rust SDK",
               "artifactUrl": "https://github.com/mydatamyconsent/rust-sdk",
-              "artifactVersion": "0.0.1",
+              "packageVersion": "0.0.1",
               "licenseUrl": "https://mydatamyconsent.com/en-us/legal/terms-of-service",
               "licenseName": "DataConsent, Inc. ToS",
               "scmUrl": "https://github.com/mydatamyconsent/rust-sdk",

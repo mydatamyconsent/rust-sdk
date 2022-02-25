@@ -238,7 +238,7 @@ pub async fn issue_document_to_organization(configuration: &configuration::Confi
     }
 }
 
-pub async fn upload_document_for_individual(configuration: &configuration::Configuration, issue_request_id: &str, form_file: Option<std::path::PathBuf>) -> Result<String, Error<UploadDocumentForIndividualError>> {
+pub async fn upload_document_for_individual(configuration: &configuration::Configuration, issue_request_id: &str, form_file: std::path::PathBuf) -> Result<String, Error<UploadDocumentForIndividualError>> {
     let local_var_configuration = configuration;
 
     let local_var_client = &local_var_configuration.client;

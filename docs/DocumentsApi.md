@@ -170,7 +170,7 @@ Upload a document for issuance request of individual.
 Name | Type | Description  | Required | Notes
 ------------- | ------------- | ------------- | ------------- | -------------
 **issue_request_id** | **String** | Issue Request Id System.Guid. | [required] |
-**form_file** | Option<**std::path::PathBuf**> |  |  |
+**form_file** | **std::path::PathBuf** |  | [required] |
 
 ### Return type
 
