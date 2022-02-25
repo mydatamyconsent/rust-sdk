@@ -4,6 +4,7 @@ README.md
 docs/Activity.md
 docs/ApprovedConsentRequest.md
 docs/BankAccountType.md
+docs/ConsentRequestReceiver.md
 docs/CreateDataProcessingAgreementRequestModel.md
 docs/CreateIndividualDataConsentRequest.md
 docs/CreateOrganizationDataConsentRequest.md
@@ -58,8 +59,6 @@ docs/OrganizationFinancialTransactionsDtoPaginatedList.md
 docs/ProblemDetails.md
 docs/PushUriRequest.md
 docs/PushUriResponse.md
-docs/Receiver.md
-docs/ReceiverType.md
 docs/SharedWith.md
 docs/StringStringKeyValuePair.md
 docs/SupportedEntityType.md
@@ -86,6 +85,7 @@ src/lib.rs
 src/models/activity.rs
 src/models/approved_consent_request.rs
 src/models/bank_account_type.rs
+src/models/consent_request_receiver.rs
 src/models/create_data_processing_agreement_request_model.rs
 src/models/create_individual_data_consent_request.rs
 src/models/create_organization_data_consent_request.rs
@@ -135,8 +135,6 @@ src/models/organization_financial_transactions_dto_paginated_list.rs
 src/models/problem_details.rs
 src/models/push_uri_request.rs
 src/models/push_uri_response.rs
-src/models/receiver.rs
-src/models/receiver_type.rs
 src/models/shared_with.rs
 src/models/string_string_key_value_pair.rs
 src/models/supported_entity_type.rs

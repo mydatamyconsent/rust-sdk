@@ -19,37 +19,43 @@ pub struct DocumentIssueRequestDetails {
     pub id: String,
     #[serde(rename = "documentTypeId")]
     pub document_type_id: String,
-    #[serde(rename = "documentTypeName")]
-    pub document_type_name: String,
-    #[serde(rename = "documentIdentifier")]
-    pub document_identifier: String,
-    #[serde(rename = "status", skip_serializing_if = "Option::is_none")]
-    pub status: Option<crate::models::DocumentIssueRequestStatus>,
+    #[serde(rename = "typeName")]
+    pub type_name: String,
+    #[serde(rename = "identifier")]
+    pub identifier: String,
+    #[serde(rename = "status")]
+    pub status: crate::models::DocumentIssueRequestStatus,
     #[serde(rename = "description")]
     pub description: String,
     #[serde(rename = "receiver")]
     pub receiver: Option<serde_json::Value>,
+    #[serde(rename = "issuedAtUtc")]
+    pub issued_at_utc: String,
+    #[serde(rename = "validFromUtc")]
+    pub valid_from_utc: String,
     #[serde(rename = "expiresAtUtc", skip_serializing_if = "Option::is_none")]
     pub expires_at_utc: Option<String>,
-    #[serde(rename = "metadata", skip_serializing_if = "Option::is_none")]
-    pub metadata: Option<serde_json::Value>,
+    #[serde(rename = "metaData", skip_serializing_if = "Option::is_none")]
+    pub meta_data: Option<serde_json::Value>,
     #[serde(rename = "createdAtUtc")]
     pub created_at_utc: String,
 }
 
 impl DocumentIssueRequestDetails {
     /// Document issue request details.
-    pub fn new(id: String, document_type_id: String, document_type_name: String, document_identifier: String, description: String, receiver: Option<serde_json::Value>, created_at_utc: String) -> DocumentIssueRequestDetails {
+    pub fn new(id: String, document_type_id: String, type_name: String, identifier: String, status: crate::models::DocumentIssueRequestStatus, description: String, receiver: Option<serde_json::Value>, issued_at_utc: String, valid_from_utc: String, created_at_utc: String) -> DocumentIssueRequestDetails {
         DocumentIssueRequestDetails {
             id,
             document_type_id,
-            document_type_name,
-            document_identifier,
-            status: None,
+            type_name,
+            identifier,
+            status,
             description,
             receiver,
+            issued_at_utc,
+            valid_from_utc,
             expires_at_utc: None,
-            metadata: None,
+            meta_data: None,
             created_at_utc,
         }
     }

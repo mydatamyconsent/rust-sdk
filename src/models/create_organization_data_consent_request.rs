@@ -18,12 +18,12 @@ pub struct CreateOrganizationDataConsentRequest {
     #[serde(rename = "consentTemplateId", skip_serializing_if = "Option::is_none")]
     pub consent_template_id: Option<String>,
     #[serde(rename = "receiver")]
-    pub receiver: Box<crate::models::Receiver>,
+    pub receiver: Box<crate::models::ConsentRequestReceiver>,
 }
 
 impl CreateOrganizationDataConsentRequest {
     /// Create organization data consent request
-    pub fn new(receiver: crate::models::Receiver) -> CreateOrganizationDataConsentRequest {
+    pub fn new(receiver: crate::models::ConsentRequestReceiver) -> CreateOrganizationDataConsentRequest {
         CreateOrganizationDataConsentRequest {
             consent_template_id: None,
             receiver: Box::new(receiver),

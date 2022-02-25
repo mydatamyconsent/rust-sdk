@@ -5,9 +5,11 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **document_type_id** | **String** |  | 
-**document_identifier** | **String** |  | 
+**identifier** | **String** |  | 
 **description** | **String** |  | 
 **receiver** | [**crate::models::DocumentReceiver**](DocumentReceiver.md) |  | 
+**issued_at_utc** | **String** |  | 
+**valid_from_utc** | **String** |  | 
 **expires_at_utc** | Option<**String**> |  | [optional]
 **metadata** | Option<**::std::collections::HashMap<String, String>**> |  | [optional]
 

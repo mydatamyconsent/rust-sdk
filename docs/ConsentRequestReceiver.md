@@ -1,10 +1,9 @@
-# Receiver
+# ConsentRequestReceiver
 
 ## Properties
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**_type** | Option<[**crate::models::ReceiverType**](ReceiverType.md)> |  | [optional]
 **identifiers** | Option<[**Vec<crate::models::StringStringKeyValuePair>**](StringStringKeyValuePair.md)> | Consent request receiver identifiers | [optional]
 **identification_strategy** | Option<[**crate::models::IdentificationStrategy**](IdentificationStrategy.md)> |  | [optional]
 

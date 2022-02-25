@@ -16,12 +16,16 @@
 pub struct DocumentIssueRequest {
     #[serde(rename = "documentTypeId")]
     pub document_type_id: String,
-    #[serde(rename = "documentIdentifier")]
-    pub document_identifier: String,
+    #[serde(rename = "identifier")]
+    pub identifier: String,
     #[serde(rename = "description")]
     pub description: String,
     #[serde(rename = "receiver")]
     pub receiver: Box<crate::models::DocumentReceiver>,
+    #[serde(rename = "issuedAtUtc")]
+    pub issued_at_utc: String,
+    #[serde(rename = "validFromUtc")]
+    pub valid_from_utc: String,
     #[serde(rename = "expiresAtUtc", skip_serializing_if = "Option::is_none")]
     pub expires_at_utc: Option<String>,
     #[serde(rename = "metadata", skip_serializing_if = "Option::is_none")]
@@ -30,12 +34,14 @@ pub struct DocumentIssueRequest {
 
 impl DocumentIssueRequest {
     /// Document Issue Request.
-    pub fn new(document_type_id: String, document_identifier: String, description: String, receiver: crate::models::DocumentReceiver) -> DocumentIssueRequest {
+    pub fn new(document_type_id: String, identifier: String, description: String, receiver: crate::models::DocumentReceiver, issued_at_utc: String, valid_from_utc: String) -> DocumentIssueRequest {
         DocumentIssueRequest {
             document_type_id,
-            document_identifier,
+            identifier,
             description,
             receiver: Box::new(receiver),
+            issued_at_utc,
+            valid_from_utc,
             expires_at_utc: None,
             metadata: None,
         }
