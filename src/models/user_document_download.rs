@@ -12,20 +12,23 @@
 
 
 #[derive(Clone, Debug, PartialEq, Default, Serialize, Deserialize)]
-pub struct UserDocumentDownloadDto {
+pub struct UserDocumentDownload {
     #[serde(rename = "id", skip_serializing_if = "Option::is_none")]
     pub id: Option<String>,
-    #[serde(rename = "storageUrl", skip_serializing_if = "Option::is_none")]
-    pub storage_url: Option<String>,
+    #[serde(rename = "downloadUrl", skip_serializing_if = "Option::is_none")]
+    pub download_url: Option<String>,
+    #[serde(rename = "expiresAtUtc", skip_serializing_if = "Option::is_none")]
+    pub expires_at_utc: Option<String>,
     #[serde(rename = "ownerId", skip_serializing_if = "Option::is_none")]
     pub owner_id: Option<String>,
 }
 
-impl UserDocumentDownloadDto {
-    pub fn new() -> UserDocumentDownloadDto {
-        UserDocumentDownloadDto {
+impl UserDocumentDownload {
+    pub fn new() -> UserDocumentDownload {
+        UserDocumentDownload {
             id: None,
-            storage_url: None,
+            download_url: None,
+            expires_at_utc: None,
             owner_id: None,
         }
     }

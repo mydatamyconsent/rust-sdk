@@ -144,7 +144,7 @@ pub enum GetOrganizationConsentedDocumentByIdError {
 }
 
 
-pub async fn download_consented_document_by_id(configuration: &configuration::Configuration, consent_id: &str, document_id: &str) -> Result<crate::models::UserDocumentDownloadDto, Error<DownloadConsentedDocumentByIdError>> {
+pub async fn download_consented_document_by_id(configuration: &configuration::Configuration, consent_id: &str, document_id: &str) -> Result<crate::models::UserDocumentDownload, Error<DownloadConsentedDocumentByIdError>> {
     let local_var_configuration = configuration;
 
     let local_var_client = &local_var_configuration.client;
@@ -230,7 +230,7 @@ pub async fn get_all_consented_financial_accounts(configuration: &configuration:
 
     let local_var_client = &local_var_configuration.client;
 
-    let local_var_uri_str = format!("{}/v1/consents/individuals/{consentId}/accounts", local_var_configuration.base_path, consentId=crate::apis::urlencode(consent_id));
+    let local_var_uri_str = format!("{}/v1/consents/individuals/{consentId}/financial-accounts", local_var_configuration.base_path, consentId=crate::apis::urlencode(consent_id));
     let mut local_var_req_builder = local_var_client.request(reqwest::Method::GET, local_var_uri_str.as_str());
 
     if let Some(ref local_var_user_agent) = local_var_configuration.user_agent {
@@ -311,7 +311,7 @@ pub async fn get_consent_financial_accounts(configuration: &configuration::Confi
 
     let local_var_client = &local_var_configuration.client;
 
-    let local_var_uri_str = format!("{}/v1/consents/organizations/{consentId}/accounts", local_var_configuration.base_path, consentId=crate::apis::urlencode(consent_id));
+    let local_var_uri_str = format!("{}/v1/consents/organizations/{consentId}/financial-accounts", local_var_configuration.base_path, consentId=crate::apis::urlencode(consent_id));
     let mut local_var_req_builder = local_var_client.request(reqwest::Method::GET, local_var_uri_str.as_str());
 
     if let Some(ref local_var_user_agent) = local_var_configuration.user_agent {
@@ -338,7 +338,7 @@ pub async fn get_consented_account_by_id(configuration: &configuration::Configur
 
     let local_var_client = &local_var_configuration.client;
 
-    let local_var_uri_str = format!("{}/v1/consents/individuals/{consentId}/accounts/{accountId}", local_var_configuration.base_path, consentId=crate::apis::urlencode(consent_id), accountId=crate::apis::urlencode(account_id));
+    let local_var_uri_str = format!("{}/v1/consents/individuals/{consentId}/financial-accounts/{accountId}", local_var_configuration.base_path, consentId=crate::apis::urlencode(consent_id), accountId=crate::apis::urlencode(account_id));
     let mut local_var_req_builder = local_var_client.request(reqwest::Method::GET, local_var_uri_str.as_str());
 
     if let Some(ref local_var_user_agent) = local_var_configuration.user_agent {
@@ -360,7 +360,7 @@ pub async fn get_consented_account_by_id(configuration: &configuration::Configur
     }
 }
 
-pub async fn get_consented_document_by_id(configuration: &configuration::Configuration, consent_id: &str, document_id: &str) -> Result<crate::models::UserDocumentDetailsDto, Error<GetConsentedDocumentByIdError>> {
+pub async fn get_consented_document_by_id(configuration: &configuration::Configuration, consent_id: &str, document_id: &str) -> Result<crate::models::UserDocumentDetails, Error<GetConsentedDocumentByIdError>> {
     let local_var_configuration = configuration;
 
     let local_var_client = &local_var_configuration.client;
@@ -392,7 +392,7 @@ pub async fn get_consented_financial_account(configuration: &configuration::Conf
 
     let local_var_client = &local_var_configuration.client;
 
-    let local_var_uri_str = format!("{}/v1/consents/organizations/{consentId}/accounts/{accountId}", local_var_configuration.base_path, consentId=crate::apis::urlencode(consent_id), accountId=crate::apis::urlencode(account_id));
+    let local_var_uri_str = format!("{}/v1/consents/organizations/{consentId}/financial-accounts/{accountId}", local_var_configuration.base_path, consentId=crate::apis::urlencode(consent_id), accountId=crate::apis::urlencode(account_id));
     let mut local_var_req_builder = local_var_client.request(reqwest::Method::GET, local_var_uri_str.as_str());
 
     if let Some(ref local_var_user_agent) = local_var_configuration.user_agent {
@@ -419,7 +419,7 @@ pub async fn get_consented_financial_account_transactions(configuration: &config
 
     let local_var_client = &local_var_configuration.client;
 
-    let local_var_uri_str = format!("{}/v1/consents/individuals/{consentId}/accounts/{accountId}/transactions", local_var_configuration.base_path, consentId=crate::apis::urlencode(consent_id), accountId=crate::apis::urlencode(account_id));
+    let local_var_uri_str = format!("{}/v1/consents/individuals/{consentId}/financial-accounts/{accountId}/transactions", local_var_configuration.base_path, consentId=crate::apis::urlencode(consent_id), accountId=crate::apis::urlencode(account_id));
     let mut local_var_req_builder = local_var_client.request(reqwest::Method::GET, local_var_uri_str.as_str());
 
     if let Some(ref local_var_str) = filters {
@@ -545,7 +545,7 @@ pub async fn get_org_consented_account_transactions(configuration: &configuratio
 
     let local_var_client = &local_var_configuration.client;
 
-    let local_var_uri_str = format!("{}/v1/consents/organizations/{consentId}/accounts/{accountId}/transactions", local_var_configuration.base_path, consentId=crate::apis::urlencode(consent_id), accountId=crate::apis::urlencode(account_id));
+    let local_var_uri_str = format!("{}/v1/consents/organizations/{consentId}/financial-accounts/{accountId}/transactions", local_var_configuration.base_path, consentId=crate::apis::urlencode(consent_id), accountId=crate::apis::urlencode(account_id));
     let mut local_var_req_builder = local_var_client.request(reqwest::Method::GET, local_var_uri_str.as_str());
 
     if let Some(ref local_var_str) = filters {
@@ -609,7 +609,7 @@ pub async fn get_organization_consent_details_by_id(configuration: &configuratio
     }
 }
 
-pub async fn get_organization_consented_document_by_id(configuration: &configuration::Configuration, consent_id: &str, document_id: &str) -> Result<crate::models::OrganizationDocumentDetailsDto, Error<GetOrganizationConsentedDocumentByIdError>> {
+pub async fn get_organization_consented_document_by_id(configuration: &configuration::Configuration, consent_id: &str, document_id: &str) -> Result<crate::models::OrganizationDocumentDetails, Error<GetOrganizationConsentedDocumentByIdError>> {
     let local_var_configuration = configuration;
 
     let local_var_client = &local_var_configuration.client;

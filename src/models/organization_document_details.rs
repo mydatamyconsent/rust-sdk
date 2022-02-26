@@ -12,54 +12,45 @@
 
 
 #[derive(Clone, Debug, PartialEq, Default, Serialize, Deserialize)]
-pub struct UserDocumentDetailsDto {
+pub struct OrganizationDocumentDetails {
     #[serde(rename = "id", skip_serializing_if = "Option::is_none")]
     pub id: Option<String>,
-    #[serde(rename = "categoryType", skip_serializing_if = "Option::is_none")]
-    pub category_type: Option<crate::models::DocumentCategoryType>,
+    #[serde(rename = "organizationId", skip_serializing_if = "Option::is_none")]
+    pub organization_id: Option<String>,
+    #[serde(rename = "organizationName", skip_serializing_if = "Option::is_none")]
+    pub organization_name: Option<String>,
     #[serde(rename = "typeId", skip_serializing_if = "Option::is_none")]
     pub type_id: Option<String>,
     #[serde(rename = "typeName", skip_serializing_if = "Option::is_none")]
     pub type_name: Option<String>,
-    #[serde(rename = "fullName", skip_serializing_if = "Option::is_none")]
-    pub full_name: Option<String>,
+    #[serde(rename = "name", skip_serializing_if = "Option::is_none")]
+    pub name: Option<String>,
     #[serde(rename = "identifier", skip_serializing_if = "Option::is_none")]
     pub identifier: Option<String>,
-    #[serde(rename = "accountId", skip_serializing_if = "Option::is_none")]
-    pub account_id: Option<String>,
+    #[serde(rename = "storageUrl", skip_serializing_if = "Option::is_none")]
+    pub storage_url: Option<String>,
+    #[serde(rename = "countryIso2", skip_serializing_if = "Option::is_none")]
+    pub country_iso2: Option<String>,
     #[serde(rename = "issuerId", skip_serializing_if = "Option::is_none")]
     pub issuer_id: Option<String>,
     #[serde(rename = "issuerName", skip_serializing_if = "Option::is_none")]
     pub issuer_name: Option<String>,
-    #[serde(rename = "storageUrl", skip_serializing_if = "Option::is_none")]
-    pub storage_url: Option<String>,
-    #[serde(rename = "isQuickAccessEnabled", skip_serializing_if = "Option::is_none")]
-    pub is_quick_access_enabled: Option<bool>,
-    #[serde(rename = "isOwner", skip_serializing_if = "Option::is_none")]
-    pub is_owner: Option<bool>,
-    #[serde(rename = "digitalSignatureDetails", skip_serializing_if = "Option::is_none")]
-    pub digital_signature_details: Option<Vec<crate::models::DigitalSignature>>,
-    #[serde(rename = "ownerId", skip_serializing_if = "Option::is_none")]
-    pub owner_id: Option<String>,
 }
 
-impl UserDocumentDetailsDto {
-    pub fn new() -> UserDocumentDetailsDto {
-        UserDocumentDetailsDto {
+impl OrganizationDocumentDetails {
+    pub fn new() -> OrganizationDocumentDetails {
+        OrganizationDocumentDetails {
             id: None,
-            category_type: None,
+            organization_id: None,
+            organization_name: None,
             type_id: None,
             type_name: None,
-            full_name: None,
+            name: None,
             identifier: None,
-            account_id: None,
+            storage_url: None,
+            country_iso2: None,
             issuer_id: None,
             issuer_name: None,
-            storage_url: None,
-            is_quick_access_enabled: None,
-            is_owner: None,
-            digital_signature_details: None,
-            owner_id: None,
         }
     }
 }

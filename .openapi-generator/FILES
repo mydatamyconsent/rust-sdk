@@ -51,7 +51,7 @@ docs/Life.md
 docs/OrganizationDataConsentInfoDto.md
 docs/OrganizationDataConsentInfoDtoPaginatedList.md
 docs/OrganizationDataConsentRequestResponse.md
-docs/OrganizationDocumentDetailsDto.md
+docs/OrganizationDocumentDetails.md
 docs/OrganizationDocumentDownloadDto.md
 docs/OrganizationFinancialAccountDto.md
 docs/OrganizationFinancialTransactionsDto.md
@@ -70,8 +70,8 @@ docs/UserAccountFinancialTransactionsDto.md
 docs/UserAccountFinancialTransactionsDtoPaginatedList.md
 docs/UserDataConsentInfoDto.md
 docs/UserDataConsentInfoDtoPaginatedList.md
-docs/UserDocumentDetailsDto.md
-docs/UserDocumentDownloadDto.md
+docs/UserDocumentDetails.md
+docs/UserDocumentDownload.md
 src/apis/configuration.rs
 src/apis/data_consent_requests_api.rs
 src/apis/data_consents_api.rs
@@ -127,7 +127,7 @@ src/models/mod.rs
 src/models/organization_data_consent_info_dto.rs
 src/models/organization_data_consent_info_dto_paginated_list.rs
 src/models/organization_data_consent_request_response.rs
-src/models/organization_document_details_dto.rs
+src/models/organization_document_details.rs
 src/models/organization_document_download_dto.rs
 src/models/organization_financial_account_dto.rs
 src/models/organization_financial_transactions_dto.rs
@@ -145,5 +145,5 @@ src/models/user_account_financial_transactions_dto.rs
 src/models/user_account_financial_transactions_dto_paginated_list.rs
 src/models/user_data_consent_info_dto.rs
 src/models/user_data_consent_info_dto_paginated_list.rs
-src/models/user_document_details_dto.rs
-src/models/user_document_download_dto.rs
+src/models/user_document_details.rs
+src/models/user_document_download.rs

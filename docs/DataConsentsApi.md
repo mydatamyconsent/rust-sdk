@@ -7,17 +7,17 @@ Method | HTTP request | Description
 [**download_consented_document_by_id**](DataConsentsApi.md#download_consented_document_by_id) | **GET** /v1/consents/individuals/{consentId}/documents/{documentId}/download | Download a individuals consented document.
 [**download_org_consented_document_by_id**](DataConsentsApi.md#download_org_consented_document_by_id) | **GET** /v1/consents/organizations/{consentId}/documents/{documentId}/download | Download a organizations consented document.
 [**get_all_consented_documents**](DataConsentsApi.md#get_all_consented_documents) | **GET** /v1/consents/individuals/{consentId}/documents | Get the individual documents based on ConsentId.
-[**get_all_consented_financial_accounts**](DataConsentsApi.md#get_all_consented_financial_accounts) | **GET** /v1/consents/individuals/{consentId}/accounts | Get all individual consented financial accounts.
+[**get_all_consented_financial_accounts**](DataConsentsApi.md#get_all_consented_financial_accounts) | **GET** /v1/consents/individuals/{consentId}/financial-accounts | Get all individual consented financial accounts.
 [**get_all_organization_consented_documents**](DataConsentsApi.md#get_all_organization_consented_documents) | **GET** /v1/consents/organizations/{consentId}/documents | Get the organization documents based on ConsentId.
 [**get_consent_details_by_id**](DataConsentsApi.md#get_consent_details_by_id) | **GET** /v1/consents/individuals/{consentId} | Get all individuals consent details by consent id.
-[**get_consent_financial_accounts**](DataConsentsApi.md#get_consent_financial_accounts) | **GET** /v1/consents/organizations/{consentId}/accounts | Get all organizational consented financial accounts.
-[**get_consented_account_by_id**](DataConsentsApi.md#get_consented_account_by_id) | **GET** /v1/consents/individuals/{consentId}/accounts/{accountId} | Get individual consented financial account details based on account id.
+[**get_consent_financial_accounts**](DataConsentsApi.md#get_consent_financial_accounts) | **GET** /v1/consents/organizations/{consentId}/financial-accounts | Get all organizational consented financial accounts.
+[**get_consented_account_by_id**](DataConsentsApi.md#get_consented_account_by_id) | **GET** /v1/consents/individuals/{consentId}/financial-accounts/{accountId} | Get individual consented financial account details based on account id.
 [**get_consented_document_by_id**](DataConsentsApi.md#get_consented_document_by_id) | **GET** /v1/consents/individuals/{consentId}/documents/{documentId} | Get individuals consent document based on document id.
-[**get_consented_financial_account**](DataConsentsApi.md#get_consented_financial_account) | **GET** /v1/consents/organizations/{consentId}/accounts/{accountId} | Get organization consented financial account details based on account id.
-[**get_consented_financial_account_transactions**](DataConsentsApi.md#get_consented_financial_account_transactions) | **GET** /v1/consents/individuals/{consentId}/accounts/{accountId}/transactions | Get individual consented financial account transactions of an individual based on accountId.
+[**get_consented_financial_account**](DataConsentsApi.md#get_consented_financial_account) | **GET** /v1/consents/organizations/{consentId}/financial-accounts/{accountId} | Get organization consented financial account details based on account id.
+[**get_consented_financial_account_transactions**](DataConsentsApi.md#get_consented_financial_account_transactions) | **GET** /v1/consents/individuals/{consentId}/financial-accounts/{accountId}/transactions | Get individual consented financial account transactions of an individual based on accountId.
 [**get_consents_for_organizations**](DataConsentsApi.md#get_consents_for_organizations) | **GET** /v1/consents/organizations | Get the list of data consents sent for organizations.
 [**get_consents_sent_to_individuals**](DataConsentsApi.md#get_consents_sent_to_individuals) | **GET** /v1/consents/individuals | Get the list of Consents Sent to Individuals.
-[**get_org_consented_account_transactions**](DataConsentsApi.md#get_org_consented_account_transactions) | **GET** /v1/consents/organizations/{consentId}/accounts/{accountId}/transactions | Get organization consented financial account transactions of an individual based on accountId.
+[**get_org_consented_account_transactions**](DataConsentsApi.md#get_org_consented_account_transactions) | **GET** /v1/consents/organizations/{consentId}/financial-accounts/{accountId}/transactions | Get organization consented financial account transactions of an individual based on accountId.
 [**get_organization_consent_details_by_id**](DataConsentsApi.md#get_organization_consent_details_by_id) | **GET** /v1/consents/organizations/{consentId} | Get all organization consent details by consent id.
 [**get_organization_consented_document_by_id**](DataConsentsApi.md#get_organization_consented_document_by_id) | **GET** /v1/consents/organizations/{consentId}/documents/{documentId} | Get organization consent document based on document id.
 
@@ -25,7 +25,7 @@ Method | HTTP request | Description
 
 ## download_consented_document_by_id
 
-> crate::models::UserDocumentDownloadDto download_consented_document_by_id(consent_id, document_id)
+> crate::models::UserDocumentDownload download_consented_document_by_id(consent_id, document_id)
 Download a individuals consented document.
 
 ### Parameters
@@ -38,7 +38,7 @@ Name | Type | Description  | Required | Notes
 
 ### Return type
 
-[**crate::models::UserDocumentDownloadDto**](UserDocumentDownloadDto.md)
+[**crate::models::UserDocumentDownload**](UserDocumentDownload.md)
 
 ### Authorization
 
@@ -252,7 +252,7 @@ No authorization required
 
 ## get_consented_document_by_id
 
-> crate::models::UserDocumentDetailsDto get_consented_document_by_id(consent_id, document_id)
+> crate::models::UserDocumentDetails get_consented_document_by_id(consent_id, document_id)
 Get individuals consent document based on document id.
 
 ### Parameters
@@ -265,7 +265,7 @@ Name | Type | Description  | Required | Notes
 
 ### Return type
 
-[**crate::models::UserDocumentDetailsDto**](UserDocumentDetailsDto.md)
+[**crate::models::UserDocumentDetails**](UserDocumentDetails.md)
 
 ### Authorization
 
@@ -470,7 +470,7 @@ No authorization required
 
 ## get_organization_consented_document_by_id
 
-> crate::models::OrganizationDocumentDetailsDto get_organization_consented_document_by_id(consent_id, document_id)
+> crate::models::OrganizationDocumentDetails get_organization_consented_document_by_id(consent_id, document_id)
 Get organization consent document based on document id.
 
 ### Parameters
@@ -483,7 +483,7 @@ Name | Type | Description  | Required | Notes
 
 ### Return type
 
-[**crate::models::OrganizationDocumentDetailsDto**](OrganizationDocumentDetailsDto.md)
+[**crate::models::OrganizationDocumentDetails**](OrganizationDocumentDetails.md)
 
 ### Authorization
 
