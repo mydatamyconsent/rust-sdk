@@ -14,12 +14,14 @@
 pub enum DocumentSubCategoryType {
     #[serde(rename = "Identity")]
     Identity,
-    #[serde(rename = "House")]
-    House,
+    #[serde(rename = "Property")]
+    Property,
     #[serde(rename = "Vehicle")]
     Vehicle,
-    #[serde(rename = "MarksMemos")]
-    MarksMemos,
+    #[serde(rename = "AdmitAndIdCards")]
+    AdmitAndIdCards,
+    #[serde(rename = "Marksheets")]
+    Marksheets,
     #[serde(rename = "Transcripts")]
     Transcripts,
     #[serde(rename = "Certificates")]
@@ -30,18 +32,32 @@ pub enum DocumentSubCategoryType {
     MedicalReports,
     #[serde(rename = "DischargeSummary")]
     DischargeSummary,
-    #[serde(rename = "Bills")]
-    Bills,
-    #[serde(rename = "Invoices")]
-    Invoices,
+    #[serde(rename = "AccountAndCertificates")]
+    AccountAndCertificates,
+    #[serde(rename = "BillsAndInvoices")]
+    BillsAndInvoices,
+    #[serde(rename = "Insurance")]
+    Insurance,
+    #[serde(rename = "ReceiptsAndSubscriptions")]
+    ReceiptsAndSubscriptions,
     #[serde(rename = "Taxes")]
     Taxes,
+    #[serde(rename = "LicencesAndCertificates")]
+    LicencesAndCertificates,
     #[serde(rename = "Corporates")]
     Corporates,
     #[serde(rename = "Competitions")]
     Competitions,
     #[serde(rename = "IntellectualProperties")]
     IntellectualProperties,
+    #[serde(rename = "Others")]
+    Others,
+    #[serde(rename = "ApplicationsAndCertificates")]
+    ApplicationsAndCertificates,
+    #[serde(rename = "Licenses")]
+    Licenses,
+    #[serde(rename = "OrganizationIds")]
+    OrganizationIds,
 
 }
 
@@ -49,20 +65,28 @@ impl ToString for DocumentSubCategoryType {
     fn to_string(&self) -> String {
         match self {
             Self::Identity => String::from("Identity"),
-            Self::House => String::from("House"),
+            Self::Property => String::from("Property"),
             Self::Vehicle => String::from("Vehicle"),
-            Self::MarksMemos => String::from("MarksMemos"),
+            Self::AdmitAndIdCards => String::from("AdmitAndIdCards"),
+            Self::Marksheets => String::from("Marksheets"),
             Self::Transcripts => String::from("Transcripts"),
             Self::Certificates => String::from("Certificates"),
             Self::Prescriptions => String::from("Prescriptions"),
             Self::MedicalReports => String::from("MedicalReports"),
             Self::DischargeSummary => String::from("DischargeSummary"),
-            Self::Bills => String::from("Bills"),
-            Self::Invoices => String::from("Invoices"),
+            Self::AccountAndCertificates => String::from("AccountAndCertificates"),
+            Self::BillsAndInvoices => String::from("BillsAndInvoices"),
+            Self::Insurance => String::from("Insurance"),
+            Self::ReceiptsAndSubscriptions => String::from("ReceiptsAndSubscriptions"),
             Self::Taxes => String::from("Taxes"),
+            Self::LicencesAndCertificates => String::from("LicencesAndCertificates"),
             Self::Corporates => String::from("Corporates"),
             Self::Competitions => String::from("Competitions"),
             Self::IntellectualProperties => String::from("IntellectualProperties"),
+            Self::Others => String::from("Others"),
+            Self::ApplicationsAndCertificates => String::from("ApplicationsAndCertificates"),
+            Self::Licenses => String::from("Licenses"),
+            Self::OrganizationIds => String::from("OrganizationIds"),
         }
     }
 }
