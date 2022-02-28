@@ -22,6 +22,8 @@ pub enum DigilockerCompatIssueDocumentError {
     Status400(serde_json::Value),
     Status401(crate::models::ProblemDetails),
     Status500(serde_json::Value),
+    Status404(serde_json::Value),
+    DefaultResponse(crate::models::ProblemDetails),
     UnknownValue(serde_json::Value),
 }
 

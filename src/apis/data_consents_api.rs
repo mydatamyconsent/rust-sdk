@@ -132,6 +132,7 @@ pub enum GetOrgConsentedAccountTransactionsError {
 #[serde(untagged)]
 pub enum GetOrganizationConsentDetailsByIdError {
     Status500(serde_json::Value),
+    Status400(serde_json::Value),
     UnknownValue(serde_json::Value),
 }
 

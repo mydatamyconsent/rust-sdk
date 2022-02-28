@@ -4,13 +4,13 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**aadhaar** | Option<**String**> |  | [optional]
-**uri** | Option<**String**> |  | [optional]
-**doc_type** | Option<**String**> |  | [optional]
-**doc_name** | Option<**String**> |  | [optional]
-**doc_id** | Option<**String**> |  | [optional]
-**issued_on** | Option<**String**> |  | [optional]
-**valid_from** | Option<**String**> |  | [optional]
+**aadhaar** | **String** |  | 
+**uri** | **String** |  | 
+**doc_type** | **String** |  | 
+**doc_name** | **String** |  | 
+**doc_id** | **String** |  | 
+**issued_on** | **String** |  | 
+**valid_from** | **String** |  | 
 **valid_to** | Option<**String**> |  | [optional]
 **timestamp** | Option<**String**> |  | [optional]
 **action** | Option<**String**> |  | [optional]

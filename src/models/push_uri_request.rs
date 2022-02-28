@@ -13,8 +13,8 @@
 
 #[derive(Clone, Debug, PartialEq, Default, Serialize, Deserialize)]
 pub struct PushUriRequest {
-    #[serde(rename = "uriDetails", skip_serializing_if = "Option::is_none")]
-    pub uri_details: Option<Box<crate::models::UriDetails>>,
+    #[serde(rename = "uriDetails")]
+    pub uri_details: Box<crate::models::UriDetails>,
     #[serde(rename = "ns2", skip_serializing_if = "Option::is_none")]
     pub ns2: Option<String>,
     #[serde(rename = "ver", skip_serializing_if = "Option::is_none")]
@@ -30,9 +30,9 @@ pub struct PushUriRequest {
 }
 
 impl PushUriRequest {
-    pub fn new() -> PushUriRequest {
+    pub fn new(uri_details: crate::models::UriDetails) -> PushUriRequest {
         PushUriRequest {
-            uri_details: None,
+            uri_details: Box::new(uri_details),
             ns2: None,
             ver: None,
             ts: None,

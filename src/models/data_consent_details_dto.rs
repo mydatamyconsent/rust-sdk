@@ -40,7 +40,7 @@ pub struct DataConsentDetailsDto {
     #[serde(rename = "identifiers", skip_serializing_if = "Option::is_none")]
     pub identifiers: Option<Box<crate::models::JsonSchema>>,
     #[serde(rename = "documents", skip_serializing_if = "Option::is_none")]
-    pub documents: Option<String>,
+    pub documents: Option<Vec<crate::models::DataConsentDocumentDetailsDto>>,
     #[serde(rename = "financials", skip_serializing_if = "Option::is_none")]
     pub financials: Option<String>,
     #[serde(rename = "healthRecords", skip_serializing_if = "Option::is_none")]

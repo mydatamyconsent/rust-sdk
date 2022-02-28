@@ -13,20 +13,20 @@
 
 #[derive(Clone, Debug, PartialEq, Default, Serialize, Deserialize)]
 pub struct UriDetails {
-    #[serde(rename = "aadhaar", skip_serializing_if = "Option::is_none")]
-    pub aadhaar: Option<String>,
-    #[serde(rename = "uri", skip_serializing_if = "Option::is_none")]
-    pub uri: Option<String>,
-    #[serde(rename = "docType", skip_serializing_if = "Option::is_none")]
-    pub doc_type: Option<String>,
-    #[serde(rename = "docName", skip_serializing_if = "Option::is_none")]
-    pub doc_name: Option<String>,
-    #[serde(rename = "docId", skip_serializing_if = "Option::is_none")]
-    pub doc_id: Option<String>,
-    #[serde(rename = "issuedOn", skip_serializing_if = "Option::is_none")]
-    pub issued_on: Option<String>,
-    #[serde(rename = "validFrom", skip_serializing_if = "Option::is_none")]
-    pub valid_from: Option<String>,
+    #[serde(rename = "aadhaar")]
+    pub aadhaar: String,
+    #[serde(rename = "uri")]
+    pub uri: String,
+    #[serde(rename = "docType")]
+    pub doc_type: String,
+    #[serde(rename = "docName")]
+    pub doc_name: String,
+    #[serde(rename = "docId")]
+    pub doc_id: String,
+    #[serde(rename = "issuedOn")]
+    pub issued_on: String,
+    #[serde(rename = "validFrom")]
+    pub valid_from: String,
     #[serde(rename = "validTo", skip_serializing_if = "Option::is_none")]
     pub valid_to: Option<String>,
     #[serde(rename = "timestamp", skip_serializing_if = "Option::is_none")]
@@ -36,15 +36,15 @@ pub struct UriDetails {
 }
 
 impl UriDetails {
-    pub fn new() -> UriDetails {
+    pub fn new(aadhaar: String, uri: String, doc_type: String, doc_name: String, doc_id: String, issued_on: String, valid_from: String) -> UriDetails {
         UriDetails {
-            aadhaar: None,
-            uri: None,
-            doc_type: None,
-            doc_name: None,
-            doc_id: None,
-            issued_on: None,
-            valid_from: None,
+            aadhaar,
+            uri,
+            doc_type,
+            doc_name,
+            doc_id,
+            issued_on,
+            valid_from,
             valid_to: None,
             timestamp: None,
             action: None,

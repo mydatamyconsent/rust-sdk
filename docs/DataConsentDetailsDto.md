@@ -17,7 +17,7 @@ Name | Type | Description | Notes
 **expires_at_utc** | Option<**String**> |  | [optional]
 **requested_at_utc** | Option<**String**> |  | [optional]
 **identifiers** | Option<[**crate::models::JsonSchema**](JsonSchema.md)> |  | [optional]
-**documents** | Option<**String**> |  | [optional]
+**documents** | Option<[**Vec<crate::models::DataConsentDocumentDetailsDto>**](DataConsentDocumentDetailsDto.md)> |  | [optional]
 **financials** | Option<**String**> |  | [optional]
 **health_records** | Option<**String**> |  | [optional]
 

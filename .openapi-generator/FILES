@@ -9,6 +9,7 @@ docs/CreateDataProcessingAgreementRequestModel.md
 docs/CreateIndividualDataConsentRequest.md
 docs/CreateOrganizationDataConsentRequest.md
 docs/DataConsentDetailsDto.md
+docs/DataConsentDocumentDetailsDto.md
 docs/DataConsentDocumentsDto.md
 docs/DataConsentFinancialsDto.md
 docs/DataConsentRequestedDocument.md
@@ -61,6 +62,9 @@ docs/PushUriRequest.md
 docs/PushUriResponse.md
 docs/SharedWith.md
 docs/StringStringKeyValuePair.md
+docs/SupportedDocumentDetailsDto.md
+docs/SupportedDocumentProviderDetailsDto.md
+docs/SupportedDocumentTypeCategoryDetailsDto.md
 docs/SupportedEntityType.md
 docs/SupportedIdentifier.md
 docs/SupportedIdentifiersApi.md
@@ -90,6 +94,7 @@ src/models/create_data_processing_agreement_request_model.rs
 src/models/create_individual_data_consent_request.rs
 src/models/create_organization_data_consent_request.rs
 src/models/data_consent_details_dto.rs
+src/models/data_consent_document_details_dto.rs
 src/models/data_consent_documents_dto.rs
 src/models/data_consent_financials_dto.rs
 src/models/data_consent_requested_document.rs
@@ -137,6 +142,9 @@ src/models/push_uri_request.rs
 src/models/push_uri_response.rs
 src/models/shared_with.rs
 src/models/string_string_key_value_pair.rs
+src/models/supported_document_details_dto.rs
+src/models/supported_document_provider_details_dto.rs
+src/models/supported_document_type_category_details_dto.rs
 src/models/supported_entity_type.rs
 src/models/supported_identifier.rs
 src/models/update_data_processing_agreement_request_model.rs

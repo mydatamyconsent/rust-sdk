@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**uri_details** | Option<[**crate::models::UriDetails**](UriDetails.md)> |  | [optional]
+**uri_details** | [**crate::models::UriDetails**](UriDetails.md) |  | 
 **ns2** | Option<**String**> |  | [optional]
 **ver** | Option<**String**> |  | [optional]
 **ts** | Option<**String**> |  | [optional]
