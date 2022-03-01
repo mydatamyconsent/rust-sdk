@@ -47,7 +47,6 @@ docs/Identifier.md
 docs/IndividualDataConsentRequestResponse.md
 docs/IssuedDocument.md
 docs/IssuedDocumentPaginatedList.md
-docs/JsonSchema.md
 docs/Life.md
 docs/OrganizationDataConsentInfoDto.md
 docs/OrganizationDataConsentInfoDtoPaginatedList.md
@@ -60,6 +59,7 @@ docs/OrganizationFinancialTransactionsDtoPaginatedList.md
 docs/ProblemDetails.md
 docs/PushUriRequest.md
 docs/PushUriResponse.md
+docs/Requester.md
 docs/SharedWith.md
 docs/StringStringKeyValuePair.md
 docs/SupportedDocumentDetailsDto.md
@@ -126,7 +126,6 @@ src/models/identifier.rs
 src/models/individual_data_consent_request_response.rs
 src/models/issued_document.rs
 src/models/issued_document_paginated_list.rs
-src/models/json_schema.rs
 src/models/life.rs
 src/models/mod.rs
 src/models/organization_data_consent_info_dto.rs
@@ -140,6 +139,7 @@ src/models/organization_financial_transactions_dto_paginated_list.rs
 src/models/problem_details.rs
 src/models/push_uri_request.rs
 src/models/push_uri_response.rs
+src/models/requester.rs
 src/models/shared_with.rs
 src/models/string_string_key_value_pair.rs
 src/models/supported_document_details_dto.rs

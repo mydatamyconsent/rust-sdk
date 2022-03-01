@@ -21,12 +21,8 @@ pub struct DataConsentDetailsDto {
     pub description: Option<String>,
     #[serde(rename = "dataLife", skip_serializing_if = "Option::is_none")]
     pub data_life: Option<Box<crate::models::Life>>,
-    #[serde(rename = "requesterName", skip_serializing_if = "Option::is_none")]
-    pub requester_name: Option<String>,
-    #[serde(rename = "requesterLogo", skip_serializing_if = "Option::is_none")]
-    pub requester_logo: Option<String>,
-    #[serde(rename = "location", skip_serializing_if = "Option::is_none")]
-    pub location: Option<String>,
+    #[serde(rename = "requestedByOrg", skip_serializing_if = "Option::is_none")]
+    pub requested_by_org: Option<Box<crate::models::Requester>>,
     #[serde(rename = "status", skip_serializing_if = "Option::is_none")]
     pub status: Option<crate::models::DataConsentStatus>,
     #[serde(rename = "approvedAtUtc", skip_serializing_if = "Option::is_none")]
@@ -38,7 +34,7 @@ pub struct DataConsentDetailsDto {
     #[serde(rename = "requestedAtUtc", skip_serializing_if = "Option::is_none")]
     pub requested_at_utc: Option<String>,
     #[serde(rename = "identifiers", skip_serializing_if = "Option::is_none")]
-    pub identifiers: Option<Box<crate::models::JsonSchema>>,
+    pub identifiers: Option<serde_json::Value>,
     #[serde(rename = "documents", skip_serializing_if = "Option::is_none")]
     pub documents: Option<Vec<crate::models::DataConsentDocumentDetailsDto>>,
     #[serde(rename = "financials", skip_serializing_if = "Option::is_none")]
@@ -54,9 +50,7 @@ impl DataConsentDetailsDto {
             title: None,
             description: None,
             data_life: None,
-            requester_name: None,
-            requester_logo: None,
-            location: None,
+            requested_by_org: None,
             status: None,
             approved_at_utc: None,
             rejected_at_utc: None,
