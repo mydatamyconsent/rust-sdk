@@ -13,8 +13,8 @@
 
 #[derive(Clone, Debug, PartialEq, Default, Serialize, Deserialize)]
 pub struct DataConsentDetailsDto {
-    #[serde(rename = "id")]
-    pub id: String,
+    #[serde(rename = "consentRequestId")]
+    pub consent_request_id: String,
     #[serde(rename = "title", skip_serializing_if = "Option::is_none")]
     pub title: Option<String>,
     #[serde(rename = "description", skip_serializing_if = "Option::is_none")]
@@ -29,24 +29,22 @@ pub struct DataConsentDetailsDto {
     pub approved_at_utc: Option<String>,
     #[serde(rename = "rejectedAtUtc", skip_serializing_if = "Option::is_none")]
     pub rejected_at_utc: Option<String>,
-    #[serde(rename = "expiresAtUtc", skip_serializing_if = "Option::is_none")]
-    pub expires_at_utc: Option<String>,
+    #[serde(rename = "revokedAtUtc", skip_serializing_if = "Option::is_none")]
+    pub revoked_at_utc: Option<String>,
+    #[serde(rename = "requestedExpiresAtUtc", skip_serializing_if = "Option::is_none")]
+    pub requested_expires_at_utc: Option<String>,
     #[serde(rename = "requestedAtUtc", skip_serializing_if = "Option::is_none")]
     pub requested_at_utc: Option<String>,
     #[serde(rename = "identifiers", skip_serializing_if = "Option::is_none")]
     pub identifiers: Option<serde_json::Value>,
     #[serde(rename = "documents", skip_serializing_if = "Option::is_none")]
     pub documents: Option<Vec<crate::models::DataConsentDocumentDetailsDto>>,
-    #[serde(rename = "financials", skip_serializing_if = "Option::is_none")]
-    pub financials: Option<String>,
-    #[serde(rename = "healthRecords", skip_serializing_if = "Option::is_none")]
-    pub health_records: Option<String>,
 }
 
 impl DataConsentDetailsDto {
-    pub fn new(id: String) -> DataConsentDetailsDto {
+    pub fn new(consent_request_id: String) -> DataConsentDetailsDto {
         DataConsentDetailsDto {
-            id,
+            consent_request_id,
             title: None,
             description: None,
             data_life: None,
@@ -54,12 +52,11 @@ impl DataConsentDetailsDto {
             status: None,
             approved_at_utc: None,
             rejected_at_utc: None,
-            expires_at_utc: None,
+            revoked_at_utc: None,
+            requested_expires_at_utc: None,
             requested_at_utc: None,
             identifiers: None,
             documents: None,
-            financials: None,
-            health_records: None,
         }
     }
 }

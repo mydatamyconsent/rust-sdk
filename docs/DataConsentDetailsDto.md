@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**id** | **String** |  | 
+**consent_request_id** | **String** |  | 
 **title** | Option<**String**> |  | [optional]
 **description** | Option<**String**> |  | [optional]
 **data_life** | Option<[**crate::models::Life**](Life.md)> |  | [optional]
@@ -12,12 +12,11 @@ Name | Type | Description | Notes
 **status** | Option<[**crate::models::DataConsentStatus**](DataConsentStatus.md)> |  | [optional]
 **approved_at_utc** | Option<**String**> |  | [optional]
 **rejected_at_utc** | Option<**String**> |  | [optional]
-**expires_at_utc** | Option<**String**> |  | [optional]
+**revoked_at_utc** | Option<**String**> |  | [optional]
+**requested_expires_at_utc** | Option<**String**> |  | [optional]
 **requested_at_utc** | Option<**String**> |  | [optional]
 **identifiers** | Option<[**serde_json::Value**](.md)> |  | [optional]
 **documents** | Option<[**Vec<crate::models::DataConsentDocumentDetailsDto>**](DataConsentDocumentDetailsDto.md)> |  | [optional]
-**financials** | Option<**String**> |  | [optional]
-**health_records** | Option<**String**> |  | [optional]
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 
