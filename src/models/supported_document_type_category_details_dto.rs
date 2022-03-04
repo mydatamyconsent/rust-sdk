@@ -19,17 +19,17 @@ pub struct SupportedDocumentTypeCategoryDetailsDto {
     pub document_type_category_name: String,
     #[serde(rename = "supportedDocuments")]
     pub supported_documents: Vec<crate::models::SupportedDocumentDetailsDto>,
-    #[serde(rename = "supportedDocumentProviderDetails")]
-    pub supported_document_provider_details: Vec<crate::models::SupportedDocumentProviderDetailsDto>,
+    #[serde(rename = "supportedDocumentProviderDetails", skip_serializing_if = "Option::is_none")]
+    pub supported_document_provider_details: Option<Vec<crate::models::SupportedDocumentProviderDetailsDto>>,
 }
 
 impl SupportedDocumentTypeCategoryDetailsDto {
-    pub fn new(document_type_category_id: String, document_type_category_name: String, supported_documents: Vec<crate::models::SupportedDocumentDetailsDto>, supported_document_provider_details: Vec<crate::models::SupportedDocumentProviderDetailsDto>) -> SupportedDocumentTypeCategoryDetailsDto {
+    pub fn new(document_type_category_id: String, document_type_category_name: String, supported_documents: Vec<crate::models::SupportedDocumentDetailsDto>) -> SupportedDocumentTypeCategoryDetailsDto {
         SupportedDocumentTypeCategoryDetailsDto {
             document_type_category_id,
             document_type_category_name,
             supported_documents,
-            supported_document_provider_details,
+            supported_document_provider_details: None,
         }
     }
 }

@@ -11,6 +11,7 @@ Name | Type | Description | Notes
 **requested_by_org** | Option<[**crate::models::Requester**](Requester.md)> |  | [optional]
 **status** | Option<[**crate::models::DataConsentStatus**](DataConsentStatus.md)> |  | [optional]
 **approved_at_utc** | Option<**String**> |  | [optional]
+**approved_expires_at_utc** | Option<**String**> |  | [optional]
 **rejected_at_utc** | Option<**String**> |  | [optional]
 **revoked_at_utc** | Option<**String**> |  | [optional]
 **requested_expires_at_utc** | Option<**String**> |  | [optional]

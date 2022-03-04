@@ -22,6 +22,8 @@ pub enum DataConsentStatus {
     Revoked,
     #[serde(rename = "Expired")]
     Expired,
+    #[serde(rename = "Timeout")]
+    Timeout,
     #[serde(rename = "Canceled")]
     Canceled,
 
@@ -35,6 +37,7 @@ impl ToString for DataConsentStatus {
             Self::Rejected => String::from("Rejected"),
             Self::Revoked => String::from("Revoked"),
             Self::Expired => String::from("Expired"),
+            Self::Timeout => String::from("Timeout"),
             Self::Canceled => String::from("Canceled"),
         }
     }

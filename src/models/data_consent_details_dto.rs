@@ -27,6 +27,8 @@ pub struct DataConsentDetailsDto {
     pub status: Option<crate::models::DataConsentStatus>,
     #[serde(rename = "approvedAtUtc", skip_serializing_if = "Option::is_none")]
     pub approved_at_utc: Option<String>,
+    #[serde(rename = "approvedExpiresAtUtc", skip_serializing_if = "Option::is_none")]
+    pub approved_expires_at_utc: Option<String>,
     #[serde(rename = "rejectedAtUtc", skip_serializing_if = "Option::is_none")]
     pub rejected_at_utc: Option<String>,
     #[serde(rename = "revokedAtUtc", skip_serializing_if = "Option::is_none")]
@@ -51,6 +53,7 @@ impl DataConsentDetailsDto {
             requested_by_org: None,
             status: None,
             approved_at_utc: None,
+            approved_expires_at_utc: None,
             rejected_at_utc: None,
             revoked_at_utc: None,
             requested_expires_at_utc: None,
