@@ -9,6 +9,7 @@ Name | Type | Description | Notes
 **description** | Option<**String**> |  | [optional]
 **data_life** | Option<[**crate::models::Life**](Life.md)> |  | [optional]
 **requested_by_org** | Option<[**crate::models::Requester**](Requester.md)> |  | [optional]
+**collectables** | [**Vec<crate::models::CollectibleTypes>**](CollectibleTypes.md) |  | 
 **status** | Option<[**crate::models::DataConsentStatus**](DataConsentStatus.md)> |  | [optional]
 **approved_at_utc** | Option<**String**> |  | [optional]
 **approved_expires_at_utc** | Option<**String**> |  | [optional]

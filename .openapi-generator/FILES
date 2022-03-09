@@ -4,6 +4,7 @@ README.md
 docs/Activity.md
 docs/ApprovedConsentRequest.md
 docs/BankAccountType.md
+docs/CollectibleTypes.md
 docs/ConsentRequestReceiver.md
 docs/CreateDataProcessingAgreementRequestModel.md
 docs/CreateIndividualDataConsentRequest.md
@@ -89,6 +90,7 @@ src/lib.rs
 src/models/activity.rs
 src/models/approved_consent_request.rs
 src/models/bank_account_type.rs
+src/models/collectible_types.rs
 src/models/consent_request_receiver.rs
 src/models/create_data_processing_agreement_request_model.rs
 src/models/create_individual_data_consent_request.rs

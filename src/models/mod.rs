@@ -4,6 +4,8 @@ pub mod approved_consent_request;
 pub use self::approved_consent_request::ApprovedConsentRequest;
 pub mod bank_account_type;
 pub use self::bank_account_type::BankAccountType;
+pub mod collectible_types;
+pub use self::collectible_types::CollectibleTypes;
 pub mod consent_request_receiver;
 pub use self::consent_request_receiver::ConsentRequestReceiver;
 pub mod create_data_processing_agreement_request_model;

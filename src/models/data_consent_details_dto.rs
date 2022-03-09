@@ -23,6 +23,8 @@ pub struct DataConsentDetailsDto {
     pub data_life: Option<Box<crate::models::Life>>,
     #[serde(rename = "requestedByOrg", skip_serializing_if = "Option::is_none")]
     pub requested_by_org: Option<Box<crate::models::Requester>>,
+    #[serde(rename = "collectables")]
+    pub collectables: Vec<crate::models::CollectibleTypes>,
     #[serde(rename = "status", skip_serializing_if = "Option::is_none")]
     pub status: Option<crate::models::DataConsentStatus>,
     #[serde(rename = "approvedAtUtc", skip_serializing_if = "Option::is_none")]
@@ -44,13 +46,14 @@ pub struct DataConsentDetailsDto {
 }
 
 impl DataConsentDetailsDto {
-    pub fn new(consent_request_id: String) -> DataConsentDetailsDto {
+    pub fn new(consent_request_id: String, collectables: Vec<crate::models::CollectibleTypes>) -> DataConsentDetailsDto {
         DataConsentDetailsDto {
             consent_request_id,
             title: None,
             description: None,
             data_life: None,
             requested_by_org: None,
+            collectables,
             status: None,
             approved_at_utc: None,
             approved_expires_at_utc: None,
