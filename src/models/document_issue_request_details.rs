@@ -14,29 +14,39 @@
 
 #[derive(Clone, Debug, PartialEq, Default, Serialize, Deserialize)]
 pub struct DocumentIssueRequestDetails {
-    /// Request Id.
+    /// Document issue request Id.
     #[serde(rename = "id")]
     pub id: String,
+    /// Document type Id.
     #[serde(rename = "documentTypeId")]
     pub document_type_id: String,
+    /// Document type name.
     #[serde(rename = "typeName")]
     pub type_name: String,
+    /// Document identifier.
     #[serde(rename = "identifier")]
     pub identifier: String,
     #[serde(rename = "status")]
     pub status: crate::models::DocumentIssueRequestStatus,
+    /// Document description.
     #[serde(rename = "description")]
     pub description: String,
+    /// Document receiver details.
     #[serde(rename = "receiver")]
     pub receiver: Option<serde_json::Value>,
+    /// Datetime of issue in UTC timezone.
     #[serde(rename = "issuedAtUtc")]
     pub issued_at_utc: String,
+    /// Valid from datetime in UTC timezone.
     #[serde(rename = "validFromUtc")]
     pub valid_from_utc: String,
+    /// Datetime of expiry in UTC timezone.
     #[serde(rename = "expiresAtUtc", skip_serializing_if = "Option::is_none")]
     pub expires_at_utc: Option<String>,
+    /// Metadata.
     #[serde(rename = "metaData", skip_serializing_if = "Option::is_none")]
     pub meta_data: Option<serde_json::Value>,
+    /// Creation datetime of issue request in UTC timezone.
     #[serde(rename = "createdAtUtc")]
     pub created_at_utc: String,
 }

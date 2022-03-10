@@ -238,7 +238,7 @@ pub async fn issue_document_to_organization(configuration: &configuration::Confi
     }
 }
 
-pub async fn upload_document_for_individual(configuration: &configuration::Configuration, issue_request_id: &str, form_file: std::path::PathBuf) -> Result<String, Error<UploadDocumentForIndividualError>> {
+pub async fn upload_document_for_individual(configuration: &configuration::Configuration, issue_request_id: &str, form_file: std::path::PathBuf) -> Result<(), Error<UploadDocumentForIndividualError>> {
     let local_var_configuration = configuration;
 
     let local_var_client = &local_var_configuration.client;
@@ -260,7 +260,7 @@ pub async fn upload_document_for_individual(configuration: &configuration::Confi
     let local_var_content = local_var_resp.text().await?;
 
     if !local_var_status.is_client_error() && !local_var_status.is_server_error() {
-        serde_json::from_str(&local_var_content).map_err(Error::from)
+        Ok(())
     } else {
         let local_var_entity: Option<UploadDocumentForIndividualError> = serde_json::from_str(&local_var_content).ok();
         let local_var_error = ResponseContent { status: local_var_status, content: local_var_content, entity: local_var_entity };
@@ -268,7 +268,7 @@ pub async fn upload_document_for_individual(configuration: &configuration::Confi
     }
 }
 
-pub async fn upload_document_for_organization(configuration: &configuration::Configuration, issue_request_id: &str, form_file: std::path::PathBuf) -> Result<String, Error<UploadDocumentForOrganizationError>> {
+pub async fn upload_document_for_organization(configuration: &configuration::Configuration, issue_request_id: &str, form_file: std::path::PathBuf) -> Result<(), Error<UploadDocumentForOrganizationError>> {
     let local_var_configuration = configuration;
 
     let local_var_client = &local_var_configuration.client;
@@ -290,7 +290,7 @@ pub async fn upload_document_for_organization(configuration: &configuration::Con
     let local_var_content = local_var_resp.text().await?;
 
     if !local_var_status.is_client_error() && !local_var_status.is_server_error() {
-        serde_json::from_str(&local_var_content).map_err(Error::from)
+        Ok(())
     } else {
         let local_var_entity: Option<UploadDocumentForOrganizationError> = serde_json::from_str(&local_var_content).ok();
         let local_var_error = ResponseContent { status: local_var_status, content: local_var_content, entity: local_var_entity };

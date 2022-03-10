@@ -14,17 +14,19 @@
 
 #[derive(Clone, Debug, PartialEq, Default, Serialize, Deserialize)]
 pub struct IssuedDocument {
-    /// Document Identifier.
+    /// Document Id.
     #[serde(rename = "id")]
     pub id: String,
-    /// Document Identifier. eg: GJ05FG67866586.
+    /// Document Identifier.
     #[serde(rename = "identifier")]
     pub identifier: String,
-    /// Document type name. eg: Driving License.
+    /// Document type name.
     #[serde(rename = "documentType")]
     pub document_type: String,
+    /// User name.
     #[serde(rename = "issuedTo")]
     pub issued_to: String,
+    /// Issued datetime in UTC timezone.
     #[serde(rename = "issuedAtUtc")]
     pub issued_at_utc: String,
 }

@@ -6,7 +6,7 @@ Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**get_issued_document_by_id**](DocumentsApi.md#get_issued_document_by_id) | **GET** /v1/documents/issued/{documentId} | Get issued document.
 [**get_issued_documents**](DocumentsApi.md#get_issued_documents) | **GET** /v1/documents/issued/{documentTypeId} | Get paginated list of issued documents of given document type.
-[**get_registered_document_types**](DocumentsApi.md#get_registered_document_types) | **GET** /v1/documents/types | Get registered document types.
+[**get_registered_document_types**](DocumentsApi.md#get_registered_document_types) | **GET** /v1/documents/types | Get paginated list of registered document types.
 [**issue_document_to_individual**](DocumentsApi.md#issue_document_to_individual) | **POST** /v1/documents/issue/individual | Issue a new document to an individual user.
 [**issue_document_to_organization**](DocumentsApi.md#issue_document_to_organization) | **POST** /v1/documents/issue/organization | Issue a new document to an organization.
 [**upload_document_for_individual**](DocumentsApi.md#upload_document_for_individual) | **POST** /v1/documents/issue/individual/upload/{issueRequestId} | Upload a document for issuance request of individual.
@@ -53,8 +53,8 @@ Get paginated list of issued documents of given document type.
 Name | Type | Description  | Required | Notes
 ------------- | ------------- | ------------- | ------------- | -------------
 **document_type_id** | **String** | Document type id. | [required] |
-**from_date_time** | Option<**String**> | From DateTime. |  |
-**to_date_time** | Option<**String**> | To DateTime. |  |
+**from_date_time** | Option<**String**> | From DateTime in UTC timezone. |  |
+**to_date_time** | Option<**String**> | To DateTime in UTC timezone. |  |
 **page_no** | Option<**i32**> | Page number. |  |[default to 1]
 **page_size** | Option<**i32**> | Number of items to return. |  |[default to 25]
 
@@ -77,7 +77,7 @@ No authorization required
 ## get_registered_document_types
 
 > crate::models::DocumentTypePaginatedList get_registered_document_types(page_no, page_size)
-Get registered document types.
+Get paginated list of registered document types.
 
 ### Parameters
 
@@ -161,7 +161,7 @@ No authorization required
 
 ## upload_document_for_individual
 
-> String upload_document_for_individual(issue_request_id, form_file)
+> upload_document_for_individual(issue_request_id, form_file)
 Upload a document for issuance request of individual.
 
 ### Parameters
@@ -169,12 +169,12 @@ Upload a document for issuance request of individual.
 
 Name | Type | Description  | Required | Notes
 ------------- | ------------- | ------------- | ------------- | -------------
-**issue_request_id** | **String** | Issue Request Id System.Guid. | [required] |
+**issue_request_id** | **String** | Document issue request id. | [required] |
 **form_file** | **std::path::PathBuf** |  | [required] |
 
 ### Return type
 
-**String**
+ (empty response body)
 
 ### Authorization
 
@@ -190,7 +190,7 @@ No authorization required
 
 ## upload_document_for_organization
 
-> String upload_document_for_organization(issue_request_id, form_file)
+> upload_document_for_organization(issue_request_id, form_file)
 Upload a document for issuance request of organization.
 
 ### Parameters
@@ -198,12 +198,12 @@ Upload a document for issuance request of organization.
 
 Name | Type | Description  | Required | Notes
 ------------- | ------------- | ------------- | ------------- | -------------
-**issue_request_id** | **String** | Issue Request Id System.Guid. | [required] |
+**issue_request_id** | **String** | Document issue request id System.Guid. | [required] |
 **form_file** | **std::path::PathBuf** |  | [required] |
 
 ### Return type
 
-**String**
+ (empty response body)
 
 ### Authorization
 

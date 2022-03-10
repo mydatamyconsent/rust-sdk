@@ -4,18 +4,18 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**id** | **String** | Request Id. | 
-**document_type_id** | **String** |  | 
-**type_name** | **String** |  | 
-**identifier** | **String** |  | 
+**id** | **String** | Document issue request Id. | 
+**document_type_id** | **String** | Document type Id. | 
+**type_name** | **String** | Document type name. | 
+**identifier** | **String** | Document identifier. | 
 **status** | [**crate::models::DocumentIssueRequestStatus**](DocumentIssueRequestStatus.md) |  | 
-**description** | **String** |  | 
-**receiver** | Option<[**serde_json::Value**](.md)> |  | 
-**issued_at_utc** | **String** |  | 
-**valid_from_utc** | **String** |  | 
-**expires_at_utc** | Option<**String**> |  | [optional]
-**meta_data** | Option<[**serde_json::Value**](.md)> |  | [optional]
-**created_at_utc** | **String** |  | 
+**description** | **String** | Document description. | 
+**receiver** | Option<[**serde_json::Value**](.md)> | Document receiver details. | 
+**issued_at_utc** | **String** | Datetime of issue in UTC timezone. | 
+**valid_from_utc** | **String** | Valid from datetime in UTC timezone. | 
+**expires_at_utc** | Option<**String**> | Datetime of expiry in UTC timezone. | [optional]
+**meta_data** | Option<[**serde_json::Value**](.md)> | Metadata. | [optional]
+**created_at_utc** | **String** | Creation datetime of issue request in UTC timezone. | 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

@@ -14,20 +14,27 @@
 
 #[derive(Clone, Debug, PartialEq, Default, Serialize, Deserialize)]
 pub struct DocumentIssueRequest {
+    /// Document type id.
     #[serde(rename = "documentTypeId")]
     pub document_type_id: String,
+    /// Document identifier.
     #[serde(rename = "identifier")]
     pub identifier: String,
+    /// Document description.
     #[serde(rename = "description")]
     pub description: String,
     #[serde(rename = "receiver")]
     pub receiver: Box<crate::models::DocumentReceiver>,
+    /// Datetime of issue in UTC timezone.
     #[serde(rename = "issuedAtUtc")]
     pub issued_at_utc: String,
+    /// Valid from datetime in UTC timezone.
     #[serde(rename = "validFromUtc")]
     pub valid_from_utc: String,
+    /// Datetime of expiry in UTC timezone.
     #[serde(rename = "expiresAtUtc", skip_serializing_if = "Option::is_none")]
     pub expires_at_utc: Option<String>,
+    /// Metadata.
     #[serde(rename = "metadata", skip_serializing_if = "Option::is_none")]
     pub metadata: Option<::std::collections::HashMap<String, String>>,
 }
