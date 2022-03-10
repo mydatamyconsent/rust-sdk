@@ -15,6 +15,14 @@ use crate::apis::ResponseContent;
 use super::{Error, configuration};
 
 
+/// struct for typed errors of method [`download_consented_document_analysis`]
+#[derive(Debug, Clone, Serialize, Deserialize)]
+#[serde(untagged)]
+pub enum DownloadConsentedDocumentAnalysisError {
+    Status500(serde_json::Value),
+    UnknownValue(serde_json::Value),
+}
+
 /// struct for typed errors of method [`download_consented_document_by_id`]
 #[derive(Debug, Clone, Serialize, Deserialize)]
 #[serde(untagged)]
@@ -95,6 +103,14 @@ pub enum GetConsentedFinancialAccountError {
     UnknownValue(serde_json::Value),
 }
 
+/// struct for typed errors of method [`get_consented_financial_account_insights`]
+#[derive(Debug, Clone, Serialize, Deserialize)]
+#[serde(untagged)]
+pub enum GetConsentedFinancialAccountInsightsError {
+    Status500(serde_json::Value),
+    UnknownValue(serde_json::Value),
+}
+
 /// struct for typed errors of method [`get_consented_financial_account_transactions`]
 #[derive(Debug, Clone, Serialize, Deserialize)]
 #[serde(untagged)]
@@ -144,6 +160,33 @@ pub enum GetOrganizationConsentedDocumentByIdError {
     UnknownValue(serde_json::Value),
 }
 
+
+pub async fn download_consented_document_analysis(configuration: &configuration::Configuration, consent_id: &str, document_id: &str) -> Result<(), Error<DownloadConsentedDocumentAnalysisError>> {
+    let local_var_configuration = configuration;
+
+    let local_var_client = &local_var_configuration.client;
+
+    let local_var_uri_str = format!("{}/v1/consents/{consentId}/documents/{documentId}/analysis", local_var_configuration.base_path, consentId=crate::apis::urlencode(consent_id), documentId=crate::apis::urlencode(document_id));
+    let mut local_var_req_builder = local_var_client.request(reqwest::Method::GET, local_var_uri_str.as_str());
+
+    if let Some(ref local_var_user_agent) = local_var_configuration.user_agent {
+        local_var_req_builder = local_var_req_builder.header(reqwest::header::USER_AGENT, local_var_user_agent.clone());
+    }
+
+    let local_var_req = local_var_req_builder.build()?;
+    let local_var_resp = local_var_client.execute(local_var_req).await?;
+
+    let local_var_status = local_var_resp.status();
+    let local_var_content = local_var_resp.text().await?;
+
+    if !local_var_status.is_client_error() && !local_var_status.is_server_error() {
+        Ok(())
+    } else {
+        let local_var_entity: Option<DownloadConsentedDocumentAnalysisError> = serde_json::from_str(&local_var_content).ok();
+        let local_var_error = ResponseContent { status: local_var_status, content: local_var_content, entity: local_var_entity };
+        Err(Error::ResponseError(local_var_error))
+    }
+}
 
 pub async fn download_consented_document_by_id(configuration: &configuration::Configuration, consent_id: &str, document_id: &str) -> Result<crate::models::UserDocumentDownload, Error<DownloadConsentedDocumentByIdError>> {
     let local_var_configuration = configuration;
@@ -410,6 +453,33 @@ pub async fn get_consented_financial_account(configuration: &configuration::Conf
         serde_json::from_str(&local_var_content).map_err(Error::from)
     } else {
         let local_var_entity: Option<GetConsentedFinancialAccountError> = serde_json::from_str(&local_var_content).ok();
+        let local_var_error = ResponseContent { status: local_var_status, content: local_var_content, entity: local_var_entity };
+        Err(Error::ResponseError(local_var_error))
+    }
+}
+
+pub async fn get_consented_financial_account_insights(configuration: &configuration::Configuration, consent_id: &str, account_id: &str) -> Result<(), Error<GetConsentedFinancialAccountInsightsError>> {
+    let local_var_configuration = configuration;
+
+    let local_var_client = &local_var_configuration.client;
+
+    let local_var_uri_str = format!("{}/v1/consents/{consentId}/financial-accounts/{accountId}/insights", local_var_configuration.base_path, consentId=crate::apis::urlencode(consent_id), accountId=crate::apis::urlencode(account_id));
+    let mut local_var_req_builder = local_var_client.request(reqwest::Method::GET, local_var_uri_str.as_str());
+
+    if let Some(ref local_var_user_agent) = local_var_configuration.user_agent {
+        local_var_req_builder = local_var_req_builder.header(reqwest::header::USER_AGENT, local_var_user_agent.clone());
+    }
+
+    let local_var_req = local_var_req_builder.build()?;
+    let local_var_resp = local_var_client.execute(local_var_req).await?;
+
+    let local_var_status = local_var_resp.status();
+    let local_var_content = local_var_resp.text().await?;
+
+    if !local_var_status.is_client_error() && !local_var_status.is_server_error() {
+        Ok(())
+    } else {
+        let local_var_entity: Option<GetConsentedFinancialAccountInsightsError> = serde_json::from_str(&local_var_content).ok();
         let local_var_error = ResponseContent { status: local_var_status, content: local_var_content, entity: local_var_entity };
         Err(Error::ResponseError(local_var_error))
     }
