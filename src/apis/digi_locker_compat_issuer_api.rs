@@ -28,7 +28,7 @@ pub enum DigilockerCompatIssueDocumentError {
 }
 
 
-pub async fn digilocker_compat_issue_document(configuration: &configuration::Configuration, push_uri_request: Option<crate::models::PushUriRequest>) -> Result<crate::models::PushUriResponse, Error<DigilockerCompatIssueDocumentError>> {
+pub async fn digilocker_compat_issue_document(configuration: &configuration::Configuration, push_uri_request: crate::models::PushUriRequest) -> Result<crate::models::PushUriResponse, Error<DigilockerCompatIssueDocumentError>> {
     let local_var_configuration = configuration;
 
     let local_var_client = &local_var_configuration.client;

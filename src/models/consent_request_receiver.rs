@@ -14,19 +14,23 @@
 
 #[derive(Clone, Debug, PartialEq, Default, Serialize, Deserialize)]
 pub struct ConsentRequestReceiver {
+    /// Consent request receiver country ISO 2 code
+    #[serde(rename = "countryIso2Code")]
+    pub country_iso2_code: String,
     /// Consent request receiver identifiers
-    #[serde(rename = "identifiers", skip_serializing_if = "Option::is_none")]
-    pub identifiers: Option<Vec<crate::models::StringStringKeyValuePair>>,
-    #[serde(rename = "identificationStrategy", skip_serializing_if = "Option::is_none")]
-    pub identification_strategy: Option<crate::models::IdentificationStrategy>,
+    #[serde(rename = "identifiers")]
+    pub identifiers: Vec<crate::models::StringStringKeyValuePair>,
+    #[serde(rename = "identificationStrategy")]
+    pub identification_strategy: crate::models::IdentificationStrategy,
 }
 
 impl ConsentRequestReceiver {
     /// Consent request receiver details
-    pub fn new() -> ConsentRequestReceiver {
+    pub fn new(country_iso2_code: String, identifiers: Vec<crate::models::StringStringKeyValuePair>, identification_strategy: crate::models::IdentificationStrategy) -> ConsentRequestReceiver {
         ConsentRequestReceiver {
-            identifiers: None,
-            identification_strategy: None,
+            country_iso2_code,
+            identifiers,
+            identification_strategy,
         }
     }
 }

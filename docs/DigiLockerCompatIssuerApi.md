@@ -18,7 +18,7 @@ Digilocker Compatible endpoint to issue document.
 
 Name | Type | Description  | Required | Notes
 ------------- | ------------- | ------------- | ------------- | -------------
-**push_uri_request** | Option<[**PushUriRequest**](PushUriRequest.md)> | Push uri request MyDataMyConsent.DeveloperApi.Models.DigiLocker.PushUriRequest. |  |
+**push_uri_request** | [**PushUriRequest**](PushUriRequest.md) | Push URI request payload | [required] |
 
 ### Return type
 

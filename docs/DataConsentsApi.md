@@ -5,23 +5,23 @@ All URIs are relative to *https://api.mydatamyconsent.com*
 Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**download_consented_document_analysis**](DataConsentsApi.md#download_consented_document_analysis) | **GET** /v1/consents/{consentId}/documents/{documentId}/analysis | Get analysis of a consented document.
-[**download_consented_document_by_id**](DataConsentsApi.md#download_consented_document_by_id) | **GET** /v1/consents/individuals/{consentId}/documents/{documentId}/download | Download a individuals consented document.
-[**download_org_consented_document_by_id**](DataConsentsApi.md#download_org_consented_document_by_id) | **GET** /v1/consents/organizations/{consentId}/documents/{documentId}/download | Download a organizations consented document.
-[**get_all_consented_documents**](DataConsentsApi.md#get_all_consented_documents) | **GET** /v1/consents/individuals/{consentId}/documents | Get the individual documents based on ConsentId.
+[**download_individual_consented_document_by_id**](DataConsentsApi.md#download_individual_consented_document_by_id) | **GET** /v1/consents/individuals/{consentId}/documents/{documentId}/download | Download individual consented document by document id.
+[**download_organization_consented_document_by_id**](DataConsentsApi.md#download_organization_consented_document_by_id) | **GET** /v1/consents/organizations/{consentId}/documents/{documentId}/download | Download organization consent document based on document id.
 [**get_all_consented_financial_accounts**](DataConsentsApi.md#get_all_consented_financial_accounts) | **GET** /v1/consents/individuals/{consentId}/financial-accounts | Get all individual consented financial accounts.
-[**get_all_organization_consented_documents**](DataConsentsApi.md#get_all_organization_consented_documents) | **GET** /v1/consents/organizations/{consentId}/documents | Get the organization documents based on ConsentId.
-[**get_consent_details_by_id**](DataConsentsApi.md#get_consent_details_by_id) | **GET** /v1/consents/individuals/{consentId} | Get all individuals consent details by consent id.
 [**get_consent_financial_accounts**](DataConsentsApi.md#get_consent_financial_accounts) | **GET** /v1/consents/organizations/{consentId}/financial-accounts | Get all organizational consented financial accounts.
 [**get_consented_account_by_id**](DataConsentsApi.md#get_consented_account_by_id) | **GET** /v1/consents/individuals/{consentId}/financial-accounts/{accountId} | Get individual consented financial account details based on account id.
-[**get_consented_document_by_id**](DataConsentsApi.md#get_consented_document_by_id) | **GET** /v1/consents/individuals/{consentId}/documents/{documentId} | Get individuals consent document based on document id.
+[**get_consented_document_by_id**](DataConsentsApi.md#get_consented_document_by_id) | **GET** /v1/consents/individuals/{consentId}/documents/{documentId} | Get individual consented document by document id.
 [**get_consented_financial_account**](DataConsentsApi.md#get_consented_financial_account) | **GET** /v1/consents/organizations/{consentId}/financial-accounts/{accountId} | Get organization consented financial account details based on account id.
 [**get_consented_financial_account_insights**](DataConsentsApi.md#get_consented_financial_account_insights) | **GET** /v1/consents/{consentId}/financial-accounts/{accountId}/insights | Get consented financial account insights.
 [**get_consented_financial_account_transactions**](DataConsentsApi.md#get_consented_financial_account_transactions) | **GET** /v1/consents/individuals/{consentId}/financial-accounts/{accountId}/transactions | Get individual consented financial account transactions of an individual based on accountId.
-[**get_consents_for_organizations**](DataConsentsApi.md#get_consents_for_organizations) | **GET** /v1/consents/organizations | Get the list of data consents sent for organizations.
-[**get_consents_sent_to_individuals**](DataConsentsApi.md#get_consents_sent_to_individuals) | **GET** /v1/consents/individuals | Get the list of Consents Sent to Individuals.
+[**get_consents**](DataConsentsApi.md#get_consents) | **GET** /v1/consents/individuals | Get the paginated list of individual data consents.
+[**get_individual_consented_documents**](DataConsentsApi.md#get_individual_consented_documents) | **GET** /v1/consents/individuals/{consentId}/documents | Get individual consented documents by consent id.
+[**get_individual_data_consent_by_id**](DataConsentsApi.md#get_individual_data_consent_by_id) | **GET** /v1/consents/individuals/{consentId} | Get individuals data consent details by consent id.
 [**get_org_consented_account_transactions**](DataConsentsApi.md#get_org_consented_account_transactions) | **GET** /v1/consents/organizations/{consentId}/financial-accounts/{accountId}/transactions | Get organization consented financial account transactions of an individual based on accountId.
-[**get_organization_consent_details_by_id**](DataConsentsApi.md#get_organization_consent_details_by_id) | **GET** /v1/consents/organizations/{consentId} | Get all organization consent details by consent id.
 [**get_organization_consented_document_by_id**](DataConsentsApi.md#get_organization_consented_document_by_id) | **GET** /v1/consents/organizations/{consentId}/documents/{documentId} | Get organization consent document based on document id.
+[**get_organization_consented_documents**](DataConsentsApi.md#get_organization_consented_documents) | **GET** /v1/consents/organizations/{consentId}/documents | Get organization consented documents by consent id.
+[**get_organization_data_consent_by_id**](DataConsentsApi.md#get_organization_data_consent_by_id) | **GET** /v1/consents/organizations/{consentId} | Get organizations data consent details by consent id.
+[**get_organization_data_consents**](DataConsentsApi.md#get_organization_data_consents) | **GET** /v1/consents/organizations | Get the paginated list of organization data consents.
 
 
 
@@ -35,8 +35,8 @@ Get analysis of a consented document.
 
 Name | Type | Description  | Required | Notes
 ------------- | ------------- | ------------- | ------------- | -------------
-**consent_id** | **String** |  | [required] |
-**document_id** | **String** | Document Id. | [required] |
+**consent_id** | **String** | Data consent id. | [required] |
+**document_id** | **String** | Consented document Id. | [required] |
 
 ### Return type
 
@@ -54,22 +54,22 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 
-## download_consented_document_by_id
+## download_individual_consented_document_by_id
 
-> crate::models::UserDocumentDownload download_consented_document_by_id(consent_id, document_id)
-Download a individuals consented document.
+> download_individual_consented_document_by_id(consent_id, document_id)
+Download individual consented document by document id.
 
 ### Parameters
 
 
 Name | Type | Description  | Required | Notes
 ------------- | ------------- | ------------- | ------------- | -------------
-**consent_id** | **String** | Consent id. | [required] |
-**document_id** | **String** | Document id. | [required] |
+**consent_id** | **String** | Individual data consent id. | [required] |
+**document_id** | **String** | Consented document id. | [required] |
 
 ### Return type
 
-[**crate::models::UserDocumentDownload**](UserDocumentDownload.md)
+ (empty response body)
 
 ### Authorization
 
@@ -83,50 +83,22 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 
-## download_org_consented_document_by_id
+## download_organization_consented_document_by_id
 
-> crate::models::OrganizationDocumentDownloadDto download_org_consented_document_by_id(consent_id, document_id)
-Download a organizations consented document.
-
-### Parameters
-
-
-Name | Type | Description  | Required | Notes
-------------- | ------------- | ------------- | ------------- | -------------
-**consent_id** | **String** | Consent id. | [required] |
-**document_id** | **String** | Document id. | [required] |
-
-### Return type
-
-[**crate::models::OrganizationDocumentDownloadDto**](OrganizationDocumentDownloadDto.md)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
-- **Content-Type**: Not defined
-- **Accept**: application/json
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
-
-## get_all_consented_documents
-
-> crate::models::DataConsentDocumentsDto get_all_consented_documents(consent_id)
-Get the individual documents based on ConsentId.
+> download_organization_consented_document_by_id(consent_id, document_id)
+Download organization consent document based on document id.
 
 ### Parameters
 
 
 Name | Type | Description  | Required | Notes
 ------------- | ------------- | ------------- | ------------- | -------------
-**consent_id** | **String** | Consent id. | [required] |
+**consent_id** | **String** | Organization data consent id. | [required] |
+**document_id** | **String** | Organization consented document Id. | [required] |
 
 ### Return type
 
-[**crate::models::DataConsentDocumentsDto**](DataConsentDocumentsDto.md)
+ (empty response body)
 
 ### Authorization
 
@@ -155,62 +127,6 @@ Name | Type | Description  | Required | Notes
 ### Return type
 
 [**crate::models::DataConsentFinancialsDto**](DataConsentFinancialsDto.md)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
-- **Content-Type**: Not defined
-- **Accept**: application/json
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
-
-## get_all_organization_consented_documents
-
-> crate::models::DataConsentDocumentsDto get_all_organization_consented_documents(consent_id)
-Get the organization documents based on ConsentId.
-
-### Parameters
-
-
-Name | Type | Description  | Required | Notes
-------------- | ------------- | ------------- | ------------- | -------------
-**consent_id** | **String** | Consent id. | [required] |
-
-### Return type
-
-[**crate::models::DataConsentDocumentsDto**](DataConsentDocumentsDto.md)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
-- **Content-Type**: Not defined
-- **Accept**: application/json
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
-
-## get_consent_details_by_id
-
-> crate::models::DataConsentDetailsDto get_consent_details_by_id(consent_id)
-Get all individuals consent details by consent id.
-
-### Parameters
-
-
-Name | Type | Description  | Required | Notes
-------------- | ------------- | ------------- | ------------- | -------------
-**consent_id** | **String** | Consent id. | [required] |
-
-### Return type
-
-[**crate::models::DataConsentDetailsDto**](DataConsentDetailsDto.md)
 
 ### Authorization
 
@@ -283,20 +199,20 @@ No authorization required
 
 ## get_consented_document_by_id
 
-> crate::models::UserDocumentDetails get_consented_document_by_id(consent_id, document_id)
-Get individuals consent document based on document id.
+> crate::models::IndividualDataConsentDocument get_consented_document_by_id(consent_id, document_id)
+Get individual consented document by document id.
 
 ### Parameters
 
 
 Name | Type | Description  | Required | Notes
 ------------- | ------------- | ------------- | ------------- | -------------
-**consent_id** | **String** | Consent id. | [required] |
-**document_id** | **String** | Document Id. | [required] |
+**consent_id** | **String** | Individual data consent id. | [required] |
+**document_id** | **String** | Consented document id. | [required] |
 
 ### Return type
 
-[**crate::models::UserDocumentDetails**](UserDocumentDetails.md)
+[**crate::models::IndividualDataConsentDocument**](IndividualDataConsentDocument.md)
 
 ### Authorization
 
@@ -402,10 +318,12 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 
-## get_consents_for_organizations
+## get_consents
 
-> crate::models::OrganizationDataConsentInfoDtoPaginatedList get_consents_for_organizations(status, from, to, page_no, page_size)
-Get the list of data consents sent for organizations.
+> crate::models::IndividualDataConsentDetailsPaginatedList get_consents(status, from_date_time, to_date_time, page_no, page_size)
+Get the paginated list of individual data consents.
+
+GetIndividualDataConsents
 
 ### Parameters
 
@@ -413,14 +331,14 @@ Get the list of data consents sent for organizations.
 Name | Type | Description  | Required | Notes
 ------------- | ------------- | ------------- | ------------- | -------------
 **status** | Option<[**crate::models::DataConsentStatus**](.md)> | Data consent status MyDataMyConsent.Domain.Entities.ConsentAggregate.Enums.DataConsentStatus. |  |
-**from** | Option<**String**> | From date time in utc timezone. |  |
-**to** | Option<**String**> | Til date time in utc timezone. |  |
+**from_date_time** | Option<**String**> | From datetime in UTC timezone. |  |
+**to_date_time** | Option<**String**> | To datetime in UTC timezone. |  |
 **page_no** | Option<**i32**> | Page number. |  |[default to 1]
 **page_size** | Option<**i32**> | Number of items to return. |  |[default to 25]
 
 ### Return type
 
-[**crate::models::OrganizationDataConsentInfoDtoPaginatedList**](OrganizationDataConsentInfoDtoPaginatedList.md)
+[**crate::models::IndividualDataConsentDetailsPaginatedList**](IndividualDataConsentDetailsPaginatedList.md)
 
 ### Authorization
 
@@ -434,25 +352,49 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 
-## get_consents_sent_to_individuals
+## get_individual_consented_documents
 
-> crate::models::UserDataConsentInfoDtoPaginatedList get_consents_sent_to_individuals(status, from, to, page_no, page_size)
-Get the list of Consents Sent to Individuals.
+> Vec<crate::models::IndividualDataConsentDocument> get_individual_consented_documents(consent_id)
+Get individual consented documents by consent id.
 
 ### Parameters
 
 
 Name | Type | Description  | Required | Notes
 ------------- | ------------- | ------------- | ------------- | -------------
-**status** | Option<[**crate::models::DataConsentStatus**](.md)> | Data consent status MyDataMyConsent.Domain.Entities.ConsentAggregate.Enums.DataConsentStatus. |  |
-**from** | Option<**String**> | From date time in utc timezone. |  |
-**to** | Option<**String**> | Til date time in utc timezone. |  |
-**page_no** | Option<**i32**> | Page number. |  |[default to 1]
-**page_size** | Option<**i32**> | Number of items to return. |  |[default to 25]
+**consent_id** | **String** | Individual data consent id. | [required] |
 
 ### Return type
 
-[**crate::models::UserDataConsentInfoDtoPaginatedList**](UserDataConsentInfoDtoPaginatedList.md)
+[**Vec<crate::models::IndividualDataConsentDocument>**](IndividualDataConsentDocument.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+
+## get_individual_data_consent_by_id
+
+> crate::models::OneOfDataConsentIndividualDataConsentOrganizationDataConsent get_individual_data_consent_by_id(consent_id)
+Get individuals data consent details by consent id.
+
+### Parameters
+
+
+Name | Type | Description  | Required | Notes
+------------- | ------------- | ------------- | ------------- | -------------
+**consent_id** | **String** | Individual data consent id. | [required] |
+
+### Return type
+
+[**crate::models::OneOfDataConsentIndividualDataConsentOrganizationDataConsent**](oneOf<DataConsent,IndividualDataConsent,OrganizationDataConsent>.md)
 
 ### Authorization
 
@@ -500,21 +442,22 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 
-## get_organization_consent_details_by_id
+## get_organization_consented_document_by_id
 
-> crate::models::DataConsentDetailsDto get_organization_consent_details_by_id(consent_id)
-Get all organization consent details by consent id.
+> crate::models::OrganizationDataConsentDocument get_organization_consented_document_by_id(consent_id, document_id)
+Get organization consent document based on document id.
 
 ### Parameters
 
 
 Name | Type | Description  | Required | Notes
 ------------- | ------------- | ------------- | ------------- | -------------
-**consent_id** | **String** | Consent id. | [required] |
+**consent_id** | **String** | Organization data consent id. | [required] |
+**document_id** | **String** | Organization consented document Id. | [required] |
 
 ### Return type
 
-[**crate::models::DataConsentDetailsDto**](DataConsentDetailsDto.md)
+[**crate::models::OrganizationDataConsentDocument**](OrganizationDataConsentDocument.md)
 
 ### Authorization
 
@@ -528,22 +471,81 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 
-## get_organization_consented_document_by_id
+## get_organization_consented_documents
 
-> crate::models::OrganizationDocumentDetails get_organization_consented_document_by_id(consent_id, document_id)
-Get organization consent document based on document id.
+> Vec<crate::models::OrganizationDataConsentDocument> get_organization_consented_documents(consent_id)
+Get organization consented documents by consent id.
 
 ### Parameters
 
 
 Name | Type | Description  | Required | Notes
 ------------- | ------------- | ------------- | ------------- | -------------
-**consent_id** | **String** | Consent id. | [required] |
-**document_id** | **String** | Document Id. | [required] |
+**consent_id** | **String** | Organization data consent id. | [required] |
 
 ### Return type
 
-[**crate::models::OrganizationDocumentDetails**](OrganizationDocumentDetails.md)
+[**Vec<crate::models::OrganizationDataConsentDocument>**](OrganizationDataConsentDocument.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+
+## get_organization_data_consent_by_id
+
+> crate::models::OneOfDataConsentIndividualDataConsentOrganizationDataConsent get_organization_data_consent_by_id(consent_id)
+Get organizations data consent details by consent id.
+
+### Parameters
+
+
+Name | Type | Description  | Required | Notes
+------------- | ------------- | ------------- | ------------- | -------------
+**consent_id** | **String** | Organization data consent id. | [required] |
+
+### Return type
+
+[**crate::models::OneOfDataConsentIndividualDataConsentOrganizationDataConsent**](oneOf<DataConsent,IndividualDataConsent,OrganizationDataConsent>.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+
+## get_organization_data_consents
+
+> crate::models::OrganizationDataConsentDetailsPaginatedList get_organization_data_consents(status, from_date_time, to_date_time, page_no, page_size)
+Get the paginated list of organization data consents.
+
+### Parameters
+
+
+Name | Type | Description  | Required | Notes
+------------- | ------------- | ------------- | ------------- | -------------
+**status** | Option<[**crate::models::DataConsentStatus**](.md)> | Data consent status MyDataMyConsent.Domain.Entities.ConsentAggregate.Enums.DataConsentStatus. |  |
+**from_date_time** | Option<**String**> | From datetime in UTC timezone. |  |
+**to_date_time** | Option<**String**> | To datetime in UTC timezone. |  |
+**page_no** | Option<**i32**> | Page number. |  |[default to 1]
+**page_size** | Option<**i32**> | Number of items to return. |  |[default to 25]
+
+### Return type
+
+[**crate::models::OrganizationDataConsentDetailsPaginatedList**](OrganizationDataConsentDetailsPaginatedList.md)
 
 ### Authorization
 

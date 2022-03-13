@@ -13,47 +13,47 @@
 
 #[derive(Clone, Debug, PartialEq, Default, Serialize, Deserialize)]
 pub struct DataProvider {
-    #[serde(rename = "id", skip_serializing_if = "Option::is_none")]
-    pub id: Option<String>,
-    #[serde(rename = "name", skip_serializing_if = "Option::is_none")]
-    pub name: Option<String>,
+    #[serde(rename = "id")]
+    pub id: String,
+    #[serde(rename = "name")]
+    pub name: String,
+    #[serde(rename = "category")]
+    pub category: String,
     #[serde(rename = "logoUrl", skip_serializing_if = "Option::is_none")]
     pub logo_url: Option<String>,
     #[serde(rename = "website", skip_serializing_if = "Option::is_none")]
     pub website: Option<String>,
-    #[serde(rename = "email", skip_serializing_if = "Option::is_none")]
-    pub email: Option<String>,
-    #[serde(rename = "supportPhoneNumber", skip_serializing_if = "Option::is_none")]
-    pub support_phone_number: Option<String>,
+    #[serde(rename = "supportEmail", skip_serializing_if = "Option::is_none")]
+    pub support_email: Option<String>,
+    #[serde(rename = "helpLineNumber", skip_serializing_if = "Option::is_none")]
+    pub help_line_number: Option<String>,
     #[serde(rename = "privacyPolicy", skip_serializing_if = "Option::is_none")]
     pub privacy_policy: Option<String>,
     #[serde(rename = "termOfService", skip_serializing_if = "Option::is_none")]
     pub term_of_service: Option<String>,
-    #[serde(rename = "category", skip_serializing_if = "Option::is_none")]
-    pub category: Option<String>,
     #[serde(rename = "dataProtectionOfficer", skip_serializing_if = "Option::is_none")]
     pub data_protection_officer: Option<Box<crate::models::DataProtectionOfficer>>,
+    #[serde(rename = "supportedDocumentTypes")]
+    pub supported_document_types: Vec<String>,
     #[serde(rename = "supportedAccountTypes", skip_serializing_if = "Option::is_none")]
     pub supported_account_types: Option<Vec<String>>,
-    #[serde(rename = "supportedDocumentTypes", skip_serializing_if = "Option::is_none")]
-    pub supported_document_types: Option<Vec<String>>,
 }
 
 impl DataProvider {
-    pub fn new() -> DataProvider {
+    pub fn new(id: String, name: String, category: String, supported_document_types: Vec<String>) -> DataProvider {
         DataProvider {
-            id: None,
-            name: None,
+            id,
+            name,
+            category,
             logo_url: None,
             website: None,
-            email: None,
-            support_phone_number: None,
+            support_email: None,
+            help_line_number: None,
             privacy_policy: None,
             term_of_service: None,
-            category: None,
             data_protection_officer: None,
+            supported_document_types,
             supported_account_types: None,
-            supported_document_types: None,
         }
     }
 }

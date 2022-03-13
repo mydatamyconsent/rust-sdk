@@ -7,7 +7,7 @@ Method | HTTP request | Description
 [**create_data_processing_agreement**](DataProcessingAgreementsApi.md#create_data_processing_agreement) | **POST** /v1/data-agreements | Create a data processing agreement.
 [**delete_data_processing_agreement_by_id**](DataProcessingAgreementsApi.md#delete_data_processing_agreement_by_id) | **DELETE** /v1/data-agreements/{id} | Delete a data processing agreement. This will not delete a published or a agreement in use with consents.
 [**get_data_processing_agreement_by_id**](DataProcessingAgreementsApi.md#get_data_processing_agreement_by_id) | **GET** /v1/data-agreements/{id} | Get data processing agreement by id.
-[**get_data_processing_agreements**](DataProcessingAgreementsApi.md#get_data_processing_agreements) | **GET** /v1/data-agreements | Get all data processing agreements.
+[**get_data_processing_agreements**](DataProcessingAgreementsApi.md#get_data_processing_agreements) | **GET** /v1/data-agreements | Get paginated data processing agreements.
 [**terminate_data_processing_agreement_by_id**](DataProcessingAgreementsApi.md#terminate_data_processing_agreement_by_id) | **PUT** /v1/data-agreements/{id}/terminate | Terminate a data processing agreement.
 [**update_data_processing_agreement**](DataProcessingAgreementsApi.md#update_data_processing_agreement) | **PUT** /v1/data-agreements/{id} | Update a data processing agreement.
 
@@ -15,7 +15,7 @@ Method | HTTP request | Description
 
 ## create_data_processing_agreement
 
-> crate::models::DataProcessingAgreementDto create_data_processing_agreement(create_data_processing_agreement_request_model)
+> crate::models::DataProcessingAgreement create_data_processing_agreement(create_data_processing_agreement)
 Create a data processing agreement.
 
 ### Parameters
@@ -23,11 +23,11 @@ Create a data processing agreement.
 
 Name | Type | Description  | Required | Notes
 ------------- | ------------- | ------------- | ------------- | -------------
-**create_data_processing_agreement_request_model** | Option<[**CreateDataProcessingAgreementRequestModel**](CreateDataProcessingAgreementRequestModel.md)> | Create data processing agreement MyDataMyConsent.Models.DataProcessingAgreements.CreateDataProcessingAgreementRequestModel. |  |
+**create_data_processing_agreement** | [**CreateDataProcessingAgreement**](CreateDataProcessingAgreement.md) | Create data processing agreement payload | [required] |
 
 ### Return type
 
-[**crate::models::DataProcessingAgreementDto**](DataProcessingAgreementDto.md)
+[**crate::models::DataProcessingAgreement**](DataProcessingAgreement.md)
 
 ### Authorization
 
@@ -71,7 +71,7 @@ No authorization required
 
 ## get_data_processing_agreement_by_id
 
-> crate::models::DataProcessingAgreementDto get_data_processing_agreement_by_id(id)
+> crate::models::DataProcessingAgreement get_data_processing_agreement_by_id(id)
 Get data processing agreement by id.
 
 ### Parameters
@@ -83,7 +83,7 @@ Name | Type | Description  | Required | Notes
 
 ### Return type
 
-[**crate::models::DataProcessingAgreementDto**](DataProcessingAgreementDto.md)
+[**crate::models::DataProcessingAgreement**](DataProcessingAgreement.md)
 
 ### Authorization
 
@@ -99,8 +99,8 @@ No authorization required
 
 ## get_data_processing_agreements
 
-> crate::models::DataProcessingAgreementDtoPaginatedList get_data_processing_agreements(page_no, page_size)
-Get all data processing agreements.
+> crate::models::DataProcessingAgreementPaginatedList get_data_processing_agreements(page_no, page_size)
+Get paginated data processing agreements.
 
 ### Parameters
 
@@ -112,7 +112,7 @@ Name | Type | Description  | Required | Notes
 
 ### Return type
 
-[**crate::models::DataProcessingAgreementDtoPaginatedList**](DataProcessingAgreementDtoPaginatedList.md)
+[**crate::models::DataProcessingAgreementPaginatedList**](DataProcessingAgreementPaginatedList.md)
 
 ### Authorization
 
@@ -156,7 +156,7 @@ No authorization required
 
 ## update_data_processing_agreement
 
-> crate::models::DataProcessingAgreementDto update_data_processing_agreement(id, update_data_processing_agreement_request_model)
+> crate::models::DataProcessingAgreement update_data_processing_agreement(id, update_data_processing_agreement)
 Update a data processing agreement.
 
 ### Parameters
@@ -165,11 +165,11 @@ Update a data processing agreement.
 Name | Type | Description  | Required | Notes
 ------------- | ------------- | ------------- | ------------- | -------------
 **id** | **String** | Agreement id. | [required] |
-**update_data_processing_agreement_request_model** | Option<[**UpdateDataProcessingAgreementRequestModel**](UpdateDataProcessingAgreementRequestModel.md)> | Updated data processing agreement MyDataMyConsent.Models.DataProcessingAgreements.UpdateDataProcessingAgreementRequestModel. |  |
+**update_data_processing_agreement** | [**UpdateDataProcessingAgreement**](UpdateDataProcessingAgreement.md) | Update data processing agreement payload | [required] |
 
 ### Return type
 
-[**crate::models::DataProcessingAgreementDto**](DataProcessingAgreementDto.md)
+[**crate::models::DataProcessingAgreement**](DataProcessingAgreement.md)
 
 ### Authorization
 

@@ -21,6 +21,8 @@ use super::{Error, configuration};
 pub enum CancelIndividualDataConsentRequestError {
     Status500(serde_json::Value),
     Status404(serde_json::Value),
+    Status400(serde_json::Value),
+    DefaultResponse(crate::models::ProblemDetails),
     UnknownValue(serde_json::Value),
 }
 
@@ -30,6 +32,8 @@ pub enum CancelIndividualDataConsentRequestError {
 pub enum CancelOrganizationDataConsentRequestError {
     Status500(serde_json::Value),
     Status404(serde_json::Value),
+    Status400(serde_json::Value),
+    DefaultResponse(crate::models::ProblemDetails),
     UnknownValue(serde_json::Value),
 }
 
@@ -57,7 +61,9 @@ pub enum CreateOrganizationDataConsentRequestError {
 #[derive(Debug, Clone, Serialize, Deserialize)]
 #[serde(untagged)]
 pub enum GetAllConsentRequestsToIndividualsError {
+    Status400(serde_json::Value),
     Status500(serde_json::Value),
+    DefaultResponse(crate::models::ProblemDetails),
     UnknownValue(serde_json::Value),
 }
 
@@ -65,7 +71,9 @@ pub enum GetAllConsentRequestsToIndividualsError {
 #[derive(Debug, Clone, Serialize, Deserialize)]
 #[serde(untagged)]
 pub enum GetAllConsentRequestsToOrganizationsError {
+    Status400(serde_json::Value),
     Status500(serde_json::Value),
+    DefaultResponse(crate::models::ProblemDetails),
     UnknownValue(serde_json::Value),
 }
 
@@ -73,7 +81,10 @@ pub enum GetAllConsentRequestsToOrganizationsError {
 #[derive(Debug, Clone, Serialize, Deserialize)]
 #[serde(untagged)]
 pub enum GetIndividualConsentRequestByIdError {
+    Status404(serde_json::Value),
+    Status400(serde_json::Value),
     Status500(serde_json::Value),
+    DefaultResponse(crate::models::ProblemDetails),
     UnknownValue(serde_json::Value),
 }
 
@@ -81,12 +92,15 @@ pub enum GetIndividualConsentRequestByIdError {
 #[derive(Debug, Clone, Serialize, Deserialize)]
 #[serde(untagged)]
 pub enum GetOrganizationConsentRequestByIdError {
+    Status404(serde_json::Value),
+    Status400(serde_json::Value),
     Status500(serde_json::Value),
+    DefaultResponse(crate::models::ProblemDetails),
     UnknownValue(serde_json::Value),
 }
 
 
-pub async fn cancel_individual_data_consent_request(configuration: &configuration::Configuration, request_id: &str) -> Result<crate::models::IndividualDataConsentRequestResponse, Error<CancelIndividualDataConsentRequestError>> {
+pub async fn cancel_individual_data_consent_request(configuration: &configuration::Configuration, request_id: &str) -> Result<(), Error<CancelIndividualDataConsentRequestError>> {
     let local_var_configuration = configuration;
 
     let local_var_client = &local_var_configuration.client;
@@ -105,7 +119,7 @@ pub async fn cancel_individual_data_consent_request(configuration: &configuratio
     let local_var_content = local_var_resp.text().await?;
 
     if !local_var_status.is_client_error() && !local_var_status.is_server_error() {
-        serde_json::from_str(&local_var_content).map_err(Error::from)
+        Ok(())
     } else {
         let local_var_entity: Option<CancelIndividualDataConsentRequestError> = serde_json::from_str(&local_var_content).ok();
         let local_var_error = ResponseContent { status: local_var_status, content: local_var_content, entity: local_var_entity };
@@ -113,7 +127,7 @@ pub async fn cancel_individual_data_consent_request(configuration: &configuratio
     }
 }
 
-pub async fn cancel_organization_data_consent_request(configuration: &configuration::Configuration, request_id: &str) -> Result<crate::models::OrganizationDataConsentRequestResponse, Error<CancelOrganizationDataConsentRequestError>> {
+pub async fn cancel_organization_data_consent_request(configuration: &configuration::Configuration, request_id: &str) -> Result<(), Error<CancelOrganizationDataConsentRequestError>> {
     let local_var_configuration = configuration;
 
     let local_var_client = &local_var_configuration.client;
@@ -132,7 +146,7 @@ pub async fn cancel_organization_data_consent_request(configuration: &configurat
     let local_var_content = local_var_resp.text().await?;
 
     if !local_var_status.is_client_error() && !local_var_status.is_server_error() {
-        serde_json::from_str(&local_var_content).map_err(Error::from)
+        Ok(())
     } else {
         let local_var_entity: Option<CancelOrganizationDataConsentRequestError> = serde_json::from_str(&local_var_content).ok();
         let local_var_error = ResponseContent { status: local_var_status, content: local_var_content, entity: local_var_entity };
@@ -140,8 +154,8 @@ pub async fn cancel_organization_data_consent_request(configuration: &configurat
     }
 }
 
-/// Create a individual data consent request.
-pub async fn create_individual_data_consent_request(configuration: &configuration::Configuration, create_individual_data_consent_request: crate::models::CreateIndividualDataConsentRequest) -> Result<crate::models::IndividualDataConsentRequestResponse, Error<CreateIndividualDataConsentRequestError>> {
+/// Create data consent request for an individual.
+pub async fn create_individual_data_consent_request(configuration: &configuration::Configuration, create_data_consent_request: crate::models::CreateDataConsentRequest) -> Result<crate::models::IndividualDataConsentRequestDetails, Error<CreateIndividualDataConsentRequestError>> {
     let local_var_configuration = configuration;
 
     let local_var_client = &local_var_configuration.client;
@@ -152,7 +166,7 @@ pub async fn create_individual_data_consent_request(configuration: &configuratio
     if let Some(ref local_var_user_agent) = local_var_configuration.user_agent {
         local_var_req_builder = local_var_req_builder.header(reqwest::header::USER_AGENT, local_var_user_agent.clone());
     }
-    local_var_req_builder = local_var_req_builder.json(&create_individual_data_consent_request);
+    local_var_req_builder = local_var_req_builder.json(&create_data_consent_request);
 
     let local_var_req = local_var_req_builder.build()?;
     let local_var_resp = local_var_client.execute(local_var_req).await?;
@@ -169,8 +183,8 @@ pub async fn create_individual_data_consent_request(configuration: &configuratio
     }
 }
 
-/// Create a organization data consent request.
-pub async fn create_organization_data_consent_request(configuration: &configuration::Configuration, create_organization_data_consent_request: crate::models::CreateOrganizationDataConsentRequest) -> Result<crate::models::OrganizationDataConsentRequestResponse, Error<CreateOrganizationDataConsentRequestError>> {
+/// Create data consent request for an organization.
+pub async fn create_organization_data_consent_request(configuration: &configuration::Configuration, create_data_consent_request: crate::models::CreateDataConsentRequest) -> Result<crate::models::OrganizationDataConsentRequestDetails, Error<CreateOrganizationDataConsentRequestError>> {
     let local_var_configuration = configuration;
 
     let local_var_client = &local_var_configuration.client;
@@ -181,7 +195,7 @@ pub async fn create_organization_data_consent_request(configuration: &configurat
     if let Some(ref local_var_user_agent) = local_var_configuration.user_agent {
         local_var_req_builder = local_var_req_builder.header(reqwest::header::USER_AGENT, local_var_user_agent.clone());
     }
-    local_var_req_builder = local_var_req_builder.json(&create_organization_data_consent_request);
+    local_var_req_builder = local_var_req_builder.json(&create_data_consent_request);
 
     let local_var_req = local_var_req_builder.build()?;
     let local_var_resp = local_var_client.execute(local_var_req).await?;
@@ -198,7 +212,7 @@ pub async fn create_organization_data_consent_request(configuration: &configurat
     }
 }
 
-pub async fn get_all_consent_requests_to_individuals(configuration: &configuration::Configuration, status: Option<crate::models::DataConsentStatus>, start_date_time: Option<String>, end_date_time: Option<String>, page_no: Option<i32>, page_size: Option<i32>) -> Result<crate::models::UserDataConsentInfoDtoPaginatedList, Error<GetAllConsentRequestsToIndividualsError>> {
+pub async fn get_all_consent_requests_to_individuals(configuration: &configuration::Configuration, status: Option<crate::models::DataConsentStatus>, start_date_time: Option<String>, end_date_time: Option<String>, page_no: Option<i32>, page_size: Option<i32>) -> Result<crate::models::IndividualDataConsentRequestDetailsPaginatedList, Error<GetAllConsentRequestsToIndividualsError>> {
     let local_var_configuration = configuration;
 
     let local_var_client = &local_var_configuration.client;
@@ -240,7 +254,7 @@ pub async fn get_all_consent_requests_to_individuals(configuration: &configurati
     }
 }
 
-pub async fn get_all_consent_requests_to_organizations(configuration: &configuration::Configuration, status: Option<crate::models::DataConsentStatus>, start_date_time: Option<String>, end_date_time: Option<String>, page_no: Option<i32>, page_size: Option<i32>) -> Result<crate::models::OrganizationDataConsentInfoDtoPaginatedList, Error<GetAllConsentRequestsToOrganizationsError>> {
+pub async fn get_all_consent_requests_to_organizations(configuration: &configuration::Configuration, status: Option<crate::models::DataConsentStatus>, start_date_time: Option<String>, end_date_time: Option<String>, page_no: Option<i32>, page_size: Option<i32>) -> Result<crate::models::OrganizationDataConsentRequestDetailsPaginatedList, Error<GetAllConsentRequestsToOrganizationsError>> {
     let local_var_configuration = configuration;
 
     let local_var_client = &local_var_configuration.client;
@@ -282,7 +296,7 @@ pub async fn get_all_consent_requests_to_organizations(configuration: &configura
     }
 }
 
-pub async fn get_individual_consent_request_by_id(configuration: &configuration::Configuration, request_id: &str) -> Result<crate::models::DataConsentDetailsDto, Error<GetIndividualConsentRequestByIdError>> {
+pub async fn get_individual_consent_request_by_id(configuration: &configuration::Configuration, request_id: &str) -> Result<crate::models::DataConsentRequest, Error<GetIndividualConsentRequestByIdError>> {
     let local_var_configuration = configuration;
 
     let local_var_client = &local_var_configuration.client;
@@ -309,7 +323,7 @@ pub async fn get_individual_consent_request_by_id(configuration: &configuration:
     }
 }
 
-pub async fn get_organization_consent_request_by_id(configuration: &configuration::Configuration, request_id: &str) -> Result<crate::models::DataConsentDetailsDto, Error<GetOrganizationConsentRequestByIdError>> {
+pub async fn get_organization_consent_request_by_id(configuration: &configuration::Configuration, request_id: &str) -> Result<crate::models::DataConsentRequest, Error<GetOrganizationConsentRequestByIdError>> {
     let local_var_configuration = configuration;
 
     let local_var_client = &local_var_configuration.client;

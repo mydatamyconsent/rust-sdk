@@ -62,7 +62,7 @@ pub async fn get_data_provider_by_id(configuration: &configuration::Configuratio
     }
 }
 
-pub async fn get_data_providers(configuration: &configuration::Configuration, account_type: Option<&str>, document_type: Option<&str>, organization_category: Option<&str>, page_no: Option<i32>, page_size: Option<i32>, country: Option<&str>) -> Result<crate::models::DataProviderPaginatedList, Error<GetDataProvidersError>> {
+pub async fn get_data_providers(configuration: &configuration::Configuration, account_type: Option<&str>, document_type: Option<&str>, organization_category: Option<&str>, page_no: Option<i32>, page_size: Option<i32>, country_iso2_code: Option<&str>) -> Result<crate::models::DataProviderPaginatedList, Error<GetDataProvidersError>> {
     let local_var_configuration = configuration;
 
     let local_var_client = &local_var_configuration.client;
@@ -85,8 +85,8 @@ pub async fn get_data_providers(configuration: &configuration::Configuration, ac
     if let Some(ref local_var_str) = page_size {
         local_var_req_builder = local_var_req_builder.query(&[("pageSize", &local_var_str.to_string())]);
     }
-    if let Some(ref local_var_str) = country {
-        local_var_req_builder = local_var_req_builder.query(&[("country", &local_var_str.to_string())]);
+    if let Some(ref local_var_str) = country_iso2_code {
+        local_var_req_builder = local_var_req_builder.query(&[("countryIso2Code", &local_var_str.to_string())]);
     }
     if let Some(ref local_var_user_agent) = local_var_configuration.user_agent {
         local_var_req_builder = local_var_req_builder.header(reqwest::header::USER_AGENT, local_var_user_agent.clone());

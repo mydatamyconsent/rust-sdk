@@ -19,6 +19,7 @@ use super::{Error, configuration};
 #[derive(Debug, Clone, Serialize, Deserialize)]
 #[serde(untagged)]
 pub enum CreateDataProcessingAgreementError {
+    Status400(serde_json::Value),
     Status500(serde_json::Value),
     UnknownValue(serde_json::Value),
 }
@@ -47,6 +48,7 @@ pub enum GetDataProcessingAgreementByIdError {
 #[derive(Debug, Clone, Serialize, Deserialize)]
 #[serde(untagged)]
 pub enum GetDataProcessingAgreementsError {
+    Status400(serde_json::Value),
     Status500(serde_json::Value),
     UnknownValue(serde_json::Value),
 }
@@ -72,7 +74,7 @@ pub enum UpdateDataProcessingAgreementError {
 }
 
 
-pub async fn create_data_processing_agreement(configuration: &configuration::Configuration, create_data_processing_agreement_request_model: Option<crate::models::CreateDataProcessingAgreementRequestModel>) -> Result<crate::models::DataProcessingAgreementDto, Error<CreateDataProcessingAgreementError>> {
+pub async fn create_data_processing_agreement(configuration: &configuration::Configuration, create_data_processing_agreement: crate::models::CreateDataProcessingAgreement) -> Result<crate::models::DataProcessingAgreement, Error<CreateDataProcessingAgreementError>> {
     let local_var_configuration = configuration;
 
     let local_var_client = &local_var_configuration.client;
@@ -83,7 +85,7 @@ pub async fn create_data_processing_agreement(configuration: &configuration::Con
     if let Some(ref local_var_user_agent) = local_var_configuration.user_agent {
         local_var_req_builder = local_var_req_builder.header(reqwest::header::USER_AGENT, local_var_user_agent.clone());
     }
-    local_var_req_builder = local_var_req_builder.json(&create_data_processing_agreement_request_model);
+    local_var_req_builder = local_var_req_builder.json(&create_data_processing_agreement);
 
     let local_var_req = local_var_req_builder.build()?;
     let local_var_resp = local_var_client.execute(local_var_req).await?;
@@ -127,7 +129,7 @@ pub async fn delete_data_processing_agreement_by_id(configuration: &configuratio
     }
 }
 
-pub async fn get_data_processing_agreement_by_id(configuration: &configuration::Configuration, id: &str) -> Result<crate::models::DataProcessingAgreementDto, Error<GetDataProcessingAgreementByIdError>> {
+pub async fn get_data_processing_agreement_by_id(configuration: &configuration::Configuration, id: &str) -> Result<crate::models::DataProcessingAgreement, Error<GetDataProcessingAgreementByIdError>> {
     let local_var_configuration = configuration;
 
     let local_var_client = &local_var_configuration.client;
@@ -154,7 +156,7 @@ pub async fn get_data_processing_agreement_by_id(configuration: &configuration::
     }
 }
 
-pub async fn get_data_processing_agreements(configuration: &configuration::Configuration, page_no: Option<i32>, page_size: Option<i32>) -> Result<crate::models::DataProcessingAgreementDtoPaginatedList, Error<GetDataProcessingAgreementsError>> {
+pub async fn get_data_processing_agreements(configuration: &configuration::Configuration, page_no: Option<i32>, page_size: Option<i32>) -> Result<crate::models::DataProcessingAgreementPaginatedList, Error<GetDataProcessingAgreementsError>> {
     let local_var_configuration = configuration;
 
     let local_var_client = &local_var_configuration.client;
@@ -214,7 +216,7 @@ pub async fn terminate_data_processing_agreement_by_id(configuration: &configura
     }
 }
 
-pub async fn update_data_processing_agreement(configuration: &configuration::Configuration, id: &str, update_data_processing_agreement_request_model: Option<crate::models::UpdateDataProcessingAgreementRequestModel>) -> Result<crate::models::DataProcessingAgreementDto, Error<UpdateDataProcessingAgreementError>> {
+pub async fn update_data_processing_agreement(configuration: &configuration::Configuration, id: &str, update_data_processing_agreement: crate::models::UpdateDataProcessingAgreement) -> Result<crate::models::DataProcessingAgreement, Error<UpdateDataProcessingAgreementError>> {
     let local_var_configuration = configuration;
 
     let local_var_client = &local_var_configuration.client;
@@ -225,7 +227,7 @@ pub async fn update_data_processing_agreement(configuration: &configuration::Con
     if let Some(ref local_var_user_agent) = local_var_configuration.user_agent {
         local_var_req_builder = local_var_req_builder.header(reqwest::header::USER_AGENT, local_var_user_agent.clone());
     }
-    local_var_req_builder = local_var_req_builder.json(&update_data_processing_agreement_request_model);
+    local_var_req_builder = local_var_req_builder.json(&update_data_processing_agreement);
 
     let local_var_req = local_var_req_builder.build()?;
     let local_var_resp = local_var_client.execute(local_var_req).await?;

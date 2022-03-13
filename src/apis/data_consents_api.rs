@@ -23,26 +23,18 @@ pub enum DownloadConsentedDocumentAnalysisError {
     UnknownValue(serde_json::Value),
 }
 
-/// struct for typed errors of method [`download_consented_document_by_id`]
+/// struct for typed errors of method [`download_individual_consented_document_by_id`]
 #[derive(Debug, Clone, Serialize, Deserialize)]
 #[serde(untagged)]
-pub enum DownloadConsentedDocumentByIdError {
+pub enum DownloadIndividualConsentedDocumentByIdError {
     Status500(serde_json::Value),
     UnknownValue(serde_json::Value),
 }
 
-/// struct for typed errors of method [`download_org_consented_document_by_id`]
+/// struct for typed errors of method [`download_organization_consented_document_by_id`]
 #[derive(Debug, Clone, Serialize, Deserialize)]
 #[serde(untagged)]
-pub enum DownloadOrgConsentedDocumentByIdError {
-    Status500(serde_json::Value),
-    UnknownValue(serde_json::Value),
-}
-
-/// struct for typed errors of method [`get_all_consented_documents`]
-#[derive(Debug, Clone, Serialize, Deserialize)]
-#[serde(untagged)]
-pub enum GetAllConsentedDocumentsError {
+pub enum DownloadOrganizationConsentedDocumentByIdError {
     Status500(serde_json::Value),
     UnknownValue(serde_json::Value),
 }
@@ -51,22 +43,6 @@ pub enum GetAllConsentedDocumentsError {
 #[derive(Debug, Clone, Serialize, Deserialize)]
 #[serde(untagged)]
 pub enum GetAllConsentedFinancialAccountsError {
-    Status500(serde_json::Value),
-    UnknownValue(serde_json::Value),
-}
-
-/// struct for typed errors of method [`get_all_organization_consented_documents`]
-#[derive(Debug, Clone, Serialize, Deserialize)]
-#[serde(untagged)]
-pub enum GetAllOrganizationConsentedDocumentsError {
-    Status500(serde_json::Value),
-    UnknownValue(serde_json::Value),
-}
-
-/// struct for typed errors of method [`get_consent_details_by_id`]
-#[derive(Debug, Clone, Serialize, Deserialize)]
-#[serde(untagged)]
-pub enum GetConsentDetailsByIdError {
     Status500(serde_json::Value),
     UnknownValue(serde_json::Value),
 }
@@ -119,18 +95,26 @@ pub enum GetConsentedFinancialAccountTransactionsError {
     UnknownValue(serde_json::Value),
 }
 
-/// struct for typed errors of method [`get_consents_for_organizations`]
+/// struct for typed errors of method [`get_consents`]
 #[derive(Debug, Clone, Serialize, Deserialize)]
 #[serde(untagged)]
-pub enum GetConsentsForOrganizationsError {
+pub enum GetConsentsError {
     Status500(serde_json::Value),
     UnknownValue(serde_json::Value),
 }
 
-/// struct for typed errors of method [`get_consents_sent_to_individuals`]
+/// struct for typed errors of method [`get_individual_consented_documents`]
 #[derive(Debug, Clone, Serialize, Deserialize)]
 #[serde(untagged)]
-pub enum GetConsentsSentToIndividualsError {
+pub enum GetIndividualConsentedDocumentsError {
+    Status500(serde_json::Value),
+    UnknownValue(serde_json::Value),
+}
+
+/// struct for typed errors of method [`get_individual_data_consent_by_id`]
+#[derive(Debug, Clone, Serialize, Deserialize)]
+#[serde(untagged)]
+pub enum GetIndividualDataConsentByIdError {
     Status500(serde_json::Value),
     UnknownValue(serde_json::Value),
 }
@@ -143,19 +127,35 @@ pub enum GetOrgConsentedAccountTransactionsError {
     UnknownValue(serde_json::Value),
 }
 
-/// struct for typed errors of method [`get_organization_consent_details_by_id`]
+/// struct for typed errors of method [`get_organization_consented_document_by_id`]
 #[derive(Debug, Clone, Serialize, Deserialize)]
 #[serde(untagged)]
-pub enum GetOrganizationConsentDetailsByIdError {
+pub enum GetOrganizationConsentedDocumentByIdError {
+    Status500(serde_json::Value),
+    UnknownValue(serde_json::Value),
+}
+
+/// struct for typed errors of method [`get_organization_consented_documents`]
+#[derive(Debug, Clone, Serialize, Deserialize)]
+#[serde(untagged)]
+pub enum GetOrganizationConsentedDocumentsError {
+    Status500(serde_json::Value),
+    UnknownValue(serde_json::Value),
+}
+
+/// struct for typed errors of method [`get_organization_data_consent_by_id`]
+#[derive(Debug, Clone, Serialize, Deserialize)]
+#[serde(untagged)]
+pub enum GetOrganizationDataConsentByIdError {
     Status500(serde_json::Value),
     Status400(serde_json::Value),
     UnknownValue(serde_json::Value),
 }
 
-/// struct for typed errors of method [`get_organization_consented_document_by_id`]
+/// struct for typed errors of method [`get_organization_data_consents`]
 #[derive(Debug, Clone, Serialize, Deserialize)]
 #[serde(untagged)]
-pub enum GetOrganizationConsentedDocumentByIdError {
+pub enum GetOrganizationDataConsentsError {
     Status500(serde_json::Value),
     UnknownValue(serde_json::Value),
 }
@@ -188,7 +188,7 @@ pub async fn download_consented_document_analysis(configuration: &configuration:
     }
 }
 
-pub async fn download_consented_document_by_id(configuration: &configuration::Configuration, consent_id: &str, document_id: &str) -> Result<crate::models::UserDocumentDownload, Error<DownloadConsentedDocumentByIdError>> {
+pub async fn download_individual_consented_document_by_id(configuration: &configuration::Configuration, consent_id: &str, document_id: &str) -> Result<(), Error<DownloadIndividualConsentedDocumentByIdError>> {
     let local_var_configuration = configuration;
 
     let local_var_client = &local_var_configuration.client;
@@ -207,15 +207,15 @@ pub async fn download_consented_document_by_id(configuration: &configuration::Co
     let local_var_content = local_var_resp.text().await?;
 
     if !local_var_status.is_client_error() && !local_var_status.is_server_error() {
-        serde_json::from_str(&local_var_content).map_err(Error::from)
+        Ok(())
     } else {
-        let local_var_entity: Option<DownloadConsentedDocumentByIdError> = serde_json::from_str(&local_var_content).ok();
+        let local_var_entity: Option<DownloadIndividualConsentedDocumentByIdError> = serde_json::from_str(&local_var_content).ok();
         let local_var_error = ResponseContent { status: local_var_status, content: local_var_content, entity: local_var_entity };
         Err(Error::ResponseError(local_var_error))
     }
 }
 
-pub async fn download_org_consented_document_by_id(configuration: &configuration::Configuration, consent_id: &str, document_id: &str) -> Result<crate::models::OrganizationDocumentDownloadDto, Error<DownloadOrgConsentedDocumentByIdError>> {
+pub async fn download_organization_consented_document_by_id(configuration: &configuration::Configuration, consent_id: &str, document_id: &str) -> Result<(), Error<DownloadOrganizationConsentedDocumentByIdError>> {
     let local_var_configuration = configuration;
 
     let local_var_client = &local_var_configuration.client;
@@ -234,36 +234,9 @@ pub async fn download_org_consented_document_by_id(configuration: &configuration
     let local_var_content = local_var_resp.text().await?;
 
     if !local_var_status.is_client_error() && !local_var_status.is_server_error() {
-        serde_json::from_str(&local_var_content).map_err(Error::from)
+        Ok(())
     } else {
-        let local_var_entity: Option<DownloadOrgConsentedDocumentByIdError> = serde_json::from_str(&local_var_content).ok();
-        let local_var_error = ResponseContent { status: local_var_status, content: local_var_content, entity: local_var_entity };
-        Err(Error::ResponseError(local_var_error))
-    }
-}
-
-pub async fn get_all_consented_documents(configuration: &configuration::Configuration, consent_id: &str) -> Result<crate::models::DataConsentDocumentsDto, Error<GetAllConsentedDocumentsError>> {
-    let local_var_configuration = configuration;
-
-    let local_var_client = &local_var_configuration.client;
-
-    let local_var_uri_str = format!("{}/v1/consents/individuals/{consentId}/documents", local_var_configuration.base_path, consentId=crate::apis::urlencode(consent_id));
-    let mut local_var_req_builder = local_var_client.request(reqwest::Method::GET, local_var_uri_str.as_str());
-
-    if let Some(ref local_var_user_agent) = local_var_configuration.user_agent {
-        local_var_req_builder = local_var_req_builder.header(reqwest::header::USER_AGENT, local_var_user_agent.clone());
-    }
-
-    let local_var_req = local_var_req_builder.build()?;
-    let local_var_resp = local_var_client.execute(local_var_req).await?;
-
-    let local_var_status = local_var_resp.status();
-    let local_var_content = local_var_resp.text().await?;
-
-    if !local_var_status.is_client_error() && !local_var_status.is_server_error() {
-        serde_json::from_str(&local_var_content).map_err(Error::from)
-    } else {
-        let local_var_entity: Option<GetAllConsentedDocumentsError> = serde_json::from_str(&local_var_content).ok();
+        let local_var_entity: Option<DownloadOrganizationConsentedDocumentByIdError> = serde_json::from_str(&local_var_content).ok();
         let local_var_error = ResponseContent { status: local_var_status, content: local_var_content, entity: local_var_entity };
         Err(Error::ResponseError(local_var_error))
     }
@@ -291,60 +264,6 @@ pub async fn get_all_consented_financial_accounts(configuration: &configuration:
         serde_json::from_str(&local_var_content).map_err(Error::from)
     } else {
         let local_var_entity: Option<GetAllConsentedFinancialAccountsError> = serde_json::from_str(&local_var_content).ok();
-        let local_var_error = ResponseContent { status: local_var_status, content: local_var_content, entity: local_var_entity };
-        Err(Error::ResponseError(local_var_error))
-    }
-}
-
-pub async fn get_all_organization_consented_documents(configuration: &configuration::Configuration, consent_id: &str) -> Result<crate::models::DataConsentDocumentsDto, Error<GetAllOrganizationConsentedDocumentsError>> {
-    let local_var_configuration = configuration;
-
-    let local_var_client = &local_var_configuration.client;
-
-    let local_var_uri_str = format!("{}/v1/consents/organizations/{consentId}/documents", local_var_configuration.base_path, consentId=crate::apis::urlencode(consent_id));
-    let mut local_var_req_builder = local_var_client.request(reqwest::Method::GET, local_var_uri_str.as_str());
-
-    if let Some(ref local_var_user_agent) = local_var_configuration.user_agent {
-        local_var_req_builder = local_var_req_builder.header(reqwest::header::USER_AGENT, local_var_user_agent.clone());
-    }
-
-    let local_var_req = local_var_req_builder.build()?;
-    let local_var_resp = local_var_client.execute(local_var_req).await?;
-
-    let local_var_status = local_var_resp.status();
-    let local_var_content = local_var_resp.text().await?;
-
-    if !local_var_status.is_client_error() && !local_var_status.is_server_error() {
-        serde_json::from_str(&local_var_content).map_err(Error::from)
-    } else {
-        let local_var_entity: Option<GetAllOrganizationConsentedDocumentsError> = serde_json::from_str(&local_var_content).ok();
-        let local_var_error = ResponseContent { status: local_var_status, content: local_var_content, entity: local_var_entity };
-        Err(Error::ResponseError(local_var_error))
-    }
-}
-
-pub async fn get_consent_details_by_id(configuration: &configuration::Configuration, consent_id: &str) -> Result<crate::models::DataConsentDetailsDto, Error<GetConsentDetailsByIdError>> {
-    let local_var_configuration = configuration;
-
-    let local_var_client = &local_var_configuration.client;
-
-    let local_var_uri_str = format!("{}/v1/consents/individuals/{consentId}", local_var_configuration.base_path, consentId=crate::apis::urlencode(consent_id));
-    let mut local_var_req_builder = local_var_client.request(reqwest::Method::GET, local_var_uri_str.as_str());
-
-    if let Some(ref local_var_user_agent) = local_var_configuration.user_agent {
-        local_var_req_builder = local_var_req_builder.header(reqwest::header::USER_AGENT, local_var_user_agent.clone());
-    }
-
-    let local_var_req = local_var_req_builder.build()?;
-    let local_var_resp = local_var_client.execute(local_var_req).await?;
-
-    let local_var_status = local_var_resp.status();
-    let local_var_content = local_var_resp.text().await?;
-
-    if !local_var_status.is_client_error() && !local_var_status.is_server_error() {
-        serde_json::from_str(&local_var_content).map_err(Error::from)
-    } else {
-        let local_var_entity: Option<GetConsentDetailsByIdError> = serde_json::from_str(&local_var_content).ok();
         let local_var_error = ResponseContent { status: local_var_status, content: local_var_content, entity: local_var_entity };
         Err(Error::ResponseError(local_var_error))
     }
@@ -404,7 +323,7 @@ pub async fn get_consented_account_by_id(configuration: &configuration::Configur
     }
 }
 
-pub async fn get_consented_document_by_id(configuration: &configuration::Configuration, consent_id: &str, document_id: &str) -> Result<crate::models::UserDocumentDetails, Error<GetConsentedDocumentByIdError>> {
+pub async fn get_consented_document_by_id(configuration: &configuration::Configuration, consent_id: &str, document_id: &str) -> Result<crate::models::IndividualDataConsentDocument, Error<GetConsentedDocumentByIdError>> {
     let local_var_configuration = configuration;
 
     let local_var_client = &local_var_configuration.client;
@@ -527,49 +446,8 @@ pub async fn get_consented_financial_account_transactions(configuration: &config
     }
 }
 
-pub async fn get_consents_for_organizations(configuration: &configuration::Configuration, status: Option<crate::models::DataConsentStatus>, from: Option<String>, to: Option<String>, page_no: Option<i32>, page_size: Option<i32>) -> Result<crate::models::OrganizationDataConsentInfoDtoPaginatedList, Error<GetConsentsForOrganizationsError>> {
-    let local_var_configuration = configuration;
-
-    let local_var_client = &local_var_configuration.client;
-
-    let local_var_uri_str = format!("{}/v1/consents/organizations", local_var_configuration.base_path);
-    let mut local_var_req_builder = local_var_client.request(reqwest::Method::GET, local_var_uri_str.as_str());
-
-    if let Some(ref local_var_str) = status {
-        local_var_req_builder = local_var_req_builder.query(&[("status", &local_var_str.to_string())]);
-    }
-    if let Some(ref local_var_str) = from {
-        local_var_req_builder = local_var_req_builder.query(&[("from", &local_var_str.to_string())]);
-    }
-    if let Some(ref local_var_str) = to {
-        local_var_req_builder = local_var_req_builder.query(&[("to", &local_var_str.to_string())]);
-    }
-    if let Some(ref local_var_str) = page_no {
-        local_var_req_builder = local_var_req_builder.query(&[("pageNo", &local_var_str.to_string())]);
-    }
-    if let Some(ref local_var_str) = page_size {
-        local_var_req_builder = local_var_req_builder.query(&[("pageSize", &local_var_str.to_string())]);
-    }
-    if let Some(ref local_var_user_agent) = local_var_configuration.user_agent {
-        local_var_req_builder = local_var_req_builder.header(reqwest::header::USER_AGENT, local_var_user_agent.clone());
-    }
-
-    let local_var_req = local_var_req_builder.build()?;
-    let local_var_resp = local_var_client.execute(local_var_req).await?;
-
-    let local_var_status = local_var_resp.status();
-    let local_var_content = local_var_resp.text().await?;
-
-    if !local_var_status.is_client_error() && !local_var_status.is_server_error() {
-        serde_json::from_str(&local_var_content).map_err(Error::from)
-    } else {
-        let local_var_entity: Option<GetConsentsForOrganizationsError> = serde_json::from_str(&local_var_content).ok();
-        let local_var_error = ResponseContent { status: local_var_status, content: local_var_content, entity: local_var_entity };
-        Err(Error::ResponseError(local_var_error))
-    }
-}
-
-pub async fn get_consents_sent_to_individuals(configuration: &configuration::Configuration, status: Option<crate::models::DataConsentStatus>, from: Option<String>, to: Option<String>, page_no: Option<i32>, page_size: Option<i32>) -> Result<crate::models::UserDataConsentInfoDtoPaginatedList, Error<GetConsentsSentToIndividualsError>> {
+/// GetIndividualDataConsents
+pub async fn get_consents(configuration: &configuration::Configuration, status: Option<crate::models::DataConsentStatus>, from_date_time: Option<String>, to_date_time: Option<String>, page_no: Option<i32>, page_size: Option<i32>) -> Result<crate::models::IndividualDataConsentDetailsPaginatedList, Error<GetConsentsError>> {
     let local_var_configuration = configuration;
 
     let local_var_client = &local_var_configuration.client;
@@ -580,11 +458,11 @@ pub async fn get_consents_sent_to_individuals(configuration: &configuration::Con
     if let Some(ref local_var_str) = status {
         local_var_req_builder = local_var_req_builder.query(&[("status", &local_var_str.to_string())]);
     }
-    if let Some(ref local_var_str) = from {
-        local_var_req_builder = local_var_req_builder.query(&[("from", &local_var_str.to_string())]);
+    if let Some(ref local_var_str) = from_date_time {
+        local_var_req_builder = local_var_req_builder.query(&[("fromDateTime", &local_var_str.to_string())]);
     }
-    if let Some(ref local_var_str) = to {
-        local_var_req_builder = local_var_req_builder.query(&[("to", &local_var_str.to_string())]);
+    if let Some(ref local_var_str) = to_date_time {
+        local_var_req_builder = local_var_req_builder.query(&[("toDateTime", &local_var_str.to_string())]);
     }
     if let Some(ref local_var_str) = page_no {
         local_var_req_builder = local_var_req_builder.query(&[("pageNo", &local_var_str.to_string())]);
@@ -605,7 +483,61 @@ pub async fn get_consents_sent_to_individuals(configuration: &configuration::Con
     if !local_var_status.is_client_error() && !local_var_status.is_server_error() {
         serde_json::from_str(&local_var_content).map_err(Error::from)
     } else {
-        let local_var_entity: Option<GetConsentsSentToIndividualsError> = serde_json::from_str(&local_var_content).ok();
+        let local_var_entity: Option<GetConsentsError> = serde_json::from_str(&local_var_content).ok();
+        let local_var_error = ResponseContent { status: local_var_status, content: local_var_content, entity: local_var_entity };
+        Err(Error::ResponseError(local_var_error))
+    }
+}
+
+pub async fn get_individual_consented_documents(configuration: &configuration::Configuration, consent_id: &str) -> Result<Vec<crate::models::IndividualDataConsentDocument>, Error<GetIndividualConsentedDocumentsError>> {
+    let local_var_configuration = configuration;
+
+    let local_var_client = &local_var_configuration.client;
+
+    let local_var_uri_str = format!("{}/v1/consents/individuals/{consentId}/documents", local_var_configuration.base_path, consentId=crate::apis::urlencode(consent_id));
+    let mut local_var_req_builder = local_var_client.request(reqwest::Method::GET, local_var_uri_str.as_str());
+
+    if let Some(ref local_var_user_agent) = local_var_configuration.user_agent {
+        local_var_req_builder = local_var_req_builder.header(reqwest::header::USER_AGENT, local_var_user_agent.clone());
+    }
+
+    let local_var_req = local_var_req_builder.build()?;
+    let local_var_resp = local_var_client.execute(local_var_req).await?;
+
+    let local_var_status = local_var_resp.status();
+    let local_var_content = local_var_resp.text().await?;
+
+    if !local_var_status.is_client_error() && !local_var_status.is_server_error() {
+        serde_json::from_str(&local_var_content).map_err(Error::from)
+    } else {
+        let local_var_entity: Option<GetIndividualConsentedDocumentsError> = serde_json::from_str(&local_var_content).ok();
+        let local_var_error = ResponseContent { status: local_var_status, content: local_var_content, entity: local_var_entity };
+        Err(Error::ResponseError(local_var_error))
+    }
+}
+
+pub async fn get_individual_data_consent_by_id(configuration: &configuration::Configuration, consent_id: &str) -> Result<crate::models::OneOfDataConsentIndividualDataConsentOrganizationDataConsent, Error<GetIndividualDataConsentByIdError>> {
+    let local_var_configuration = configuration;
+
+    let local_var_client = &local_var_configuration.client;
+
+    let local_var_uri_str = format!("{}/v1/consents/individuals/{consentId}", local_var_configuration.base_path, consentId=crate::apis::urlencode(consent_id));
+    let mut local_var_req_builder = local_var_client.request(reqwest::Method::GET, local_var_uri_str.as_str());
+
+    if let Some(ref local_var_user_agent) = local_var_configuration.user_agent {
+        local_var_req_builder = local_var_req_builder.header(reqwest::header::USER_AGENT, local_var_user_agent.clone());
+    }
+
+    let local_var_req = local_var_req_builder.build()?;
+    let local_var_resp = local_var_client.execute(local_var_req).await?;
+
+    let local_var_status = local_var_resp.status();
+    let local_var_content = local_var_resp.text().await?;
+
+    if !local_var_status.is_client_error() && !local_var_status.is_server_error() {
+        serde_json::from_str(&local_var_content).map_err(Error::from)
+    } else {
+        let local_var_entity: Option<GetIndividualDataConsentByIdError> = serde_json::from_str(&local_var_content).ok();
         let local_var_error = ResponseContent { status: local_var_status, content: local_var_content, entity: local_var_entity };
         Err(Error::ResponseError(local_var_error))
     }
@@ -653,34 +585,7 @@ pub async fn get_org_consented_account_transactions(configuration: &configuratio
     }
 }
 
-pub async fn get_organization_consent_details_by_id(configuration: &configuration::Configuration, consent_id: &str) -> Result<crate::models::DataConsentDetailsDto, Error<GetOrganizationConsentDetailsByIdError>> {
-    let local_var_configuration = configuration;
-
-    let local_var_client = &local_var_configuration.client;
-
-    let local_var_uri_str = format!("{}/v1/consents/organizations/{consentId}", local_var_configuration.base_path, consentId=crate::apis::urlencode(consent_id));
-    let mut local_var_req_builder = local_var_client.request(reqwest::Method::GET, local_var_uri_str.as_str());
-
-    if let Some(ref local_var_user_agent) = local_var_configuration.user_agent {
-        local_var_req_builder = local_var_req_builder.header(reqwest::header::USER_AGENT, local_var_user_agent.clone());
-    }
-
-    let local_var_req = local_var_req_builder.build()?;
-    let local_var_resp = local_var_client.execute(local_var_req).await?;
-
-    let local_var_status = local_var_resp.status();
-    let local_var_content = local_var_resp.text().await?;
-
-    if !local_var_status.is_client_error() && !local_var_status.is_server_error() {
-        serde_json::from_str(&local_var_content).map_err(Error::from)
-    } else {
-        let local_var_entity: Option<GetOrganizationConsentDetailsByIdError> = serde_json::from_str(&local_var_content).ok();
-        let local_var_error = ResponseContent { status: local_var_status, content: local_var_content, entity: local_var_entity };
-        Err(Error::ResponseError(local_var_error))
-    }
-}
-
-pub async fn get_organization_consented_document_by_id(configuration: &configuration::Configuration, consent_id: &str, document_id: &str) -> Result<crate::models::OrganizationDocumentDetails, Error<GetOrganizationConsentedDocumentByIdError>> {
+pub async fn get_organization_consented_document_by_id(configuration: &configuration::Configuration, consent_id: &str, document_id: &str) -> Result<crate::models::OrganizationDataConsentDocument, Error<GetOrganizationConsentedDocumentByIdError>> {
     let local_var_configuration = configuration;
 
     let local_var_client = &local_var_configuration.client;
@@ -702,6 +607,102 @@ pub async fn get_organization_consented_document_by_id(configuration: &configura
         serde_json::from_str(&local_var_content).map_err(Error::from)
     } else {
         let local_var_entity: Option<GetOrganizationConsentedDocumentByIdError> = serde_json::from_str(&local_var_content).ok();
+        let local_var_error = ResponseContent { status: local_var_status, content: local_var_content, entity: local_var_entity };
+        Err(Error::ResponseError(local_var_error))
+    }
+}
+
+pub async fn get_organization_consented_documents(configuration: &configuration::Configuration, consent_id: &str) -> Result<Vec<crate::models::OrganizationDataConsentDocument>, Error<GetOrganizationConsentedDocumentsError>> {
+    let local_var_configuration = configuration;
+
+    let local_var_client = &local_var_configuration.client;
+
+    let local_var_uri_str = format!("{}/v1/consents/organizations/{consentId}/documents", local_var_configuration.base_path, consentId=crate::apis::urlencode(consent_id));
+    let mut local_var_req_builder = local_var_client.request(reqwest::Method::GET, local_var_uri_str.as_str());
+
+    if let Some(ref local_var_user_agent) = local_var_configuration.user_agent {
+        local_var_req_builder = local_var_req_builder.header(reqwest::header::USER_AGENT, local_var_user_agent.clone());
+    }
+
+    let local_var_req = local_var_req_builder.build()?;
+    let local_var_resp = local_var_client.execute(local_var_req).await?;
+
+    let local_var_status = local_var_resp.status();
+    let local_var_content = local_var_resp.text().await?;
+
+    if !local_var_status.is_client_error() && !local_var_status.is_server_error() {
+        serde_json::from_str(&local_var_content).map_err(Error::from)
+    } else {
+        let local_var_entity: Option<GetOrganizationConsentedDocumentsError> = serde_json::from_str(&local_var_content).ok();
+        let local_var_error = ResponseContent { status: local_var_status, content: local_var_content, entity: local_var_entity };
+        Err(Error::ResponseError(local_var_error))
+    }
+}
+
+pub async fn get_organization_data_consent_by_id(configuration: &configuration::Configuration, consent_id: &str) -> Result<crate::models::OneOfDataConsentIndividualDataConsentOrganizationDataConsent, Error<GetOrganizationDataConsentByIdError>> {
+    let local_var_configuration = configuration;
+
+    let local_var_client = &local_var_configuration.client;
+
+    let local_var_uri_str = format!("{}/v1/consents/organizations/{consentId}", local_var_configuration.base_path, consentId=crate::apis::urlencode(consent_id));
+    let mut local_var_req_builder = local_var_client.request(reqwest::Method::GET, local_var_uri_str.as_str());
+
+    if let Some(ref local_var_user_agent) = local_var_configuration.user_agent {
+        local_var_req_builder = local_var_req_builder.header(reqwest::header::USER_AGENT, local_var_user_agent.clone());
+    }
+
+    let local_var_req = local_var_req_builder.build()?;
+    let local_var_resp = local_var_client.execute(local_var_req).await?;
+
+    let local_var_status = local_var_resp.status();
+    let local_var_content = local_var_resp.text().await?;
+
+    if !local_var_status.is_client_error() && !local_var_status.is_server_error() {
+        serde_json::from_str(&local_var_content).map_err(Error::from)
+    } else {
+        let local_var_entity: Option<GetOrganizationDataConsentByIdError> = serde_json::from_str(&local_var_content).ok();
+        let local_var_error = ResponseContent { status: local_var_status, content: local_var_content, entity: local_var_entity };
+        Err(Error::ResponseError(local_var_error))
+    }
+}
+
+pub async fn get_organization_data_consents(configuration: &configuration::Configuration, status: Option<crate::models::DataConsentStatus>, from_date_time: Option<String>, to_date_time: Option<String>, page_no: Option<i32>, page_size: Option<i32>) -> Result<crate::models::OrganizationDataConsentDetailsPaginatedList, Error<GetOrganizationDataConsentsError>> {
+    let local_var_configuration = configuration;
+
+    let local_var_client = &local_var_configuration.client;
+
+    let local_var_uri_str = format!("{}/v1/consents/organizations", local_var_configuration.base_path);
+    let mut local_var_req_builder = local_var_client.request(reqwest::Method::GET, local_var_uri_str.as_str());
+
+    if let Some(ref local_var_str) = status {
+        local_var_req_builder = local_var_req_builder.query(&[("status", &local_var_str.to_string())]);
+    }
+    if let Some(ref local_var_str) = from_date_time {
+        local_var_req_builder = local_var_req_builder.query(&[("fromDateTime", &local_var_str.to_string())]);
+    }
+    if let Some(ref local_var_str) = to_date_time {
+        local_var_req_builder = local_var_req_builder.query(&[("toDateTime", &local_var_str.to_string())]);
+    }
+    if let Some(ref local_var_str) = page_no {
+        local_var_req_builder = local_var_req_builder.query(&[("pageNo", &local_var_str.to_string())]);
+    }
+    if let Some(ref local_var_str) = page_size {
+        local_var_req_builder = local_var_req_builder.query(&[("pageSize", &local_var_str.to_string())]);
+    }
+    if let Some(ref local_var_user_agent) = local_var_configuration.user_agent {
+        local_var_req_builder = local_var_req_builder.header(reqwest::header::USER_AGENT, local_var_user_agent.clone());
+    }
+
+    let local_var_req = local_var_req_builder.build()?;
+    let local_var_resp = local_var_client.execute(local_var_req).await?;
+
+    let local_var_status = local_var_resp.status();
+    let local_var_content = local_var_resp.text().await?;
+
+    if !local_var_status.is_client_error() && !local_var_status.is_server_error() {
+        serde_json::from_str(&local_var_content).map_err(Error::from)
+    } else {
+        let local_var_entity: Option<GetOrganizationDataConsentsError> = serde_json::from_str(&local_var_content).ok();
         let local_var_error = ResponseContent { status: local_var_status, content: local_var_content, entity: local_var_entity };
         Err(Error::ResponseError(local_var_error))
     }

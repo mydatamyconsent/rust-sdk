@@ -113,7 +113,7 @@ Issue a new document to an individual user.
 
 Name | Type | Description  | Required | Notes
 ------------- | ------------- | ------------- | ------------- | -------------
-**document_issue_request** | [**DocumentIssueRequest**](DocumentIssueRequest.md) | Document issue request MyDataMyConsent.DeveloperApi.Models.DocumentIssueRequest. | [required] |
+**document_issue_request** | [**DocumentIssueRequest**](DocumentIssueRequest.md) | Document issue request payload | [required] |
 
 ### Return type
 
@@ -141,7 +141,7 @@ Issue a new document to an organization.
 
 Name | Type | Description  | Required | Notes
 ------------- | ------------- | ------------- | ------------- | -------------
-**document_issue_request** | [**DocumentIssueRequest**](DocumentIssueRequest.md) | Document issue request MyDataMyConsent.DeveloperApi.Models.DocumentIssueRequest. | [required] |
+**document_issue_request** | [**DocumentIssueRequest**](DocumentIssueRequest.md) | Document issue request payload | [required] |
 
 ### Return type
 

@@ -4,7 +4,7 @@ All URIs are relative to *https://api.mydatamyconsent.com*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**get_data_provider_by_id**](DataProviderDiscoveryApi.md#get_data_provider_by_id) | **GET** /v1/data-providers/{providerId} | Get a Data Provider details based on provider id.
+[**get_data_provider_by_id**](DataProviderDiscoveryApi.md#get_data_provider_by_id) | **GET** /v1/data-providers/{providerId} | Get a Data Provider details by provider id.
 [**get_data_providers**](DataProviderDiscoveryApi.md#get_data_providers) | **GET** /v1/data-providers | Discover all data providers in My Data My Consent by country and filters.
 
 
@@ -12,14 +12,14 @@ Method | HTTP request | Description
 ## get_data_provider_by_id
 
 > crate::models::DataProvider get_data_provider_by_id(provider_id)
-Get a Data Provider details based on provider id.
+Get a Data Provider details by provider id.
 
 ### Parameters
 
 
 Name | Type | Description  | Required | Notes
 ------------- | ------------- | ------------- | ------------- | -------------
-**provider_id** | **String** | Provider id. | [required] |
+**provider_id** | **String** | Data provider id. | [required] |
 
 ### Return type
 
@@ -39,7 +39,7 @@ No authorization required
 
 ## get_data_providers
 
-> crate::models::DataProviderPaginatedList get_data_providers(account_type, document_type, organization_category, page_no, page_size, country)
+> crate::models::DataProviderPaginatedList get_data_providers(account_type, document_type, organization_category, page_no, page_size, country_iso2_code)
 Discover all data providers in My Data My Consent by country and filters.
 
 ### Parameters
@@ -52,7 +52,7 @@ Name | Type | Description  | Required | Notes
 **organization_category** | Option<**String**> | Organization category. |  |
 **page_no** | Option<**i32**> | Page number. |  |[default to 1]
 **page_size** | Option<**i32**> | Number of items to return. |  |[default to 25]
-**country** | Option<**String**> | ISO2 Country code. |  |[default to IN]
+**country_iso2_code** | Option<**String**> | ISO2 Country code. |  |[default to IN]
 
 ### Return type
 
