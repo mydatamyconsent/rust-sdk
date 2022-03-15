@@ -27,7 +27,7 @@ Method | HTTP request | Description
 
 ## download_consented_document_analysis
 
-> download_consented_document_analysis(consent_id, document_id)
+> serde_json::Value download_consented_document_analysis(consent_id, document_id)
 Get analysis of a consented document.
 
 ### Parameters
@@ -40,7 +40,7 @@ Name | Type | Description  | Required | Notes
 
 ### Return type
 
- (empty response body)
+[**serde_json::Value**](serde_json::Value.md)
 
 ### Authorization
 
@@ -56,7 +56,7 @@ No authorization required
 
 ## download_individual_consented_document_by_id
 
-> download_individual_consented_document_by_id(consent_id, document_id)
+> serde_json::Value download_individual_consented_document_by_id(consent_id, document_id)
 Download individual consented document by document id.
 
 ### Parameters
@@ -69,7 +69,7 @@ Name | Type | Description  | Required | Notes
 
 ### Return type
 
- (empty response body)
+[**serde_json::Value**](serde_json::Value.md)
 
 ### Authorization
 
@@ -85,7 +85,7 @@ No authorization required
 
 ## download_organization_consented_document_by_id
 
-> download_organization_consented_document_by_id(consent_id, document_id)
+> serde_json::Value download_organization_consented_document_by_id(consent_id, document_id)
 Download organization consent document based on document id.
 
 ### Parameters
@@ -98,7 +98,7 @@ Name | Type | Description  | Required | Notes
 
 ### Return type
 
- (empty response body)
+[**serde_json::Value**](serde_json::Value.md)
 
 ### Authorization
 
@@ -199,7 +199,7 @@ No authorization required
 
 ## get_consented_document_by_id
 
-> crate::models::IndividualDataConsentDocument get_consented_document_by_id(consent_id, document_id)
+> serde_json::Value get_consented_document_by_id(consent_id, document_id)
 Get individual consented document by document id.
 
 ### Parameters
@@ -212,7 +212,7 @@ Name | Type | Description  | Required | Notes
 
 ### Return type
 
-[**crate::models::IndividualDataConsentDocument**](IndividualDataConsentDocument.md)
+[**serde_json::Value**](serde_json::Value.md)
 
 ### Authorization
 
@@ -320,7 +320,7 @@ No authorization required
 
 ## get_consents
 
-> crate::models::IndividualDataConsentDetailsPaginatedList get_consents(status, from_date_time, to_date_time, page_no, page_size)
+> serde_json::Value get_consents(status, from_date_time, to_date_time, page_no, page_size)
 Get the paginated list of individual data consents.
 
 GetIndividualDataConsents
@@ -338,7 +338,7 @@ Name | Type | Description  | Required | Notes
 
 ### Return type
 
-[**crate::models::IndividualDataConsentDetailsPaginatedList**](IndividualDataConsentDetailsPaginatedList.md)
+[**serde_json::Value**](serde_json::Value.md)
 
 ### Authorization
 
@@ -354,7 +354,7 @@ No authorization required
 
 ## get_individual_consented_documents
 
-> Vec<crate::models::IndividualDataConsentDocument> get_individual_consented_documents(consent_id)
+> serde_json::Value get_individual_consented_documents(consent_id)
 Get individual consented documents by consent id.
 
 ### Parameters
@@ -366,7 +366,7 @@ Name | Type | Description  | Required | Notes
 
 ### Return type
 
-[**Vec<crate::models::IndividualDataConsentDocument>**](IndividualDataConsentDocument.md)
+[**serde_json::Value**](serde_json::Value.md)
 
 ### Authorization
 
@@ -382,7 +382,7 @@ No authorization required
 
 ## get_individual_data_consent_by_id
 
-> crate::models::OneOfDataConsentIndividualDataConsentOrganizationDataConsent get_individual_data_consent_by_id(consent_id)
+> serde_json::Value get_individual_data_consent_by_id(consent_id)
 Get individuals data consent details by consent id.
 
 ### Parameters
@@ -394,7 +394,7 @@ Name | Type | Description  | Required | Notes
 
 ### Return type
 
-[**crate::models::OneOfDataConsentIndividualDataConsentOrganizationDataConsent**](oneOf<DataConsent,IndividualDataConsent,OrganizationDataConsent>.md)
+[**serde_json::Value**](serde_json::Value.md)
 
 ### Authorization
 
@@ -444,7 +444,7 @@ No authorization required
 
 ## get_organization_consented_document_by_id
 
-> crate::models::OrganizationDataConsentDocument get_organization_consented_document_by_id(consent_id, document_id)
+> serde_json::Value get_organization_consented_document_by_id(consent_id, document_id)
 Get organization consent document based on document id.
 
 ### Parameters
@@ -457,7 +457,7 @@ Name | Type | Description  | Required | Notes
 
 ### Return type
 
-[**crate::models::OrganizationDataConsentDocument**](OrganizationDataConsentDocument.md)
+[**serde_json::Value**](serde_json::Value.md)
 
 ### Authorization
 
@@ -473,7 +473,7 @@ No authorization required
 
 ## get_organization_consented_documents
 
-> Vec<crate::models::OrganizationDataConsentDocument> get_organization_consented_documents(consent_id)
+> serde_json::Value get_organization_consented_documents(consent_id)
 Get organization consented documents by consent id.
 
 ### Parameters
@@ -485,7 +485,7 @@ Name | Type | Description  | Required | Notes
 
 ### Return type
 
-[**Vec<crate::models::OrganizationDataConsentDocument>**](OrganizationDataConsentDocument.md)
+[**serde_json::Value**](serde_json::Value.md)
 
 ### Authorization
 
@@ -501,7 +501,7 @@ No authorization required
 
 ## get_organization_data_consent_by_id
 
-> crate::models::OneOfDataConsentIndividualDataConsentOrganizationDataConsent get_organization_data_consent_by_id(consent_id)
+> serde_json::Value get_organization_data_consent_by_id(consent_id)
 Get organizations data consent details by consent id.
 
 ### Parameters
@@ -513,7 +513,7 @@ Name | Type | Description  | Required | Notes
 
 ### Return type
 
-[**crate::models::OneOfDataConsentIndividualDataConsentOrganizationDataConsent**](oneOf<DataConsent,IndividualDataConsent,OrganizationDataConsent>.md)
+[**serde_json::Value**](serde_json::Value.md)
 
 ### Authorization
 
@@ -529,7 +529,7 @@ No authorization required
 
 ## get_organization_data_consents
 
-> crate::models::OrganizationDataConsentDetailsPaginatedList get_organization_data_consents(status, from_date_time, to_date_time, page_no, page_size)
+> serde_json::Value get_organization_data_consents(status, from_date_time, to_date_time, page_no, page_size)
 Get the paginated list of organization data consents.
 
 ### Parameters
@@ -545,7 +545,7 @@ Name | Type | Description  | Required | Notes
 
 ### Return type
 
-[**crate::models::OrganizationDataConsentDetailsPaginatedList**](OrganizationDataConsentDetailsPaginatedList.md)
+[**serde_json::Value**](serde_json::Value.md)
 
 ### Authorization
 

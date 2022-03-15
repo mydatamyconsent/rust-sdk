@@ -19,7 +19,9 @@ use super::{Error, configuration};
 #[derive(Debug, Clone, Serialize, Deserialize)]
 #[serde(untagged)]
 pub enum DownloadConsentedDocumentAnalysisError {
-    Status500(serde_json::Value),
+    Status400(serde_json::Value),
+    Status404(serde_json::Value),
+    Status500(),
     UnknownValue(serde_json::Value),
 }
 
@@ -27,7 +29,9 @@ pub enum DownloadConsentedDocumentAnalysisError {
 #[derive(Debug, Clone, Serialize, Deserialize)]
 #[serde(untagged)]
 pub enum DownloadIndividualConsentedDocumentByIdError {
-    Status500(serde_json::Value),
+    Status400(serde_json::Value),
+    Status404(serde_json::Value),
+    Status500(),
     UnknownValue(serde_json::Value),
 }
 
@@ -35,7 +39,9 @@ pub enum DownloadIndividualConsentedDocumentByIdError {
 #[derive(Debug, Clone, Serialize, Deserialize)]
 #[serde(untagged)]
 pub enum DownloadOrganizationConsentedDocumentByIdError {
-    Status500(serde_json::Value),
+    Status400(serde_json::Value),
+    Status404(serde_json::Value),
+    Status500(),
     UnknownValue(serde_json::Value),
 }
 
@@ -67,7 +73,9 @@ pub enum GetConsentedAccountByIdError {
 #[derive(Debug, Clone, Serialize, Deserialize)]
 #[serde(untagged)]
 pub enum GetConsentedDocumentByIdError {
-    Status500(serde_json::Value),
+    Status400(serde_json::Value),
+    Status404(serde_json::Value),
+    Status500(),
     UnknownValue(serde_json::Value),
 }
 
@@ -99,7 +107,8 @@ pub enum GetConsentedFinancialAccountTransactionsError {
 #[derive(Debug, Clone, Serialize, Deserialize)]
 #[serde(untagged)]
 pub enum GetConsentsError {
-    Status500(serde_json::Value),
+    Status400(serde_json::Value),
+    Status500(),
     UnknownValue(serde_json::Value),
 }
 
@@ -107,7 +116,9 @@ pub enum GetConsentsError {
 #[derive(Debug, Clone, Serialize, Deserialize)]
 #[serde(untagged)]
 pub enum GetIndividualConsentedDocumentsError {
-    Status500(serde_json::Value),
+    Status400(serde_json::Value),
+    Status404(serde_json::Value),
+    Status500(),
     UnknownValue(serde_json::Value),
 }
 
@@ -115,7 +126,9 @@ pub enum GetIndividualConsentedDocumentsError {
 #[derive(Debug, Clone, Serialize, Deserialize)]
 #[serde(untagged)]
 pub enum GetIndividualDataConsentByIdError {
-    Status500(serde_json::Value),
+    Status400(serde_json::Value),
+    Status404(serde_json::Value),
+    Status500(),
     UnknownValue(serde_json::Value),
 }
 
@@ -131,7 +144,9 @@ pub enum GetOrgConsentedAccountTransactionsError {
 #[derive(Debug, Clone, Serialize, Deserialize)]
 #[serde(untagged)]
 pub enum GetOrganizationConsentedDocumentByIdError {
-    Status500(serde_json::Value),
+    Status400(serde_json::Value),
+    Status404(serde_json::Value),
+    Status500(),
     UnknownValue(serde_json::Value),
 }
 
@@ -139,7 +154,9 @@ pub enum GetOrganizationConsentedDocumentByIdError {
 #[derive(Debug, Clone, Serialize, Deserialize)]
 #[serde(untagged)]
 pub enum GetOrganizationConsentedDocumentsError {
-    Status500(serde_json::Value),
+    Status400(serde_json::Value),
+    Status404(serde_json::Value),
+    Status500(),
     UnknownValue(serde_json::Value),
 }
 
@@ -147,8 +164,9 @@ pub enum GetOrganizationConsentedDocumentsError {
 #[derive(Debug, Clone, Serialize, Deserialize)]
 #[serde(untagged)]
 pub enum GetOrganizationDataConsentByIdError {
-    Status500(serde_json::Value),
     Status400(serde_json::Value),
+    Status404(serde_json::Value),
+    Status500(),
     UnknownValue(serde_json::Value),
 }
 
@@ -156,12 +174,13 @@ pub enum GetOrganizationDataConsentByIdError {
 #[derive(Debug, Clone, Serialize, Deserialize)]
 #[serde(untagged)]
 pub enum GetOrganizationDataConsentsError {
-    Status500(serde_json::Value),
+    Status400(serde_json::Value),
+    Status500(),
     UnknownValue(serde_json::Value),
 }
 
 
-pub async fn download_consented_document_analysis(configuration: &configuration::Configuration, consent_id: &str, document_id: &str) -> Result<(), Error<DownloadConsentedDocumentAnalysisError>> {
+pub async fn download_consented_document_analysis(configuration: &configuration::Configuration, consent_id: &str, document_id: &str) -> Result<serde_json::Value, Error<DownloadConsentedDocumentAnalysisError>> {
     let local_var_configuration = configuration;
 
     let local_var_client = &local_var_configuration.client;
@@ -180,7 +199,7 @@ pub async fn download_consented_document_analysis(configuration: &configuration:
     let local_var_content = local_var_resp.text().await?;
 
     if !local_var_status.is_client_error() && !local_var_status.is_server_error() {
-        Ok(())
+        serde_json::from_str(&local_var_content).map_err(Error::from)
     } else {
         let local_var_entity: Option<DownloadConsentedDocumentAnalysisError> = serde_json::from_str(&local_var_content).ok();
         let local_var_error = ResponseContent { status: local_var_status, content: local_var_content, entity: local_var_entity };
@@ -188,7 +207,7 @@ pub async fn download_consented_document_analysis(configuration: &configuration:
     }
 }
 
-pub async fn download_individual_consented_document_by_id(configuration: &configuration::Configuration, consent_id: &str, document_id: &str) -> Result<(), Error<DownloadIndividualConsentedDocumentByIdError>> {
+pub async fn download_individual_consented_document_by_id(configuration: &configuration::Configuration, consent_id: &str, document_id: &str) -> Result<serde_json::Value, Error<DownloadIndividualConsentedDocumentByIdError>> {
     let local_var_configuration = configuration;
 
     let local_var_client = &local_var_configuration.client;
@@ -207,7 +226,7 @@ pub async fn download_individual_consented_document_by_id(configuration: &config
     let local_var_content = local_var_resp.text().await?;
 
     if !local_var_status.is_client_error() && !local_var_status.is_server_error() {
-        Ok(())
+        serde_json::from_str(&local_var_content).map_err(Error::from)
     } else {
         let local_var_entity: Option<DownloadIndividualConsentedDocumentByIdError> = serde_json::from_str(&local_var_content).ok();
         let local_var_error = ResponseContent { status: local_var_status, content: local_var_content, entity: local_var_entity };
@@ -215,7 +234,7 @@ pub async fn download_individual_consented_document_by_id(configuration: &config
     }
 }
 
-pub async fn download_organization_consented_document_by_id(configuration: &configuration::Configuration, consent_id: &str, document_id: &str) -> Result<(), Error<DownloadOrganizationConsentedDocumentByIdError>> {
+pub async fn download_organization_consented_document_by_id(configuration: &configuration::Configuration, consent_id: &str, document_id: &str) -> Result<serde_json::Value, Error<DownloadOrganizationConsentedDocumentByIdError>> {
     let local_var_configuration = configuration;
 
     let local_var_client = &local_var_configuration.client;
@@ -234,7 +253,7 @@ pub async fn download_organization_consented_document_by_id(configuration: &conf
     let local_var_content = local_var_resp.text().await?;
 
     if !local_var_status.is_client_error() && !local_var_status.is_server_error() {
-        Ok(())
+        serde_json::from_str(&local_var_content).map_err(Error::from)
     } else {
         let local_var_entity: Option<DownloadOrganizationConsentedDocumentByIdError> = serde_json::from_str(&local_var_content).ok();
         let local_var_error = ResponseContent { status: local_var_status, content: local_var_content, entity: local_var_entity };
@@ -323,7 +342,7 @@ pub async fn get_consented_account_by_id(configuration: &configuration::Configur
     }
 }
 
-pub async fn get_consented_document_by_id(configuration: &configuration::Configuration, consent_id: &str, document_id: &str) -> Result<crate::models::IndividualDataConsentDocument, Error<GetConsentedDocumentByIdError>> {
+pub async fn get_consented_document_by_id(configuration: &configuration::Configuration, consent_id: &str, document_id: &str) -> Result<serde_json::Value, Error<GetConsentedDocumentByIdError>> {
     let local_var_configuration = configuration;
 
     let local_var_client = &local_var_configuration.client;
@@ -447,7 +466,7 @@ pub async fn get_consented_financial_account_transactions(configuration: &config
 }
 
 /// GetIndividualDataConsents
-pub async fn get_consents(configuration: &configuration::Configuration, status: Option<crate::models::DataConsentStatus>, from_date_time: Option<String>, to_date_time: Option<String>, page_no: Option<i32>, page_size: Option<i32>) -> Result<crate::models::IndividualDataConsentDetailsPaginatedList, Error<GetConsentsError>> {
+pub async fn get_consents(configuration: &configuration::Configuration, status: Option<crate::models::DataConsentStatus>, from_date_time: Option<String>, to_date_time: Option<String>, page_no: Option<i32>, page_size: Option<i32>) -> Result<serde_json::Value, Error<GetConsentsError>> {
     let local_var_configuration = configuration;
 
     let local_var_client = &local_var_configuration.client;
@@ -489,7 +508,7 @@ pub async fn get_consents(configuration: &configuration::Configuration, status: 
     }
 }
 
-pub async fn get_individual_consented_documents(configuration: &configuration::Configuration, consent_id: &str) -> Result<Vec<crate::models::IndividualDataConsentDocument>, Error<GetIndividualConsentedDocumentsError>> {
+pub async fn get_individual_consented_documents(configuration: &configuration::Configuration, consent_id: &str) -> Result<serde_json::Value, Error<GetIndividualConsentedDocumentsError>> {
     let local_var_configuration = configuration;
 
     let local_var_client = &local_var_configuration.client;
@@ -516,7 +535,7 @@ pub async fn get_individual_consented_documents(configuration: &configuration::C
     }
 }
 
-pub async fn get_individual_data_consent_by_id(configuration: &configuration::Configuration, consent_id: &str) -> Result<crate::models::OneOfDataConsentIndividualDataConsentOrganizationDataConsent, Error<GetIndividualDataConsentByIdError>> {
+pub async fn get_individual_data_consent_by_id(configuration: &configuration::Configuration, consent_id: &str) -> Result<serde_json::Value, Error<GetIndividualDataConsentByIdError>> {
     let local_var_configuration = configuration;
 
     let local_var_client = &local_var_configuration.client;
@@ -585,7 +604,7 @@ pub async fn get_org_consented_account_transactions(configuration: &configuratio
     }
 }
 
-pub async fn get_organization_consented_document_by_id(configuration: &configuration::Configuration, consent_id: &str, document_id: &str) -> Result<crate::models::OrganizationDataConsentDocument, Error<GetOrganizationConsentedDocumentByIdError>> {
+pub async fn get_organization_consented_document_by_id(configuration: &configuration::Configuration, consent_id: &str, document_id: &str) -> Result<serde_json::Value, Error<GetOrganizationConsentedDocumentByIdError>> {
     let local_var_configuration = configuration;
 
     let local_var_client = &local_var_configuration.client;
@@ -612,7 +631,7 @@ pub async fn get_organization_consented_document_by_id(configuration: &configura
     }
 }
 
-pub async fn get_organization_consented_documents(configuration: &configuration::Configuration, consent_id: &str) -> Result<Vec<crate::models::OrganizationDataConsentDocument>, Error<GetOrganizationConsentedDocumentsError>> {
+pub async fn get_organization_consented_documents(configuration: &configuration::Configuration, consent_id: &str) -> Result<serde_json::Value, Error<GetOrganizationConsentedDocumentsError>> {
     let local_var_configuration = configuration;
 
     let local_var_client = &local_var_configuration.client;
@@ -639,7 +658,7 @@ pub async fn get_organization_consented_documents(configuration: &configuration:
     }
 }
 
-pub async fn get_organization_data_consent_by_id(configuration: &configuration::Configuration, consent_id: &str) -> Result<crate::models::OneOfDataConsentIndividualDataConsentOrganizationDataConsent, Error<GetOrganizationDataConsentByIdError>> {
+pub async fn get_organization_data_consent_by_id(configuration: &configuration::Configuration, consent_id: &str) -> Result<serde_json::Value, Error<GetOrganizationDataConsentByIdError>> {
     let local_var_configuration = configuration;
 
     let local_var_client = &local_var_configuration.client;
@@ -666,7 +685,7 @@ pub async fn get_organization_data_consent_by_id(configuration: &configuration::
     }
 }
 
-pub async fn get_organization_data_consents(configuration: &configuration::Configuration, status: Option<crate::models::DataConsentStatus>, from_date_time: Option<String>, to_date_time: Option<String>, page_no: Option<i32>, page_size: Option<i32>) -> Result<crate::models::OrganizationDataConsentDetailsPaginatedList, Error<GetOrganizationDataConsentsError>> {
+pub async fn get_organization_data_consents(configuration: &configuration::Configuration, status: Option<crate::models::DataConsentStatus>, from_date_time: Option<String>, to_date_time: Option<String>, page_no: Option<i32>, page_size: Option<i32>) -> Result<serde_json::Value, Error<GetOrganizationDataConsentsError>> {
     let local_var_configuration = configuration;
 
     let local_var_client = &local_var_configuration.client;
