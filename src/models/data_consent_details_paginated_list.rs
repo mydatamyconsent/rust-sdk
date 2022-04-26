@@ -12,7 +12,7 @@
 
 
 #[derive(Clone, Debug, PartialEq, Default, Serialize, Deserialize)]
-pub struct IssuedDocumentPaginatedList {
+pub struct DataConsentDetailsPaginatedList {
     #[serde(rename = "pageIndex", skip_serializing_if = "Option::is_none")]
     pub page_index: Option<i32>,
     #[serde(rename = "pageSize", skip_serializing_if = "Option::is_none")]
@@ -22,12 +22,12 @@ pub struct IssuedDocumentPaginatedList {
     #[serde(rename = "totalItems", skip_serializing_if = "Option::is_none")]
     pub total_items: Option<i64>,
     #[serde(rename = "items", skip_serializing_if = "Option::is_none")]
-    pub items: Option<Vec<crate::models::OneOfIssuedDocumentIssuedDocumentDetails>>,
+    pub items: Option<Vec<crate::models::DataConsentDetails>>,
 }
 
-impl IssuedDocumentPaginatedList {
-    pub fn new() -> IssuedDocumentPaginatedList {
-        IssuedDocumentPaginatedList {
+impl DataConsentDetailsPaginatedList {
+    pub fn new() -> DataConsentDetailsPaginatedList {
+        DataConsentDetailsPaginatedList {
             page_index: None,
             page_size: None,
             total_pages: None,

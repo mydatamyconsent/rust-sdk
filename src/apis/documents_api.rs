@@ -86,7 +86,7 @@ pub enum UploadDocumentForOrganizationError {
 }
 
 
-pub async fn get_issued_document_by_id(configuration: &configuration::Configuration, document_id: &str) -> Result<crate::models::IssuedDocument, Error<GetIssuedDocumentByIdError>> {
+pub async fn get_issued_document_by_id(configuration: &configuration::Configuration, document_id: &str) -> Result<crate::models::OneOfIssuedDocumentIssuedDocumentDetails, Error<GetIssuedDocumentByIdError>> {
     let local_var_configuration = configuration;
 
     let local_var_client = &local_var_configuration.client;

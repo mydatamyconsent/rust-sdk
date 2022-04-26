@@ -1,9 +1,12 @@
-# IssuedDocument
+# IssuedDocumentDetails
 
 ## Properties
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
+**receiver** | [**crate::models::DocumentReceiver**](DocumentReceiver.md) |  | 
+**metadata** | Option<**::std::collections::HashMap<String, String>**> | Metadata. | [optional]
+**digital_signatures** | [**Vec<crate::models::DocumentDigitalSignature>**](DocumentDigitalSignature.md) | Digital signatures. | 
 **id** | **String** | Document Id. | 
 **identifier** | **String** | Document Identifier. | 
 **document_type** | **String** | Document type name. | 

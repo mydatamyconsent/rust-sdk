@@ -54,14 +54,11 @@ pub struct DocumentType {
     /// DateTime of approval in UTC timezone.
     #[serde(rename = "approvedAtUtc", skip_serializing_if = "Option::is_none")]
     pub approved_at_utc: Option<String>,
-    /// Document type approval status.
-    #[serde(rename = "approved")]
-    pub approved: bool,
 }
 
 impl DocumentType {
     /// Issuable Document Type details.
-    pub fn new(id: String, category_type: crate::models::DocumentCategoryType, sub_category_type: crate::models::DocumentSubCategoryType, name: String, slug: String, logo_url: String, supported_entity_types: Vec<crate::models::SupportedEntityType>, added_by: String, approved: bool) -> DocumentType {
+    pub fn new(id: String, category_type: crate::models::DocumentCategoryType, sub_category_type: crate::models::DocumentSubCategoryType, name: String, slug: String, logo_url: String, supported_entity_types: Vec<crate::models::SupportedEntityType>, added_by: String) -> DocumentType {
         DocumentType {
             id,
             category_type,
@@ -77,7 +74,6 @@ impl DocumentType {
             payable_amount: None,
             payable_amount_currency: None,
             approved_at_utc: None,
-            approved,
         }
     }
 }

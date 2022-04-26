@@ -20,6 +20,9 @@ pub struct DataConsentRequestDetails {
     /// Consent request template id
     #[serde(rename = "templateId", skip_serializing_if = "Option::is_none")]
     pub template_id: Option<String>,
+    /// Data Consent id
+    #[serde(rename = "consentId", skip_serializing_if = "Option::is_none")]
+    pub consent_id: Option<String>,
     /// Consent request title.
     #[serde(rename = "title")]
     pub title: String,
@@ -37,20 +40,25 @@ pub struct DataConsentRequestDetails {
     /// Request creation datetime in UTC timezone
     #[serde(rename = "createdAtUtc")]
     pub created_at_utc: String,
+    /// Request expiration datetime in UTC timezone
+    #[serde(rename = "expiresAtUtc")]
+    pub expires_at_utc: String,
 }
 
 impl DataConsentRequestDetails {
     /// DataConsentRequestResponse
-    pub fn new(id: String, title: String, description: String, status: crate::models::DataConsentStatus, created_at_utc: String) -> DataConsentRequestDetails {
+    pub fn new(id: String, title: String, description: String, status: crate::models::DataConsentStatus, created_at_utc: String, expires_at_utc: String) -> DataConsentRequestDetails {
         DataConsentRequestDetails {
             id,
             template_id: None,
+            consent_id: None,
             title,
             description,
             purpose: None,
             status,
             transaction_id: None,
             created_at_utc,
+            expires_at_utc,
         }
     }
 }

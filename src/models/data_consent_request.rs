@@ -20,6 +20,9 @@ pub struct DataConsentRequest {
     /// Data consent template id.
     #[serde(rename = "templateId", skip_serializing_if = "Option::is_none")]
     pub template_id: Option<String>,
+    /// Data consent id.
+    #[serde(rename = "consentId", skip_serializing_if = "Option::is_none")]
+    pub consent_id: Option<String>,
     /// Data consent title.
     #[serde(rename = "title")]
     pub title: String,
@@ -34,6 +37,8 @@ pub struct DataConsentRequest {
     /// List of supported collectables.
     #[serde(rename = "collectables")]
     pub collectables: Vec<crate::models::CollectibleTypes>,
+    #[serde(rename = "receiver")]
+    pub receiver: Box<crate::models::ConsentRequestReceiver>,
     #[serde(rename = "status")]
     pub status: crate::models::DataConsentStatus,
     /// Request creation datetime in UTC timezone.
@@ -58,15 +63,17 @@ pub struct DataConsentRequest {
 
 impl DataConsentRequest {
     /// Data consent request details.
-    pub fn new(id: String, title: String, description: String, collectables: Vec<crate::models::CollectibleTypes>, status: crate::models::DataConsentStatus, created_at_utc: String, expires_at_utc: String) -> DataConsentRequest {
+    pub fn new(id: String, title: String, description: String, collectables: Vec<crate::models::CollectibleTypes>, receiver: crate::models::ConsentRequestReceiver, status: crate::models::DataConsentStatus, created_at_utc: String, expires_at_utc: String) -> DataConsentRequest {
         DataConsentRequest {
             id,
             template_id: None,
+            consent_id: None,
             title,
             description,
             purpose: None,
             data_life: None,
             collectables,
+            receiver: Box::new(receiver),
             status,
             created_at_utc,
             expires_at_utc,

@@ -8,6 +8,11 @@ docs/CollectibleTypes.md
 docs/ConsentRequestReceiver.md
 docs/CreateDataConsentRequest.md
 docs/CreateDataProcessingAgreement.md
+docs/DataConsent.md
+docs/DataConsentDetails.md
+docs/DataConsentDetailsPaginatedList.md
+docs/DataConsentDocument.md
+docs/DataConsentDocumentIssuer.md
 docs/DataConsentFinancialsDto.md
 docs/DataConsentRequest.md
 docs/DataConsentRequestDetails.md
@@ -25,6 +30,7 @@ docs/DataProviderDiscoveryApi.md
 docs/DataProviderPaginatedList.md
 docs/DigiLockerCompatIssuerApi.md
 docs/DocumentCategoryType.md
+docs/DocumentDigitalSignature.md
 docs/DocumentIssueRequest.md
 docs/DocumentIssueRequestDetails.md
 docs/DocumentIssueRequestStatus.md
@@ -44,6 +50,7 @@ docs/Identifier.md
 docs/IndividualDataConsentRequestDetails.md
 docs/IndividualDataConsentRequestDetailsPaginatedList.md
 docs/IssuedDocument.md
+docs/IssuedDocumentDetails.md
 docs/IssuedDocumentPaginatedList.md
 docs/Life.md
 docs/OrganizationDataConsentRequestDetails.md
@@ -80,6 +87,11 @@ src/models/collectible_types.rs
 src/models/consent_request_receiver.rs
 src/models/create_data_consent_request.rs
 src/models/create_data_processing_agreement.rs
+src/models/data_consent.rs
+src/models/data_consent_details.rs
+src/models/data_consent_details_paginated_list.rs
+src/models/data_consent_document.rs
+src/models/data_consent_document_issuer.rs
 src/models/data_consent_financials_dto.rs
 src/models/data_consent_request.rs
 src/models/data_consent_request_details.rs
@@ -92,6 +104,7 @@ src/models/data_protection_officer.rs
 src/models/data_provider.rs
 src/models/data_provider_paginated_list.rs
 src/models/document_category_type.rs
+src/models/document_digital_signature.rs
 src/models/document_issue_request.rs
 src/models/document_issue_request_details.rs
 src/models/document_issue_request_status.rs
@@ -110,6 +123,7 @@ src/models/identifier.rs
 src/models/individual_data_consent_request_details.rs
 src/models/individual_data_consent_request_details_paginated_list.rs
 src/models/issued_document.rs
+src/models/issued_document_details.rs
 src/models/issued_document_paginated_list.rs
 src/models/life.rs
 src/models/mod.rs

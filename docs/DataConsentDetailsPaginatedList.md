@@ -1,4 +1,4 @@
-# IssuedDocumentPaginatedList
+# DataConsentDetailsPaginatedList
 
 ## Properties
 
@@ -8,7 +8,7 @@ Name | Type | Description | Notes
 **page_size** | Option<**i32**> |  | [optional]
 **total_pages** | Option<**i32**> |  | [optional][readonly]
 **total_items** | Option<**i64**> |  | [optional]
-**items** | Option<[**Vec<crate::models::OneOfIssuedDocumentIssuedDocumentDetails>**](oneOf<IssuedDocument,IssuedDocumentDetails>.md)> |  | [optional]
+**items** | Option<[**Vec<crate::models::DataConsentDetails>**](DataConsentDetails.md)> |  | [optional]
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

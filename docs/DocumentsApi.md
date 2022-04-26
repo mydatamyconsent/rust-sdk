@@ -16,7 +16,7 @@ Method | HTTP request | Description
 
 ## get_issued_document_by_id
 
-> crate::models::IssuedDocument get_issued_document_by_id(document_id)
+> crate::models::OneOfIssuedDocumentIssuedDocumentDetails get_issued_document_by_id(document_id)
 Get issued document.
 
 ### Parameters
@@ -28,7 +28,7 @@ Name | Type | Description  | Required | Notes
 
 ### Return type
 
-[**crate::models::IssuedDocument**](IssuedDocument.md)
+[**crate::models::OneOfIssuedDocumentIssuedDocumentDetails**](oneOf<IssuedDocument,IssuedDocumentDetails>.md)
 
 ### Authorization
 
