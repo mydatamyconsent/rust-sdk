@@ -86,7 +86,7 @@ pub enum UploadDocumentForOrganizationError {
 }
 
 
-pub async fn get_issued_document_by_id(configuration: &configuration::Configuration, document_id: &str) -> Result<crate::models::OneOfIssuedDocumentIssuedDocumentDetails, Error<GetIssuedDocumentByIdError>> {
+pub async fn get_issued_document_by_id(configuration: &configuration::Configuration, document_id: &str) -> Result<crate::models::IssuedDocumentDetails, Error<GetIssuedDocumentByIdError>> {
     let local_var_configuration = configuration;
 
     let local_var_client = &local_var_configuration.client;
@@ -113,14 +113,17 @@ pub async fn get_issued_document_by_id(configuration: &configuration::Configurat
     }
 }
 
-pub async fn get_issued_documents(configuration: &configuration::Configuration, document_type_id: &str, from_date_time: Option<String>, to_date_time: Option<String>, page_no: Option<i32>, page_size: Option<i32>) -> Result<crate::models::IssuedDocumentPaginatedList, Error<GetIssuedDocumentsError>> {
+pub async fn get_issued_documents(configuration: &configuration::Configuration, document_type_id: Option<&str>, from_date_time: Option<String>, to_date_time: Option<String>, page_no: Option<i32>, page_size: Option<i32>) -> Result<crate::models::IssuedDocumentPaginatedList, Error<GetIssuedDocumentsError>> {
     let local_var_configuration = configuration;
 
     let local_var_client = &local_var_configuration.client;
 
-    let local_var_uri_str = format!("{}/v1/documents/issued/{documentTypeId}", local_var_configuration.base_path, documentTypeId=crate::apis::urlencode(document_type_id));
+    let local_var_uri_str = format!("{}/v1/documents/issued", local_var_configuration.base_path);
     let mut local_var_req_builder = local_var_client.request(reqwest::Method::GET, local_var_uri_str.as_str());
 
+    if let Some(ref local_var_str) = document_type_id {
+        local_var_req_builder = local_var_req_builder.query(&[("documentTypeId", &local_var_str.to_string())]);
+    }
     if let Some(ref local_var_str) = from_date_time {
         local_var_req_builder = local_var_req_builder.query(&[("fromDateTime", &local_var_str.to_string())]);
     }
@@ -152,7 +155,7 @@ pub async fn get_issued_documents(configuration: &configuration::Configuration, 
     }
 }
 
-pub async fn get_registered_document_types(configuration: &configuration::Configuration, page_no: Option<i32>, page_size: Option<i32>) -> Result<crate::models::DocumentTypePaginatedList, Error<GetRegisteredDocumentTypesError>> {
+pub async fn get_registered_document_types(configuration: &configuration::Configuration, supported_entity_type: Option<crate::models::SupportedEntityType>, page_no: Option<i32>, page_size: Option<i32>) -> Result<crate::models::DocumentTypePaginatedList, Error<GetRegisteredDocumentTypesError>> {
     let local_var_configuration = configuration;
 
     let local_var_client = &local_var_configuration.client;
@@ -160,6 +163,9 @@ pub async fn get_registered_document_types(configuration: &configuration::Config
     let local_var_uri_str = format!("{}/v1/documents/types", local_var_configuration.base_path);
     let mut local_var_req_builder = local_var_client.request(reqwest::Method::GET, local_var_uri_str.as_str());
 
+    if let Some(ref local_var_str) = supported_entity_type {
+        local_var_req_builder = local_var_req_builder.query(&[("supportedEntityType", &local_var_str.to_string())]);
+    }
     if let Some(ref local_var_str) = page_no {
         local_var_req_builder = local_var_req_builder.query(&[("pageNo", &local_var_str.to_string())]);
     }

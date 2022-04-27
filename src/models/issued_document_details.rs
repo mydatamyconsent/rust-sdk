@@ -13,14 +13,6 @@
 
 #[derive(Clone, Debug, PartialEq, Default, Serialize, Deserialize)]
 pub struct IssuedDocumentDetails {
-    #[serde(rename = "receiver")]
-    pub receiver: Box<crate::models::DocumentReceiver>,
-    /// Metadata.
-    #[serde(rename = "metadata", skip_serializing_if = "Option::is_none")]
-    pub metadata: Option<::std::collections::HashMap<String, String>>,
-    /// Digital signatures.
-    #[serde(rename = "digitalSignatures")]
-    pub digital_signatures: Vec<crate::models::DocumentDigitalSignature>,
     /// Document Id.
     #[serde(rename = "id")]
     pub id: String,
@@ -42,14 +34,19 @@ pub struct IssuedDocumentDetails {
     /// Accepted datetime in UTC timezone.
     #[serde(rename = "acceptedAtUtc", skip_serializing_if = "Option::is_none")]
     pub accepted_at_utc: Option<String>,
+    #[serde(rename = "receiver")]
+    pub receiver: Box<crate::models::DocumentReceiver>,
+    /// Metadata.
+    #[serde(rename = "metadata", skip_serializing_if = "Option::is_none")]
+    pub metadata: Option<::std::collections::HashMap<String, String>>,
+    /// Digital signatures.
+    #[serde(rename = "digitalSignatures")]
+    pub digital_signatures: Vec<crate::models::DocumentDigitalSignature>,
 }
 
 impl IssuedDocumentDetails {
-    pub fn new(receiver: crate::models::DocumentReceiver, digital_signatures: Vec<crate::models::DocumentDigitalSignature>, id: String, identifier: String, document_type: String, issued_to: String, issued_at_utc: String) -> IssuedDocumentDetails {
+    pub fn new(id: String, identifier: String, document_type: String, issued_to: String, issued_at_utc: String, receiver: crate::models::DocumentReceiver, digital_signatures: Vec<crate::models::DocumentDigitalSignature>) -> IssuedDocumentDetails {
         IssuedDocumentDetails {
-            receiver: Box::new(receiver),
-            metadata: None,
-            digital_signatures,
             id,
             identifier,
             document_type,
@@ -57,6 +54,9 @@ impl IssuedDocumentDetails {
             issued_at_utc,
             expires_at_utc: None,
             accepted_at_utc: None,
+            receiver: Box::new(receiver),
+            metadata: None,
+            digital_signatures,
         }
     }
 }

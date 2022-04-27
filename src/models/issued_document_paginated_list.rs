@@ -22,7 +22,7 @@ pub struct IssuedDocumentPaginatedList {
     #[serde(rename = "totalItems", skip_serializing_if = "Option::is_none")]
     pub total_items: Option<i64>,
     #[serde(rename = "items", skip_serializing_if = "Option::is_none")]
-    pub items: Option<Vec<crate::models::OneOfIssuedDocumentIssuedDocumentDetails>>,
+    pub items: Option<Vec<crate::models::IssuedDocument>>,
 }
 
 impl IssuedDocumentPaginatedList {
