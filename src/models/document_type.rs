@@ -46,8 +46,8 @@ pub struct DocumentType {
     #[serde(rename = "addedBy")]
     pub added_by: String,
     /// Payable amount if document is chargeable. eg: 10.25.
-    #[serde(rename = "payableAmount", skip_serializing_if = "Option::is_none")]
-    pub payable_amount: Option<f64>,
+    #[serde(rename = "payableAmount")]
+    pub payable_amount: f64,
     /// Payable amount currency. eg: INR, USD etc.,.
     #[serde(rename = "payableAmountCurrency", skip_serializing_if = "Option::is_none")]
     pub payable_amount_currency: Option<String>,
@@ -58,7 +58,7 @@ pub struct DocumentType {
 
 impl DocumentType {
     /// Issuable Document Type details.
-    pub fn new(id: String, category_type: crate::models::DocumentCategoryType, sub_category_type: crate::models::DocumentSubCategoryType, name: String, slug: String, logo_url: String, supported_entity_types: Vec<crate::models::SupportedEntityType>, added_by: String) -> DocumentType {
+    pub fn new(id: String, category_type: crate::models::DocumentCategoryType, sub_category_type: crate::models::DocumentSubCategoryType, name: String, slug: String, logo_url: String, supported_entity_types: Vec<crate::models::SupportedEntityType>, added_by: String, payable_amount: f64) -> DocumentType {
         DocumentType {
             id,
             category_type,
@@ -71,7 +71,7 @@ impl DocumentType {
             repository_service_name: None,
             supported_entity_types,
             added_by,
-            payable_amount: None,
+            payable_amount,
             payable_amount_currency: None,
             approved_at_utc: None,
         }

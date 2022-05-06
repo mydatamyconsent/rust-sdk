@@ -100,6 +100,8 @@ pub mod organization_financial_transactions_dto;
 pub use self::organization_financial_transactions_dto::OrganizationFinancialTransactionsDto;
 pub mod organization_financial_transactions_dto_paginated_list;
 pub use self::organization_financial_transactions_dto_paginated_list::OrganizationFinancialTransactionsDtoPaginatedList;
+pub mod payment_request;
+pub use self::payment_request::PaymentRequest;
 pub mod problem_details;
 pub use self::problem_details::ProblemDetails;
 pub mod push_uri_request;

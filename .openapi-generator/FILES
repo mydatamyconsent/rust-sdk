@@ -58,6 +58,7 @@ docs/OrganizationDataConsentRequestDetailsPaginatedList.md
 docs/OrganizationFinancialAccountDto.md
 docs/OrganizationFinancialTransactionsDto.md
 docs/OrganizationFinancialTransactionsDtoPaginatedList.md
+docs/PaymentRequest.md
 docs/ProblemDetails.md
 docs/PushUriRequest.md
 docs/PushUriResponse.md
@@ -132,6 +133,7 @@ src/models/organization_data_consent_request_details_paginated_list.rs
 src/models/organization_financial_account_dto.rs
 src/models/organization_financial_transactions_dto.rs
 src/models/organization_financial_transactions_dto_paginated_list.rs
+src/models/payment_request.rs
 src/models/problem_details.rs
 src/models/push_uri_request.rs
 src/models/push_uri_response.rs

@@ -34,6 +34,8 @@ pub struct DocumentIssueRequest {
     /// Datetime of expiry in UTC timezone.
     #[serde(rename = "expiresAtUtc", skip_serializing_if = "Option::is_none")]
     pub expires_at_utc: Option<String>,
+    #[serde(rename = "paymentRequest", skip_serializing_if = "Option::is_none")]
+    pub payment_request: Option<Box<crate::models::PaymentRequest>>,
     /// Metadata.
     #[serde(rename = "metadata", skip_serializing_if = "Option::is_none")]
     pub metadata: Option<::std::collections::HashMap<String, String>>,
@@ -50,6 +52,7 @@ impl DocumentIssueRequest {
             issued_at_utc,
             valid_from_utc,
             expires_at_utc: None,
+            payment_request: None,
             metadata: None,
         }
     }

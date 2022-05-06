@@ -15,7 +15,7 @@ Name | Type | Description | Notes
 **repository_service_name** | Option<**String**> | Document repository service name. | [optional]
 **supported_entity_types** | [**Vec<crate::models::SupportedEntityType>**](SupportedEntityType.md) | Supported entity types. eg: Individual, Organization. | 
 **added_by** | **String** | Name of the document type creator. | 
-**payable_amount** | Option<**f64**> | Payable amount if document is chargeable. eg: 10.25. | [optional]
+**payable_amount** | **f64** | Payable amount if document is chargeable. eg: 10.25. | 
 **payable_amount_currency** | Option<**String**> | Payable amount currency. eg: INR, USD etc.,. | [optional]
 **approved_at_utc** | Option<**String**> | DateTime of approval in UTC timezone. | [optional]
 
