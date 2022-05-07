@@ -4,6 +4,7 @@ README.md
 docs/Activity.md
 docs/ApprovedConsentRequest.md
 docs/BankAccountType.md
+docs/BillPaymentOrderItem.md
 docs/CollectibleTypes.md
 docs/ConsentRequestReceiver.md
 docs/CreateDataConsentRequest.md
@@ -84,6 +85,7 @@ src/lib.rs
 src/models/activity.rs
 src/models/approved_consent_request.rs
 src/models/bank_account_type.rs
+src/models/bill_payment_order_item.rs
 src/models/collectible_types.rs
 src/models/consent_request_receiver.rs
 src/models/create_data_consent_request.rs

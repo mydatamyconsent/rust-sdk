@@ -15,8 +15,8 @@
 pub struct PaymentRequest {
     #[serde(rename = "identifier", skip_serializing_if = "Option::is_none")]
     pub identifier: Option<String>,
-    #[serde(rename = "amount", skip_serializing_if = "Option::is_none")]
-    pub amount: Option<String>,
+    #[serde(rename = "items", skip_serializing_if = "Option::is_none")]
+    pub items: Option<Vec<crate::models::BillPaymentOrderItem>>,
     #[serde(rename = "currencyCode", skip_serializing_if = "Option::is_none")]
     pub currency_code: Option<String>,
     #[serde(rename = "paymentUrl", skip_serializing_if = "Option::is_none")]
@@ -31,7 +31,7 @@ impl PaymentRequest {
     pub fn new() -> PaymentRequest {
         PaymentRequest {
             identifier: None,
-            amount: None,
+            items: None,
             currency_code: None,
             payment_url: None,
             description: None,

@@ -5,7 +5,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **identifier** | Option<**String**> |  | [optional]
-**amount** | Option<**String**> |  | [optional]
+**items** | Option<[**Vec<crate::models::BillPaymentOrderItem>**](BillPaymentOrderItem.md)> |  | [optional]
 **currency_code** | Option<**String**> |  | [optional]
 **payment_url** | Option<**String**> |  | [optional]
 **description** | Option<**String**> |  | [optional]

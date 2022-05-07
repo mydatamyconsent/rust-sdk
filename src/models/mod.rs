@@ -4,6 +4,8 @@ pub mod approved_consent_request;
 pub use self::approved_consent_request::ApprovedConsentRequest;
 pub mod bank_account_type;
 pub use self::bank_account_type::BankAccountType;
+pub mod bill_payment_order_item;
+pub use self::bill_payment_order_item::BillPaymentOrderItem;
 pub mod collectible_types;
 pub use self::collectible_types::CollectibleTypes;
 pub mod consent_request_receiver;
