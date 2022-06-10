@@ -330,7 +330,7 @@ GetIndividualDataConsents
 
 Name | Type | Description  | Required | Notes
 ------------- | ------------- | ------------- | ------------- | -------------
-**status** | Option<[**crate::models::DataConsentStatus**](.md)> | Data consent status. |  |
+**status** | Option<[**DataConsentStatus**](.md)> | Data consent status. |  |
 **from_date_time** | Option<**String**> | From datetime in UTC timezone. |  |
 **to_date_time** | Option<**String**> | To datetime in UTC timezone. |  |
 **page_no** | Option<**i32**> | Page number. |  |[default to 1]
@@ -537,7 +537,7 @@ Get the paginated list of organization data consents.
 
 Name | Type | Description  | Required | Notes
 ------------- | ------------- | ------------- | ------------- | -------------
-**status** | Option<[**crate::models::DataConsentStatus**](.md)> | Data consent status. |  |
+**status** | Option<[**DataConsentStatus**](.md)> | Data consent status. |  |
 **from_date_time** | Option<**String**> | From datetime in UTC timezone. |  |
 **to_date_time** | Option<**String**> | To datetime in UTC timezone. |  |
 **page_no** | Option<**i32**> | Page number. |  |[default to 1]

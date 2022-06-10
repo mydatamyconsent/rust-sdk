@@ -155,7 +155,7 @@ pub async fn get_issued_documents(configuration: &configuration::Configuration, 
     }
 }
 
-pub async fn get_registered_document_types(configuration: &configuration::Configuration, supported_entity_type: Option<crate::models::SupportedEntityType>, page_no: Option<i32>, page_size: Option<i32>) -> Result<crate::models::DocumentTypePaginatedList, Error<GetRegisteredDocumentTypesError>> {
+pub async fn get_registered_document_types(configuration: &configuration::Configuration, supported_entity_type: Option<SupportedEntityType>, page_no: Option<i32>, page_size: Option<i32>) -> Result<crate::models::DocumentTypePaginatedList, Error<GetRegisteredDocumentTypesError>> {
     let local_var_configuration = configuration;
 
     let local_var_client = &local_var_configuration.client;

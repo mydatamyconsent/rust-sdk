@@ -212,7 +212,7 @@ pub async fn create_organization_data_consent_request(configuration: &configurat
     }
 }
 
-pub async fn get_all_consent_requests_to_individuals(configuration: &configuration::Configuration, status: Option<crate::models::DataConsentStatus>, start_date_time: Option<String>, end_date_time: Option<String>, page_no: Option<i32>, page_size: Option<i32>) -> Result<crate::models::IndividualDataConsentRequestDetailsPaginatedList, Error<GetAllConsentRequestsToIndividualsError>> {
+pub async fn get_all_consent_requests_to_individuals(configuration: &configuration::Configuration, status: Option<DataConsentStatus>, start_date_time: Option<String>, end_date_time: Option<String>, page_no: Option<i32>, page_size: Option<i32>) -> Result<crate::models::IndividualDataConsentRequestDetailsPaginatedList, Error<GetAllConsentRequestsToIndividualsError>> {
     let local_var_configuration = configuration;
 
     let local_var_client = &local_var_configuration.client;
@@ -254,7 +254,7 @@ pub async fn get_all_consent_requests_to_individuals(configuration: &configurati
     }
 }
 
-pub async fn get_all_consent_requests_to_organizations(configuration: &configuration::Configuration, status: Option<crate::models::DataConsentStatus>, start_date_time: Option<String>, end_date_time: Option<String>, page_no: Option<i32>, page_size: Option<i32>) -> Result<crate::models::OrganizationDataConsentRequestDetailsPaginatedList, Error<GetAllConsentRequestsToOrganizationsError>> {
+pub async fn get_all_consent_requests_to_organizations(configuration: &configuration::Configuration, status: Option<DataConsentStatus>, start_date_time: Option<String>, end_date_time: Option<String>, page_no: Option<i32>, page_size: Option<i32>) -> Result<crate::models::OrganizationDataConsentRequestDetailsPaginatedList, Error<GetAllConsentRequestsToOrganizationsError>> {
     let local_var_configuration = configuration;
 
     let local_var_client = &local_var_configuration.client;

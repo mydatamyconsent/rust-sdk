@@ -466,7 +466,7 @@ pub async fn get_consented_financial_account_transactions(configuration: &config
 }
 
 /// GetIndividualDataConsents
-pub async fn get_consents(configuration: &configuration::Configuration, status: Option<crate::models::DataConsentStatus>, from_date_time: Option<String>, to_date_time: Option<String>, page_no: Option<i32>, page_size: Option<i32>) -> Result<crate::models::DataConsentDetailsPaginatedList, Error<GetConsentsError>> {
+pub async fn get_consents(configuration: &configuration::Configuration, status: Option<DataConsentStatus>, from_date_time: Option<String>, to_date_time: Option<String>, page_no: Option<i32>, page_size: Option<i32>) -> Result<crate::models::DataConsentDetailsPaginatedList, Error<GetConsentsError>> {
     let local_var_configuration = configuration;
 
     let local_var_client = &local_var_configuration.client;
@@ -685,7 +685,7 @@ pub async fn get_organization_data_consent_by_id(configuration: &configuration::
     }
 }
 
-pub async fn get_organization_data_consents(configuration: &configuration::Configuration, status: Option<crate::models::DataConsentStatus>, from_date_time: Option<String>, to_date_time: Option<String>, page_no: Option<i32>, page_size: Option<i32>) -> Result<crate::models::DataConsentDetailsPaginatedList, Error<GetOrganizationDataConsentsError>> {
+pub async fn get_organization_data_consents(configuration: &configuration::Configuration, status: Option<DataConsentStatus>, from_date_time: Option<String>, to_date_time: Option<String>, page_no: Option<i32>, page_size: Option<i32>) -> Result<crate::models::DataConsentDetailsPaginatedList, Error<GetOrganizationDataConsentsError>> {
     let local_var_configuration = configuration;
 
     let local_var_client = &local_var_configuration.client;

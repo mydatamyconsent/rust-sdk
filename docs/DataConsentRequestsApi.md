@@ -141,7 +141,7 @@ Get all Consent Requests sent to individuals.
 
 Name | Type | Description  | Required | Notes
 ------------- | ------------- | ------------- | ------------- | -------------
-**status** | Option<[**crate::models::DataConsentStatus**](.md)> | Data consent status. |  |
+**status** | Option<[**DataConsentStatus**](.md)> | Data consent status. |  |
 **start_date_time** | Option<**String**> | Start datetime in UTC timezone. |  |
 **end_date_time** | Option<**String**> | End datetime in UTC timezone. |  |
 **page_no** | Option<**i32**> | Page number. |  |[default to 1]
@@ -173,7 +173,7 @@ Get all Consent Requests sent to organizations.
 
 Name | Type | Description  | Required | Notes
 ------------- | ------------- | ------------- | ------------- | -------------
-**status** | Option<[**crate::models::DataConsentStatus**](.md)> | Data consent status. |  |
+**status** | Option<[**DataConsentStatus**](.md)> | Data consent status. |  |
 **start_date_time** | Option<**String**> | Start datetime in UTC timezone. |  |
 **end_date_time** | Option<**String**> | End datetime in UTC timezone. |  |
 **page_no** | Option<**i32**> | Page number. |  |[default to 1]

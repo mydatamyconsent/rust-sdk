@@ -84,7 +84,7 @@ Get paginated list of registered document types.
 
 Name | Type | Description  | Required | Notes
 ------------- | ------------- | ------------- | ------------- | -------------
-**supported_entity_type** | Option<[**crate::models::SupportedEntityType**](.md)> | Supported entity type. |  |
+**supported_entity_type** | Option<[**SupportedEntityType**](.md)> | Supported entity type. |  |
 **page_no** | Option<**i32**> | Page number. |  |[default to 1]
 **page_size** | Option<**i32**> | Number of items to return. |  |[default to 25]
 
