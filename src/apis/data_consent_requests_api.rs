@@ -20,8 +20,8 @@ use super::{Error, configuration};
 #[serde(untagged)]
 pub enum CancelIndividualDataConsentRequestError {
     Status500(),
-    Status404(serde_json::Value),
-    Status400(serde_json::Value),
+    Status404(crate::models::Error),
+    Status400(crate::models::Error),
     DefaultResponse(crate::models::ProblemDetails),
     UnknownValue(serde_json::Value),
 }
@@ -31,8 +31,8 @@ pub enum CancelIndividualDataConsentRequestError {
 #[serde(untagged)]
 pub enum CancelOrganizationDataConsentRequestError {
     Status500(),
-    Status404(serde_json::Value),
-    Status400(serde_json::Value),
+    Status404(crate::models::Error),
+    Status400(crate::models::Error),
     DefaultResponse(crate::models::ProblemDetails),
     UnknownValue(serde_json::Value),
 }
@@ -42,8 +42,8 @@ pub enum CancelOrganizationDataConsentRequestError {
 #[serde(untagged)]
 pub enum CreateIndividualDataConsentRequestError {
     Status500(),
-    Status404(serde_json::Value),
-    Status400(serde_json::Value),
+    Status404(crate::models::Error),
+    Status400(crate::models::Error),
     UnknownValue(serde_json::Value),
 }
 
@@ -52,8 +52,8 @@ pub enum CreateIndividualDataConsentRequestError {
 #[serde(untagged)]
 pub enum CreateOrganizationDataConsentRequestError {
     Status500(),
-    Status404(serde_json::Value),
-    Status400(serde_json::Value),
+    Status404(crate::models::Error),
+    Status400(crate::models::Error),
     UnknownValue(serde_json::Value),
 }
 
@@ -61,7 +61,7 @@ pub enum CreateOrganizationDataConsentRequestError {
 #[derive(Debug, Clone, Serialize, Deserialize)]
 #[serde(untagged)]
 pub enum GetAllConsentRequestsToIndividualsError {
-    Status400(serde_json::Value),
+    Status400(crate::models::Error),
     Status500(),
     DefaultResponse(crate::models::ProblemDetails),
     UnknownValue(serde_json::Value),
@@ -71,7 +71,7 @@ pub enum GetAllConsentRequestsToIndividualsError {
 #[derive(Debug, Clone, Serialize, Deserialize)]
 #[serde(untagged)]
 pub enum GetAllConsentRequestsToOrganizationsError {
-    Status400(serde_json::Value),
+    Status400(crate::models::Error),
     Status500(),
     DefaultResponse(crate::models::ProblemDetails),
     UnknownValue(serde_json::Value),
@@ -81,8 +81,8 @@ pub enum GetAllConsentRequestsToOrganizationsError {
 #[derive(Debug, Clone, Serialize, Deserialize)]
 #[serde(untagged)]
 pub enum GetIndividualConsentRequestByIdError {
-    Status404(serde_json::Value),
-    Status400(serde_json::Value),
+    Status404(crate::models::Error),
+    Status400(crate::models::Error),
     Status500(),
     DefaultResponse(crate::models::ProblemDetails),
     UnknownValue(serde_json::Value),
@@ -92,8 +92,8 @@ pub enum GetIndividualConsentRequestByIdError {
 #[derive(Debug, Clone, Serialize, Deserialize)]
 #[serde(untagged)]
 pub enum GetOrganizationConsentRequestByIdError {
-    Status404(serde_json::Value),
-    Status400(serde_json::Value),
+    Status404(crate::models::Error),
+    Status400(crate::models::Error),
     Status500(),
     DefaultResponse(crate::models::ProblemDetails),
     UnknownValue(serde_json::Value),

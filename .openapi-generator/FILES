@@ -41,7 +41,8 @@ docs/DocumentType.md
 docs/DocumentTypePaginatedList.md
 docs/DocumentsApi.md
 docs/DocumentsRequired.md
-docs/FileType.md
+docs/Error.md
+docs/ErrorType.md
 docs/Financial.md
 docs/FinancialAccount.md
 docs/FinancialAccountDetailsRequired.md
@@ -116,7 +117,8 @@ src/models/document_sub_category_type.rs
 src/models/document_type.rs
 src/models/document_type_paginated_list.rs
 src/models/documents_required.rs
-src/models/file_type.rs
+src/models/error.rs
+src/models/error_type.rs
 src/models/financial.rs
 src/models/financial_account.rs
 src/models/financial_account_details_required.rs

@@ -37,8 +37,6 @@ pub struct OrganizationFinancialAccountDto {
     pub bank_account_type: Option<crate::models::BankAccountType>,
     #[serde(rename = "bankAccountProofUrl", skip_serializing_if = "Option::is_none")]
     pub bank_account_proof_url: Option<String>,
-    #[serde(rename = "fileType", skip_serializing_if = "Option::is_none")]
-    pub file_type: Option<crate::models::FileType>,
 }
 
 impl OrganizationFinancialAccountDto {
@@ -56,7 +54,6 @@ impl OrganizationFinancialAccountDto {
             bank_name: None,
             bank_account_type: None,
             bank_account_proof_url: None,
-            file_type: None,
         }
     }
 }

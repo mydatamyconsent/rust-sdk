@@ -16,7 +16,6 @@ Name | Type | Description | Notes
 **bank_name** | Option<**String**> |  | [optional]
 **bank_account_type** | Option<[**crate::models::BankAccountType**](BankAccountType.md)> |  | [optional]
 **bank_account_proof_url** | Option<**String**> |  | [optional]
-**file_type** | Option<[**crate::models::FileType**](FileType.md)> |  | [optional]
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

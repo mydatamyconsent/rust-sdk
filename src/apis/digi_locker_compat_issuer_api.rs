@@ -19,10 +19,10 @@ use super::{Error, configuration};
 #[derive(Debug, Clone, Serialize, Deserialize)]
 #[serde(untagged)]
 pub enum DigilockerCompatIssueDocumentError {
-    Status400(serde_json::Value),
+    Status400(crate::models::Error),
     Status401(crate::models::ProblemDetails),
-    Status500(serde_json::Value),
-    Status404(serde_json::Value),
+    Status500(crate::models::Error),
+    Status404(crate::models::Error),
     DefaultResponse(crate::models::ProblemDetails),
     UnknownValue(serde_json::Value),
 }

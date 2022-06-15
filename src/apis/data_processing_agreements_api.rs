@@ -19,8 +19,8 @@ use super::{Error, configuration};
 #[derive(Debug, Clone, Serialize, Deserialize)]
 #[serde(untagged)]
 pub enum CreateDataProcessingAgreementError {
-    Status400(serde_json::Value),
-    Status500(serde_json::Value),
+    Status400(crate::models::Error),
+    Status500(crate::models::Error),
     UnknownValue(serde_json::Value),
 }
 
@@ -28,9 +28,9 @@ pub enum CreateDataProcessingAgreementError {
 #[derive(Debug, Clone, Serialize, Deserialize)]
 #[serde(untagged)]
 pub enum DeleteDataProcessingAgreementByIdError {
-    Status404(serde_json::Value),
-    Status400(serde_json::Value),
-    Status500(serde_json::Value),
+    Status404(crate::models::Error),
+    Status400(crate::models::Error),
+    Status500(crate::models::Error),
     UnknownValue(serde_json::Value),
 }
 
@@ -38,9 +38,9 @@ pub enum DeleteDataProcessingAgreementByIdError {
 #[derive(Debug, Clone, Serialize, Deserialize)]
 #[serde(untagged)]
 pub enum GetDataProcessingAgreementByIdError {
-    Status500(serde_json::Value),
-    Status400(serde_json::Value),
-    Status404(serde_json::Value),
+    Status500(crate::models::Error),
+    Status400(crate::models::Error),
+    Status404(crate::models::Error),
     UnknownValue(serde_json::Value),
 }
 
@@ -48,8 +48,8 @@ pub enum GetDataProcessingAgreementByIdError {
 #[derive(Debug, Clone, Serialize, Deserialize)]
 #[serde(untagged)]
 pub enum GetDataProcessingAgreementsError {
-    Status400(serde_json::Value),
-    Status500(serde_json::Value),
+    Status400(crate::models::Error),
+    Status500(crate::models::Error),
     UnknownValue(serde_json::Value),
 }
 
@@ -57,9 +57,9 @@ pub enum GetDataProcessingAgreementsError {
 #[derive(Debug, Clone, Serialize, Deserialize)]
 #[serde(untagged)]
 pub enum TerminateDataProcessingAgreementByIdError {
-    Status404(serde_json::Value),
-    Status400(serde_json::Value),
-    Status500(serde_json::Value),
+    Status404(crate::models::Error),
+    Status400(crate::models::Error),
+    Status500(crate::models::Error),
     UnknownValue(serde_json::Value),
 }
 
@@ -67,9 +67,9 @@ pub enum TerminateDataProcessingAgreementByIdError {
 #[derive(Debug, Clone, Serialize, Deserialize)]
 #[serde(untagged)]
 pub enum UpdateDataProcessingAgreementError {
-    Status404(serde_json::Value),
-    Status400(serde_json::Value),
-    Status500(serde_json::Value),
+    Status404(crate::models::Error),
+    Status400(crate::models::Error),
+    Status500(crate::models::Error),
     UnknownValue(serde_json::Value),
 }
 

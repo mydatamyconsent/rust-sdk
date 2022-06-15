@@ -19,8 +19,8 @@ use super::{Error, configuration};
 #[derive(Debug, Clone, Serialize, Deserialize)]
 #[serde(untagged)]
 pub enum GetAllSupportedIdentifiersError {
-    Status404(serde_json::Value),
-    Status500(serde_json::Value),
+    Status404(crate::models::Error),
+    Status500(crate::models::Error),
     UnknownValue(serde_json::Value),
 }
 
