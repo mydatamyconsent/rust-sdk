@@ -42,8 +42,6 @@ pub enum DocumentSubCategoryType {
     ReceiptsAndSubscriptions,
     #[serde(rename = "Taxes")]
     Taxes,
-    #[serde(rename = "LicencesAndCertificates")]
-    LicencesAndCertificates,
     #[serde(rename = "Corporates")]
     Corporates,
     #[serde(rename = "Competitions")]
@@ -58,6 +56,10 @@ pub enum DocumentSubCategoryType {
     Licenses,
     #[serde(rename = "OrganizationIds")]
     OrganizationIds,
+    #[serde(rename = "Permits")]
+    Permits,
+    #[serde(rename = "Legal")]
+    Legal,
 
 }
 
@@ -79,7 +81,6 @@ impl ToString for DocumentSubCategoryType {
             Self::Insurance => String::from("Insurance"),
             Self::ReceiptsAndSubscriptions => String::from("ReceiptsAndSubscriptions"),
             Self::Taxes => String::from("Taxes"),
-            Self::LicencesAndCertificates => String::from("LicencesAndCertificates"),
             Self::Corporates => String::from("Corporates"),
             Self::Competitions => String::from("Competitions"),
             Self::IntellectualProperties => String::from("IntellectualProperties"),
@@ -87,6 +88,8 @@ impl ToString for DocumentSubCategoryType {
             Self::ApplicationsAndCertificates => String::from("ApplicationsAndCertificates"),
             Self::Licenses => String::from("Licenses"),
             Self::OrganizationIds => String::from("OrganizationIds"),
+            Self::Permits => String::from("Permits"),
+            Self::Legal => String::from("Legal"),
         }
     }
 }

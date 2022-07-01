@@ -22,8 +22,14 @@ pub enum DocumentCategoryType {
     Finance,
     #[serde(rename = "Professional")]
     Professional,
-    #[serde(rename = "LicencesAndCertificates")]
-    LicencesAndCertificates,
+    #[serde(rename = "Licenses")]
+    Licenses,
+    #[serde(rename = "Permits")]
+    Permits,
+    #[serde(rename = "Certificates")]
+    Certificates,
+    #[serde(rename = "Legal")]
+    Legal,
     #[serde(rename = "Others")]
     Others,
 
@@ -37,7 +43,10 @@ impl ToString for DocumentCategoryType {
             Self::Health => String::from("Health"),
             Self::Finance => String::from("Finance"),
             Self::Professional => String::from("Professional"),
-            Self::LicencesAndCertificates => String::from("LicencesAndCertificates"),
+            Self::Licenses => String::from("Licenses"),
+            Self::Permits => String::from("Permits"),
+            Self::Certificates => String::from("Certificates"),
+            Self::Legal => String::from("Legal"),
             Self::Others => String::from("Others"),
         }
     }
