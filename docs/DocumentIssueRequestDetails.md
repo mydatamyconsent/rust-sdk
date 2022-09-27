@@ -10,7 +10,8 @@ Name | Type | Description | Notes
 **identifier** | **String** | Document identifier. | 
 **status** | [**crate::models::DocumentIssueRequestStatus**](DocumentIssueRequestStatus.md) |  | 
 **description** | **String** | Document description. | 
-**receiver** | Option<[**serde_json::Value**](.md)> | Document receiver details. | 
+**receiver** | [**crate::models::DocumentIssueRequestDetailsReceiver**](DocumentIssueRequestDetails_receiver.md) |  | 
+**payment_request** | Option<[**crate::models::PaymentRequest**](PaymentRequest.md)> |  | [optional]
 **issued_at_utc** | **String** | Datetime of issue in UTC timezone. | 
 **valid_from_utc** | **String** | Valid from datetime in UTC timezone. | 
 **expires_at_utc** | Option<**String**> | Datetime of expiry in UTC timezone. | [optional]

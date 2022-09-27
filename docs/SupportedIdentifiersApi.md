@@ -4,15 +4,13 @@ All URIs are relative to *https://api.mydatamyconsent.com*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**get_all_supported_identifiers**](SupportedIdentifiersApi.md#get_all_supported_identifiers) | **GET** /v1/supported-identifiers/{countryIso2Code} | Get all supported identifiers by country.
+[**v1_supported_identifiers_country_iso2_code_get**](SupportedIdentifiersApi.md#v1_supported_identifiers_country_iso2_code_get) | **GET** /v1/supported-identifiers/{country_iso2_code} | Get all supported identifiers by country.
 
 
 
-## get_all_supported_identifiers
+## v1_supported_identifiers_country_iso2_code_get
 
-> crate::models::SupportedIdentifier get_all_supported_identifiers(country_iso2_code)
-Get all supported identifiers by country.
-
+> crate::models::SupportedIdentifier v1_supported_identifiers_country_iso2_code_get(country_iso2_code)
 Get all supported identifiers by country.
 
 ### Parameters
@@ -20,7 +18,7 @@ Get all supported identifiers by country.
 
 Name | Type | Description  | Required | Notes
 ------------- | ------------- | ------------- | ------------- | -------------
-**country_iso2_code** | **String** | Country ISO 2 code. | [required] |
+**country_iso2_code** | **String** |  | [required] |
 
 ### Return type
 
@@ -28,7 +26,7 @@ Name | Type | Description  | Required | Notes
 
 ### Authorization
 
-No authorization required
+[OAuth2ClientCredentials](../README.md#OAuth2ClientCredentials)
 
 ### HTTP request headers
 
