@@ -4,7 +4,7 @@
   "generator-cli": {
     "version": "6.0.0",
     "generators": {
-      "php": {
+      "rust": {
           "generatorName": "rust",
           "httpUserAgent": "MDMC-Rust-SDK",
           "apiPackage": "api",
@@ -15,6 +15,7 @@
           "gitRepoId": "rust-sdk",
           "gitUserId": "mydatamyconsent",
           "removeOperationIdPrefix": true,
+          "inputSpec": "./openapi-spec.json",
           "additionalProperties": {
               "invokerPackage": "MyDataMyConsent",
               "developerEmail": "developers@mydatamyconsent.com",
