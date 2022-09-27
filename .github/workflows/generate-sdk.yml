@@ -37,13 +37,13 @@ jobs:
             
             - name: Cleanup Spec
               run: |
-                sed -i 's/FinancialAccount\[\(.*\)]/\1/' openapi-spec.json
+                sed -i 's/FinancialAccount\[\(.*\)]/FinancialAccount\1/' openapi-spec.json
                 sed -i 's/FinancialAccountTransaction\[\(.*\)]/FinancialAccount\1/' openapi-spec.json
                 sed -i 's/PaginatedList<\(.*\)>/PaginatedListOf\1s/' openapi-spec.json
 
             - name: Generate SDK's
               run: |
-                  npx @openapitools/openapi-generator-cli generate
+                  npx @openapitools/openapi-generator-cli generate --skip-validate-spec
 
             - name: Repository update
               uses: EndBug/add-and-commit@v9
