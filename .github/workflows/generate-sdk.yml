@@ -38,7 +38,7 @@ jobs:
             - name: Cleanup Spec
               run: |
                 sed -i 's/FinancialAccount\[\(.*\)]/\1/' openapi-spec.json
-                sed -i 's/FinancialAccountTransaction\[\(.*\)]/\1/' openapi-spec.json
+                sed -i 's/FinancialAccountTransaction\[\(.*\)]/FinancialAccount\1/' openapi-spec.json
                 sed -i 's/PaginatedList<\(.*\)>/PaginatedListOf\1s/' openapi-spec.json
 
             - name: Generate SDK's
