@@ -14,7 +14,7 @@
           "gitHost": "github.com",
           "gitRepoId": "rust-sdk",
           "gitUserId": "mydatamyconsent",
-          "inputSpec": "https://api.mydatamyconsent.com/swagger/v1/swagger.json",
+          "inputSpec": "https://api.mydatamyconsent.com/openapi-spec.json",
           "removeOperationIdPrefix": true,
           "additionalProperties": {
               "invokerPackage": "MyDataMyConsent",
