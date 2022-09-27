@@ -15,7 +15,7 @@
           "gitRepoId": "rust-sdk",
           "gitUserId": "mydatamyconsent",
           "removeOperationIdPrefix": true,
-          "validateSpec": false,
+          "skipValidateSpec": true,
           "inputSpec": "./openapi-spec.json",
           "additionalProperties": {
               "invokerPackage": "MyDataMyConsent",
