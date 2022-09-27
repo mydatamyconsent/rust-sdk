@@ -43,7 +43,7 @@ jobs:
 
             - name: Generate SDK's
               run: |
-                  npx @openapitools/openapi-generator-cli generate --skip-validate-spec
+                  npx @openapitools/openapi-generator-cli generate
 
             - name: Repository update
               uses: EndBug/add-and-commit@v9
