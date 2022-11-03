@@ -19,35 +19,41 @@ pub struct FinancialAccountEquity {
     pub id: String,
     #[serde(rename = "name")]
     pub name: String,
-    #[serde(rename = "identifier")]
-    pub identifier: String,
-    #[serde(rename = "balance")]
-    pub balance: f64,
-    #[serde(rename = "profile")]
-    pub profile: Box<crate::models::Profile>,
-    #[serde(rename = "summary")]
-    pub summary: Box<crate::models::EquitySummary>,
-    #[serde(rename = "masked_account_number")]
-    pub masked_account_number: String,
-    #[serde(rename = "linked_account_ref")]
-    pub linked_account_ref: String,
-    #[serde(rename = "version")]
-    pub version: f32,
+    #[serde(rename = "issuer_name")]
+    pub issuer_name: String,
+    #[serde(rename = "exchange")]
+    pub exchange: String,
+    #[serde(rename = "isin")]
+    pub isin: String,
+    #[serde(rename = "units")]
+    pub units: i64,
+    #[serde(rename = "investment_value")]
+    pub investment_value: f64,
+    #[serde(rename = "current_value")]
+    pub current_value: f64,
+    #[serde(rename = "currency_code")]
+    pub currency_code: String,
+    #[serde(rename = "holder")]
+    pub holder: Box<crate::models::Holder>,
+    #[serde(rename = "transactions")]
+    pub transactions: bool,
 }
 
 impl FinancialAccountEquity {
-    pub fn new(r#type: String, id: String, name: String, identifier: String, balance: f64, profile: crate::models::Profile, summary: crate::models::EquitySummary, masked_account_number: String, linked_account_ref: String, version: f32) -> FinancialAccountEquity {
+    pub fn new(r#type: String, id: String, name: String, issuer_name: String, exchange: String, isin: String, units: i64, investment_value: f64, current_value: f64, currency_code: String, holder: crate::models::Holder, transactions: bool) -> FinancialAccountEquity {
         FinancialAccountEquity {
             r#type,
             id,
             name,
-            identifier,
-            balance,
-            profile: Box::new(profile),
-            summary: Box::new(summary),
-            masked_account_number,
-            linked_account_ref,
-            version,
+            issuer_name,
+            exchange,
+            isin,
+            units,
+            investment_value,
+            current_value,
+            currency_code,
+            holder: Box::new(holder),
+            transactions,
         }
     }
 }

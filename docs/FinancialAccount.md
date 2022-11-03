@@ -7,14 +7,26 @@ Name | Type | Description | Notes
 **r#type** | **String** |  | 
 **id** | **String** |  | 
 **name** | **String** |  | 
-**identifier** | **String** |  | 
-**balance** | **f64** |  | 
-**profile** | [**crate::models::Profile**](Profile.md) |  | 
-**summary** | [**crate::models::EquitySummary**](EquitySummary.md) |  | 
-**masked_account_number** | **String** |  | 
-**linked_account_ref** | **String** |  | 
-**version** | **f32** |  | 
-**amount** | **f64** |  | 
+**issuer_name** | **String** |  | 
+**exchange** | **String** |  | 
+**isin** | **String** |  | 
+**units** | **f64** |  | 
+**investment_value** | **f64** |  | 
+**current_value** | **f64** |  | 
+**currency_code** | **String** |  | 
+**holder** | [**crate::models::Holder**](Holder.md) |  | 
+**transactions** | **bool** |  | 
+**amc** | Option<**String**> |  | [optional]
+**registrar** | Option<**String**> |  | [optional]
+**fund_name** | **String** |  | 
+**folio_number** | **String** |  | 
+**scheme_code** | Option<**String**> |  | [optional]
+**fund_type** | Option<**String**> |  | [optional]
+**fund_category** | Option<**String**> |  | [optional]
+**lien_units** | Option<**String**> |  | [optional]
+**creation_date** | Option<**String**> |  | [optional]
+**plan_info** | [**crate::models::SipPlanInformation**](SipPlanInformation.md) |  | 
+**investment_info** | [**crate::models::SipInvestmentInformation**](SipInvestmentInformation.md) |  | 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

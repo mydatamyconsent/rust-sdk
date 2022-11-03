@@ -15,39 +15,27 @@
 pub struct Holder {
     #[serde(rename = "name")]
     pub name: String,
-    #[serde(rename = "dob", skip_serializing_if = "Option::is_none")]
-    pub dob: Option<String>,
+    #[serde(rename = "date_of_birth", skip_serializing_if = "Option::is_none")]
+    pub date_of_birth: Option<String>,
     #[serde(rename = "mobile", skip_serializing_if = "Option::is_none")]
     pub mobile: Option<String>,
-    #[serde(rename = "nominee", skip_serializing_if = "Option::is_none")]
-    pub nominee: Option<crate::models::HoldingNominee>,
-    #[serde(rename = "dematId")]
+    #[serde(rename = "demat_id")]
     pub demat_id: String,
-    #[serde(rename = "landline", skip_serializing_if = "Option::is_none")]
-    pub landline: Option<String>,
-    #[serde(rename = "address", skip_serializing_if = "Option::is_none")]
-    pub address: Option<String>,
     #[serde(rename = "email")]
     pub email: String,
     #[serde(rename = "pan", skip_serializing_if = "Option::is_none")]
     pub pan: Option<String>,
-    #[serde(rename = "ckycCompliance")]
-    pub ckyc_compliance: bool,
 }
 
 impl Holder {
-    pub fn new(name: String, demat_id: String, email: String, ckyc_compliance: bool) -> Holder {
+    pub fn new(name: String, demat_id: String, email: String) -> Holder {
         Holder {
             name,
-            dob: None,
+            date_of_birth: None,
             mobile: None,
-            nominee: None,
             demat_id,
-            landline: None,
-            address: None,
             email,
             pan: None,
-            ckyc_compliance,
         }
     }
 }

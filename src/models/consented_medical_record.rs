@@ -23,6 +23,12 @@ pub struct ConsentedMedicalRecord {
     /// Health field slug.
     #[serde(rename = "fieldSlug")]
     pub field_slug: String,
+    /// Issuer id.
+    #[serde(rename = "issuerId")]
+    pub issuer_id: String,
+    /// Issuer name.
+    #[serde(rename = "issuerName")]
+    pub issuer_name: String,
     /// health category type.
     #[serde(rename = "category")]
     pub category: String,
@@ -36,11 +42,13 @@ pub struct ConsentedMedicalRecord {
 
 impl ConsentedMedicalRecord {
     /// ConsentedMedicalRecord : Consented medical record details.
-    pub fn new(field_title: String, field_slug: String, category: String) -> ConsentedMedicalRecord {
+    pub fn new(field_title: String, field_slug: String, issuer_id: String, issuer_name: String, category: String) -> ConsentedMedicalRecord {
         ConsentedMedicalRecord {
             id: None,
             field_title,
             field_slug,
+            issuer_id,
+            issuer_name,
             category,
             to_date: None,
             from_date: None,

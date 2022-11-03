@@ -13,212 +13,30 @@
 #[derive(Clone, Debug, PartialEq, Serialize, Deserialize)]
 #[serde(tag = "r#type")]
 pub enum FinancialAccount {
-    #[serde(rename="Aif")]
-    FinancialAccountAif {
-        #[serde(rename = "id")]
-        id: String,
-        #[serde(rename = "name")]
-        name: String,
-        #[serde(rename = "identifier")]
-        identifier: String,
-        #[serde(rename = "amount")]
-        amount: f64,
-    },
-    #[serde(rename="BillPayment")]
-    FinancialAccountBillPayment {
-        #[serde(rename = "id")]
-        id: String,
-        #[serde(rename = "name")]
-        name: String,
-        #[serde(rename = "identifier")]
-        identifier: String,
-        #[serde(rename = "amount")]
-        amount: f64,
-    },
-    #[serde(rename="Bond")]
-    FinancialAccountBond {
-        #[serde(rename = "id")]
-        id: String,
-        #[serde(rename = "name")]
-        name: String,
-        #[serde(rename = "identifier")]
-        identifier: String,
-        #[serde(rename = "amount")]
-        amount: f64,
-    },
-    #[serde(rename="CIS")]
-    FinancialAccountCis {
-        #[serde(rename = "id")]
-        id: String,
-        #[serde(rename = "name")]
-        name: String,
-        #[serde(rename = "identifier")]
-        identifier: String,
-        #[serde(rename = "amount")]
-        amount: f64,
-    },
-    #[serde(rename="CertificateOfDeposit")]
-    FinancialAccountCertificateOfDeposit {
-        #[serde(rename = "id")]
-        id: String,
-        #[serde(rename = "name")]
-        name: String,
-        #[serde(rename = "identifier")]
-        identifier: String,
-        #[serde(rename = "amount")]
-        amount: f64,
-    },
-    #[serde(rename="CommercialPaper")]
-    FinancialAccountCommercialPaper {
-        #[serde(rename = "id")]
-        id: String,
-        #[serde(rename = "name")]
-        name: String,
-        #[serde(rename = "identifier")]
-        identifier: String,
-        #[serde(rename = "amount")]
-        amount: f64,
-    },
-    #[serde(rename="CreditCard")]
-    FinancialAccountCreditCard {
-        #[serde(rename = "id")]
-        id: String,
-        #[serde(rename = "name")]
-        name: String,
-        #[serde(rename = "identifier")]
-        identifier: String,
-        #[serde(rename = "balance")]
-        balance: f64,
-        #[serde(rename = "profile")]
-        profile: Box<crate::models::CreditCardProfile>,
-        #[serde(rename = "summary")]
-        summary: Box<crate::models::CreditCardSummary>,
-        #[serde(rename = "masked_account_number")]
-        masked_account_number: String,
-        #[serde(rename = "linked_account_ref")]
-        linked_account_ref: String,
-        #[serde(rename = "version")]
-        version: f32,
-    },
-    #[serde(rename="Debenture")]
-    FinancialAccountDebenture {
-        #[serde(rename = "id")]
-        id: String,
-        #[serde(rename = "name")]
-        name: String,
-        #[serde(rename = "identifier")]
-        identifier: String,
-        #[serde(rename = "amount")]
-        amount: f64,
-    },
-    #[serde(rename="Deposit")]
-    FinancialAccountDeposit {
-        #[serde(rename = "id")]
-        id: String,
-        #[serde(rename = "name")]
-        name: String,
-        #[serde(rename = "identifier")]
-        identifier: String,
-        #[serde(rename = "amount")]
-        amount: f64,
-    },
-    #[serde(rename="Epf")]
-    FinancialAccountEpf {
-        #[serde(rename = "id")]
-        id: String,
-        #[serde(rename = "name")]
-        name: String,
-        #[serde(rename = "identifier")]
-        identifier: String,
-        #[serde(rename = "amount")]
-        amount: f64,
-    },
     #[serde(rename="Equity")]
     FinancialAccountEquity {
         #[serde(rename = "id")]
         id: String,
         #[serde(rename = "name")]
         name: String,
-        #[serde(rename = "identifier")]
-        identifier: String,
-        #[serde(rename = "balance")]
-        balance: f64,
-        #[serde(rename = "profile")]
-        profile: Box<crate::models::Profile>,
-        #[serde(rename = "summary")]
-        summary: Box<crate::models::EquitySummary>,
-        #[serde(rename = "masked_account_number")]
-        masked_account_number: String,
-        #[serde(rename = "linked_account_ref")]
-        linked_account_ref: String,
-        #[serde(rename = "version")]
-        version: f32,
-    },
-    #[serde(rename="Etf")]
-    FinancialAccountEtf {
-        #[serde(rename = "id")]
-        id: String,
-        #[serde(rename = "name")]
-        name: String,
-        #[serde(rename = "identifier")]
-        identifier: String,
-        #[serde(rename = "amount")]
-        amount: f64,
-    },
-    #[serde(rename="GovtSecurity")]
-    FinancialAccountGovtSecurity {
-        #[serde(rename = "id")]
-        id: String,
-        #[serde(rename = "name")]
-        name: String,
-        #[serde(rename = "identifier")]
-        identifier: String,
-        #[serde(rename = "amount")]
-        amount: f64,
-    },
-    #[serde(rename="Idr")]
-    FinancialAccountIdr {
-        #[serde(rename = "id")]
-        id: String,
-        #[serde(rename = "name")]
-        name: String,
-        #[serde(rename = "identifier")]
-        identifier: String,
-        #[serde(rename = "amount")]
-        amount: f64,
-    },
-    #[serde(rename="InsurancePolicy")]
-    FinancialAccountInsurancePolicy {
-        #[serde(rename = "id")]
-        id: String,
-        #[serde(rename = "name")]
-        name: String,
-        #[serde(rename = "identifier")]
-        identifier: String,
-        #[serde(rename = "amount")]
-        amount: f64,
-    },
-    #[serde(rename="Invit")]
-    FinancialAccountInvit {
-        #[serde(rename = "id")]
-        id: String,
-        #[serde(rename = "name")]
-        name: String,
-        #[serde(rename = "identifier")]
-        identifier: String,
-        #[serde(rename = "amount")]
-        amount: f64,
-    },
-    #[serde(rename="Loan")]
-    FinancialAccountLoan {
-        #[serde(rename = "id")]
-        id: String,
-        #[serde(rename = "name")]
-        name: String,
-        #[serde(rename = "identifier")]
-        identifier: String,
-        #[serde(rename = "amount")]
-        amount: f64,
+        #[serde(rename = "issuer_name")]
+        issuer_name: String,
+        #[serde(rename = "exchange")]
+        exchange: String,
+        #[serde(rename = "isin")]
+        isin: String,
+        #[serde(rename = "units")]
+        units: i64,
+        #[serde(rename = "investment_value")]
+        investment_value: f64,
+        #[serde(rename = "current_value")]
+        current_value: f64,
+        #[serde(rename = "currency_code")]
+        currency_code: String,
+        #[serde(rename = "holder")]
+        holder: Box<crate::models::Holder>,
+        #[serde(rename = "transactions")]
+        transactions: bool,
     },
     #[serde(rename="MutualFund")]
     FinancialAccountMutualFund {
@@ -226,64 +44,38 @@ pub enum FinancialAccount {
         id: String,
         #[serde(rename = "name")]
         name: String,
-        #[serde(rename = "identifier")]
-        identifier: String,
-        #[serde(rename = "balance")]
-        balance: f64,
-        #[serde(rename = "profile")]
-        profile: Box<crate::models::Profile>,
-        #[serde(rename = "summary")]
-        summary: Box<crate::models::MutualFundSummary>,
-        #[serde(rename = "masked_account_number")]
-        masked_account_number: String,
-        #[serde(rename = "linked_account_ref")]
-        linked_account_ref: String,
-        #[serde(rename = "version")]
-        version: f32,
-    },
-    #[serde(rename="Nps")]
-    FinancialAccountNps {
-        #[serde(rename = "id")]
-        id: String,
-        #[serde(rename = "name")]
-        name: String,
-        #[serde(rename = "identifier")]
-        identifier: String,
-        #[serde(rename = "amount")]
-        amount: f64,
-    },
-    #[serde(rename="Ppf")]
-    FinancialAccountPpf {
-        #[serde(rename = "id")]
-        id: String,
-        #[serde(rename = "name")]
-        name: String,
-        #[serde(rename = "identifier")]
-        identifier: String,
-        #[serde(rename = "amount")]
-        amount: f64,
-    },
-    #[serde(rename="RecurringDeposit")]
-    FinancialAccountRecurringDeposit {
-        #[serde(rename = "id")]
-        id: String,
-        #[serde(rename = "name")]
-        name: String,
-        #[serde(rename = "identifier")]
-        identifier: String,
-        #[serde(rename = "amount")]
-        amount: f64,
-    },
-    #[serde(rename="Reit")]
-    FinancialAccountReit {
-        #[serde(rename = "id")]
-        id: String,
-        #[serde(rename = "name")]
-        name: String,
-        #[serde(rename = "identifier")]
-        identifier: String,
-        #[serde(rename = "amount")]
-        amount: f64,
+        #[serde(rename = "investment_value")]
+        investment_value: f64,
+        #[serde(rename = "current_value")]
+        current_value: f64,
+        #[serde(rename = "currency_code")]
+        currency_code: String,
+        #[serde(rename = "amc", skip_serializing_if = "Option::is_none")]
+        amc: Option<String>,
+        #[serde(rename = "registrar", skip_serializing_if = "Option::is_none")]
+        registrar: Option<String>,
+        #[serde(rename = "fund_name")]
+        fund_name: String,
+        #[serde(rename = "isin")]
+        isin: String,
+        #[serde(rename = "folio_number")]
+        folio_number: String,
+        #[serde(rename = "scheme_code", skip_serializing_if = "Option::is_none")]
+        scheme_code: Option<String>,
+        #[serde(rename = "fund_type", skip_serializing_if = "Option::is_none")]
+        fund_type: Option<String>,
+        #[serde(rename = "fund_category", skip_serializing_if = "Option::is_none")]
+        fund_category: Option<String>,
+        #[serde(rename = "units")]
+        units: f64,
+        #[serde(rename = "lien_units", skip_serializing_if = "Option::is_none")]
+        lien_units: Option<String>,
+        #[serde(rename = "creation_date", skip_serializing_if = "Option::is_none")]
+        creation_date: Option<String>,
+        #[serde(rename = "holder")]
+        holder: Box<crate::models::Holder>,
+        #[serde(rename = "transactions")]
+        transactions: bool,
     },
     #[serde(rename="Sip")]
     FinancialAccountSip {
@@ -291,32 +83,20 @@ pub enum FinancialAccount {
         id: String,
         #[serde(rename = "name")]
         name: String,
-        #[serde(rename = "identifier")]
-        identifier: String,
-        #[serde(rename = "amount")]
-        amount: f64,
-    },
-    #[serde(rename="TermDeposit")]
-    FinancialAccountTermDeposit {
-        #[serde(rename = "id")]
-        id: String,
-        #[serde(rename = "name")]
-        name: String,
-        #[serde(rename = "identifier")]
-        identifier: String,
-        #[serde(rename = "amount")]
-        amount: f64,
-    },
-    #[serde(rename="Ulip")]
-    FinancialAccountUlip {
-        #[serde(rename = "id")]
-        id: String,
-        #[serde(rename = "name")]
-        name: String,
-        #[serde(rename = "identifier")]
-        identifier: String,
-        #[serde(rename = "amount")]
-        amount: f64,
+        #[serde(rename = "investment_value")]
+        investment_value: f64,
+        #[serde(rename = "current_value")]
+        current_value: f64,
+        #[serde(rename = "currency_code")]
+        currency_code: String,
+        #[serde(rename = "plan_info")]
+        plan_info: Box<crate::models::SipPlanInformation>,
+        #[serde(rename = "investment_info")]
+        investment_info: Box<crate::models::SipInvestmentInformation>,
+        #[serde(rename = "holder")]
+        holder: Box<crate::models::Holder>,
+        #[serde(rename = "transactions")]
+        transactions: bool,
     },
 }
 

@@ -6,14 +6,6 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **r#type** | **String** |  | 
 **id** | **String** |  | 
-**txn_type** | [**crate::models::CreditCardTransactionType**](CreditCardTransactionType.md) |  | 
-**txn_date** | **String** |  | 
-**amount** | **String** |  | 
-**value_date** | **String** |  | 
-**narration** | **String** |  | 
-**statement_date** | **String** |  | 
-**mcc** | **String** |  | 
-**masked_card_number** | **String** |  | 
 **amc** | **String** |  | 
 **registrar** | **String** |  | 
 **scheme_code** | **String** |  | 
@@ -25,6 +17,7 @@ Name | Type | Description | Notes
 **scheme_types** | [**crate::models::MutualFundSchemeType**](MutualFundSchemeType.md) |  | 
 **scheme_category** | [**crate::models::MutualFundSchemeCategory**](MutualFundSchemeCategory.md) |  | 
 **ucc** | **String** |  | 
+**amount** | **String** |  | 
 **closing_units** | **String** |  | 
 **lien_units** | **String** |  | 
 **nav** | **String** |  | 
@@ -34,6 +27,7 @@ Name | Type | Description | Notes
 **lockin_flag** | **String** |  | 
 **lockin_days** | **String** |  | 
 **mode** | [**crate::models::MutualFundHoldingMode**](MutualFundHoldingMode.md) |  | 
+**narration** | **String** |  | 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

@@ -6,13 +6,15 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **id** | **String** |  | 
 **name** | **String** |  | 
-**identifier** | **String** |  | 
-**balance** | **f64** |  | 
-**profile** | [**crate::models::Profile**](Profile.md) |  | 
-**summary** | [**crate::models::EquitySummary**](EquitySummary.md) |  | 
-**masked_account_number** | **String** |  | 
-**linked_account_ref** | **String** |  | 
-**version** | **f32** |  | 
+**issuer_name** | **String** |  | 
+**exchange** | **String** |  | 
+**isin** | **String** |  | 
+**units** | **i64** |  | 
+**investment_value** | **f64** |  | 
+**current_value** | **f64** |  | 
+**currency_code** | **String** |  | 
+**holder** | [**crate::models::Holder**](Holder.md) |  | 
+**transactions** | **bool** |  | 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

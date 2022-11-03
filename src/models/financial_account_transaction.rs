@@ -13,104 +13,8 @@
 #[derive(Clone, Debug, PartialEq, Serialize, Deserialize)]
 #[serde(tag = "r#type")]
 pub enum FinancialAccountTransaction {
-    #[serde(rename="AifTransaction")]
-    FinancialAccountAifTransaction {
-        #[serde(rename = "id")]
-        id: String,
-    },
-    #[serde(rename="BillPaymentTransaction")]
-    FinancialAccountBillPaymentTransaction {
-        #[serde(rename = "id")]
-        id: String,
-    },
-    #[serde(rename="BondTransaction")]
-    FinancialAccountBondTransaction {
-        #[serde(rename = "id")]
-        id: String,
-    },
-    #[serde(rename="CISTransaction")]
-    FinancialAccountCisTransaction {
-        #[serde(rename = "id")]
-        id: String,
-    },
-    #[serde(rename="CertificateOfDepositTransaction")]
-    FinancialAccountCertificateOfDepositTransaction {
-        #[serde(rename = "id")]
-        id: String,
-    },
-    #[serde(rename="CommercialPaperTransaction")]
-    FinancialAccountCommercialPaperTransaction {
-        #[serde(rename = "id")]
-        id: String,
-    },
-    #[serde(rename="CreditCardTransaction")]
-    FinancialAccountCreditCardTransaction {
-        #[serde(rename = "id")]
-        id: String,
-        #[serde(rename = "txn_type")]
-        txn_type: crate::models::CreditCardTransactionType,
-        #[serde(rename = "txn_date")]
-        txn_date: String,
-        #[serde(rename = "amount")]
-        amount: f32,
-        #[serde(rename = "value_date")]
-        value_date: String,
-        #[serde(rename = "narration")]
-        narration: String,
-        #[serde(rename = "statement_date")]
-        statement_date: String,
-        #[serde(rename = "mcc")]
-        mcc: String,
-        #[serde(rename = "masked_card_number")]
-        masked_card_number: String,
-    },
-    #[serde(rename="DebentureTransaction")]
-    FinancialAccountDebentureTransaction {
-        #[serde(rename = "id")]
-        id: String,
-    },
-    #[serde(rename="DepositTransaction")]
-    FinancialAccountDepositTransaction {
-        #[serde(rename = "id")]
-        id: String,
-    },
-    #[serde(rename="EpfTransaction")]
-    FinancialAccountEpfTransaction {
-        #[serde(rename = "id")]
-        id: String,
-    },
     #[serde(rename="EquityTransaction")]
     FinancialAccountEquityTransaction {
-        #[serde(rename = "id")]
-        id: String,
-    },
-    #[serde(rename="EtfTransaction")]
-    FinancialAccountEtfTransaction {
-        #[serde(rename = "id")]
-        id: String,
-    },
-    #[serde(rename="GovtSecurityTransaction")]
-    FinancialAccountGovtSecurityTransaction {
-        #[serde(rename = "id")]
-        id: String,
-    },
-    #[serde(rename="IdrTransaction")]
-    FinancialAccountIdrTransaction {
-        #[serde(rename = "id")]
-        id: String,
-    },
-    #[serde(rename="InsurancePolicyTransaction")]
-    FinancialAccountInsurancePolicyTransaction {
-        #[serde(rename = "id")]
-        id: String,
-    },
-    #[serde(rename="InvitTransaction")]
-    FinancialAccountInvitTransaction {
-        #[serde(rename = "id")]
-        id: String,
-    },
-    #[serde(rename="LoanTransaction")]
-    FinancialAccountLoanTransaction {
         #[serde(rename = "id")]
         id: String,
     },
@@ -163,38 +67,8 @@ pub enum FinancialAccountTransaction {
         #[serde(rename = "narration")]
         narration: String,
     },
-    #[serde(rename="NpsTransaction")]
-    FinancialAccountNpsTransaction {
-        #[serde(rename = "id")]
-        id: String,
-    },
-    #[serde(rename="PpfTransaction")]
-    FinancialAccountPpfTransaction {
-        #[serde(rename = "id")]
-        id: String,
-    },
-    #[serde(rename="RecurringDepositTransaction")]
-    FinancialAccountRecurringDepositTransaction {
-        #[serde(rename = "id")]
-        id: String,
-    },
-    #[serde(rename="ReitTransaction")]
-    FinancialAccountReitTransaction {
-        #[serde(rename = "id")]
-        id: String,
-    },
     #[serde(rename="SipTransaction")]
     FinancialAccountSipTransaction {
-        #[serde(rename = "id")]
-        id: String,
-    },
-    #[serde(rename="TermDepositTransaction")]
-    FinancialAccountTermDepositTransaction {
-        #[serde(rename = "id")]
-        id: String,
-    },
-    #[serde(rename="UlipTransaction")]
-    FinancialAccountUlipTransaction {
         #[serde(rename = "id")]
         id: String,
     },

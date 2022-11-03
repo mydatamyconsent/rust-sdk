@@ -19,20 +19,35 @@ pub struct FinancialAccountSip {
     pub id: String,
     #[serde(rename = "name")]
     pub name: String,
-    #[serde(rename = "identifier")]
-    pub identifier: String,
-    #[serde(rename = "amount")]
-    pub amount: f64,
+    #[serde(rename = "investment_value")]
+    pub investment_value: f64,
+    #[serde(rename = "current_value")]
+    pub current_value: f64,
+    #[serde(rename = "currency_code")]
+    pub currency_code: String,
+    #[serde(rename = "plan_info")]
+    pub plan_info: Box<crate::models::SipPlanInformation>,
+    #[serde(rename = "investment_info")]
+    pub investment_info: Box<crate::models::SipInvestmentInformation>,
+    #[serde(rename = "holder")]
+    pub holder: Box<crate::models::Holder>,
+    #[serde(rename = "transactions")]
+    pub transactions: bool,
 }
 
 impl FinancialAccountSip {
-    pub fn new(r#type: String, id: String, name: String, identifier: String, amount: f64) -> FinancialAccountSip {
+    pub fn new(r#type: String, id: String, name: String, investment_value: f64, current_value: f64, currency_code: String, plan_info: crate::models::SipPlanInformation, investment_info: crate::models::SipInvestmentInformation, holder: crate::models::Holder, transactions: bool) -> FinancialAccountSip {
         FinancialAccountSip {
             r#type,
             id,
             name,
-            identifier,
-            amount,
+            investment_value,
+            current_value,
+            currency_code,
+            plan_info: Box::new(plan_info),
+            investment_info: Box::new(investment_info),
+            holder: Box::new(holder),
+            transactions,
         }
     }
 }
