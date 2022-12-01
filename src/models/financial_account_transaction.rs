@@ -14,12 +14,12 @@
 #[serde(tag = "r#type")]
 pub enum FinancialAccountTransaction {
     #[serde(rename="EquityTransaction")]
-    FinancialAccountEquityTransaction {
+    FinancialAccountTransactionEquityTransaction {
         #[serde(rename = "id")]
         id: String,
     },
     #[serde(rename="MutualFundTransaction")]
-    FinancialAccountMutualFundTransaction {
+    FinancialAccountTransactionMutualFundTransaction {
         #[serde(rename = "id")]
         id: String,
         #[serde(rename = "amc")]
@@ -68,7 +68,7 @@ pub enum FinancialAccountTransaction {
         narration: String,
     },
     #[serde(rename="SipTransaction")]
-    FinancialAccountSipTransaction {
+    FinancialAccountTransactionSipTransaction {
         #[serde(rename = "id")]
         id: String,
     },

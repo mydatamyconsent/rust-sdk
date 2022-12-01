@@ -1,4 +1,4 @@
-# FinancialAccountEquityTransaction
+# FinancialAccountTransactionEquityTransaction
 
 ## Properties
 

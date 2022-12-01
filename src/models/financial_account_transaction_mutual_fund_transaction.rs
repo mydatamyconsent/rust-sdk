@@ -12,7 +12,7 @@
 
 
 #[derive(Clone, Debug, PartialEq, Default, Serialize, Deserialize)]
-pub struct FinancialAccountMutualFundTransaction {
+pub struct FinancialAccountTransactionMutualFundTransaction {
     #[serde(rename = "type")]
     pub r#type: crate::models::MutualFundTransactionType,
     #[serde(rename = "id")]
@@ -63,9 +63,9 @@ pub struct FinancialAccountMutualFundTransaction {
     pub narration: String,
 }
 
-impl FinancialAccountMutualFundTransaction {
-    pub fn new(r#type: crate::models::MutualFundTransactionType, id: String, amc: String, registrar: String, scheme_code: String, scheme_plan: crate::models::MutualFundSchemePlan, isin: String, amfi_code: String, fund_type: crate::models::MutualFundFundType, scheme_option: crate::models::MutualFundSchemeOption, scheme_types: crate::models::MutualFundSchemeType, scheme_category: crate::models::MutualFundSchemeCategory, ucc: String, amount: String, closing_units: String, lien_units: String, nav: String, nav_date: String, order_date: String, execution_date: String, lockin_flag: String, lockin_days: String, mode: crate::models::MutualFundHoldingMode, narration: String) -> FinancialAccountMutualFundTransaction {
-        FinancialAccountMutualFundTransaction {
+impl FinancialAccountTransactionMutualFundTransaction {
+    pub fn new(r#type: crate::models::MutualFundTransactionType, id: String, amc: String, registrar: String, scheme_code: String, scheme_plan: crate::models::MutualFundSchemePlan, isin: String, amfi_code: String, fund_type: crate::models::MutualFundFundType, scheme_option: crate::models::MutualFundSchemeOption, scheme_types: crate::models::MutualFundSchemeType, scheme_category: crate::models::MutualFundSchemeCategory, ucc: String, amount: String, closing_units: String, lien_units: String, nav: String, nav_date: String, order_date: String, execution_date: String, lockin_flag: String, lockin_days: String, mode: crate::models::MutualFundHoldingMode, narration: String) -> FinancialAccountTransactionMutualFundTransaction {
+        FinancialAccountTransactionMutualFundTransaction {
             r#type,
             id,
             amc,

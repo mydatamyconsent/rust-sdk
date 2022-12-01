@@ -12,15 +12,18 @@
 
 
 #[derive(Clone, Debug, PartialEq, Default, Serialize, Deserialize)]
-pub struct FinancialAccountSipTransactionAllOf {
+pub struct FinancialAccountTransactionSipTransaction {
     #[serde(rename = "type")]
     pub r#type: String,
+    #[serde(rename = "id")]
+    pub id: String,
 }
 
-impl FinancialAccountSipTransactionAllOf {
-    pub fn new(r#type: String) -> FinancialAccountSipTransactionAllOf {
-        FinancialAccountSipTransactionAllOf {
+impl FinancialAccountTransactionSipTransaction {
+    pub fn new(r#type: String, id: String) -> FinancialAccountTransactionSipTransaction {
+        FinancialAccountTransactionSipTransaction {
             r#type,
+            id,
         }
     }
 }
