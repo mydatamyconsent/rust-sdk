@@ -1,11 +1,7 @@
 .gitignore
 Cargo.toml
 README.md
-docs/AllergyDetails.md
-docs/AllergyIntoleranceReaction.md
 docs/ApiErrorType.md
-docs/CodeableConcept.md
-docs/Coding.md
 docs/CollectibleTypes.md
 docs/Consent.md
 docs/ConsentDetails.md
@@ -62,9 +58,6 @@ docs/FinancialAccountTransactionMutualFundTransactionAllOf.md
 docs/FinancialAccountTransactionPeriod.md
 docs/FinancialAccountTransactionSipTransaction.md
 docs/FinancialAccountTransactionSipTransactionAllOf.md
-docs/HealthRecord.md
-docs/HealthRecordAllergyDetails.md
-docs/HealthRecordAllergyDetailsAllOf.md
 docs/Holder.md
 docs/IdentificationStrategy.md
 docs/Identifier.md
@@ -124,11 +117,7 @@ src/apis/mod.rs
 src/apis/organizations_api.rs
 src/apis/supported_identifiers_api.rs
 src/lib.rs
-src/models/allergy_details.rs
-src/models/allergy_intolerance_reaction.rs
 src/models/api_error_type.rs
-src/models/codeable_concept.rs
-src/models/coding.rs
 src/models/collectible_types.rs
 src/models/consent.rs
 src/models/consent_details.rs
@@ -183,9 +172,6 @@ src/models/financial_account_transaction_mutual_fund_transaction_all_of.rs
 src/models/financial_account_transaction_period.rs
 src/models/financial_account_transaction_sip_transaction.rs
 src/models/financial_account_transaction_sip_transaction_all_of.rs
-src/models/health_record.rs
-src/models/health_record_allergy_details.rs
-src/models/health_record_allergy_details_all_of.rs
 src/models/holder.rs
 src/models/identification_strategy.rs
 src/models/identifier.rs
