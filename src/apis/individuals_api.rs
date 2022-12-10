@@ -705,7 +705,7 @@ pub async fn v1_individuals_consents_consent_id_get(configuration: &configuratio
     }
 }
 
-pub async fn v1_individuals_consents_consent_id_health_fhir_bundle_get(configuration: &configuration::Configuration, consent_id: &str) -> Result<serde_json::Value, Error<V1IndividualsConsentsConsentIdHealthFhirBundleGetError>> {
+pub async fn v1_individuals_consents_consent_id_health_fhir_bundle_get(configuration: &configuration::Configuration, consent_id: &str) -> Result<crate::models::FhirBundleLessThanAnyGreaterThan, Error<V1IndividualsConsentsConsentIdHealthFhirBundleGetError>> {
     let local_var_configuration = configuration;
 
     let local_var_client = &local_var_configuration.client;

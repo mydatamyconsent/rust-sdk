@@ -70,6 +70,8 @@ pub mod equity_transaction;
 pub use self::equity_transaction::EquityTransaction;
 pub mod error;
 pub use self::error::Error;
+pub mod fhir_bundle_less_than_any_greater_than;
+pub use self::fhir_bundle_less_than_any_greater_than::FhirBundleLessThanAnyGreaterThan;
 pub mod financial_account;
 pub use self::financial_account::FinancialAccount;
 pub mod financial_account_category_type;

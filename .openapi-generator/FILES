@@ -39,6 +39,7 @@ docs/DocumentType.md
 docs/Equity.md
 docs/EquityTransaction.md
 docs/Error.md
+docs/FhirBundleLessThanAnyGreaterThan.md
 docs/FinancialAccount.md
 docs/FinancialAccountCategoryType.md
 docs/FinancialAccountDetailsRequired.md
@@ -153,6 +154,7 @@ src/models/document_type.rs
 src/models/equity.rs
 src/models/equity_transaction.rs
 src/models/error.rs
+src/models/fhir_bundle_less_than_any_greater_than.rs
 src/models/financial_account.rs
 src/models/financial_account_category_type.rs
 src/models/financial_account_details_required.rs

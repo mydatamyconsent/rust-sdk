@@ -436,7 +436,7 @@ Name | Type | Description  | Required | Notes
 
 ## v1_individuals_consents_consent_id_health_fhir_bundle_get
 
-> serde_json::Value v1_individuals_consents_consent_id_health_fhir_bundle_get(consent_id)
+> crate::models::FhirBundleLessThanAnyGreaterThan v1_individuals_consents_consent_id_health_fhir_bundle_get(consent_id)
 Get Individual consented Health Records by consent id.
 
 ### Parameters
@@ -448,7 +448,7 @@ Name | Type | Description  | Required | Notes
 
 ### Return type
 
-[**serde_json::Value**](serde_json::Value.md)
+[**crate::models::FhirBundleLessThanAnyGreaterThan**](FhirBundle<any>.md)
 
 ### Authorization
 
