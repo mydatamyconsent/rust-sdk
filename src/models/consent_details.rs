@@ -60,7 +60,7 @@ pub struct ConsentDetails {
     pub medical_records: Option<Vec<crate::models::ConsentedMedicalRecord>>,
     /// List of consented financial accounts.
     #[serde(rename = "financialAccounts", skip_serializing_if = "Option::is_none")]
-    pub financial_accounts: Option<Vec<crate::models::ConsentedFinancialAccount>>,
+    pub financial_accounts: Option<Vec<crate::models::ConsentedFinancialAccountField>>,
 }
 
 impl ConsentDetails {

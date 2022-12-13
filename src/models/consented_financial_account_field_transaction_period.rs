@@ -12,16 +12,16 @@
 
 
 #[derive(Clone, Debug, PartialEq, Default, Serialize, Deserialize)]
-pub struct ConsentedFinancialAccountTransactionPeriod {
+pub struct ConsentedFinancialAccountFieldTransactionPeriod {
     #[serde(rename = "from")]
     pub from: String,
     #[serde(rename = "to")]
     pub to: String,
 }
 
-impl ConsentedFinancialAccountTransactionPeriod {
-    pub fn new(from: String, to: String) -> ConsentedFinancialAccountTransactionPeriod {
-        ConsentedFinancialAccountTransactionPeriod {
+impl ConsentedFinancialAccountFieldTransactionPeriod {
+    pub fn new(from: String, to: String) -> ConsentedFinancialAccountFieldTransactionPeriod {
+        ConsentedFinancialAccountFieldTransactionPeriod {
             from,
             to,
         }

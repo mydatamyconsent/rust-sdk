@@ -12,7 +12,8 @@ docs/ConsentRequestTemplate.md
 docs/ConsentRequestTemplateStatus.md
 docs/ConsentedDocument.md
 docs/ConsentedFinancialAccount.md
-docs/ConsentedFinancialAccountTransactionPeriod.md
+docs/ConsentedFinancialAccountField.md
+docs/ConsentedFinancialAccountFieldTransactionPeriod.md
 docs/ConsentedIdentifier.md
 docs/ConsentedMedicalRecord.md
 docs/CreateConsentRequest.md
@@ -129,7 +130,8 @@ src/models/consent_request_template.rs
 src/models/consent_request_template_status.rs
 src/models/consented_document.rs
 src/models/consented_financial_account.rs
-src/models/consented_financial_account_transaction_period.rs
+src/models/consented_financial_account_field.rs
+src/models/consented_financial_account_field_transaction_period.rs
 src/models/consented_identifier.rs
 src/models/consented_medical_record.rs
 src/models/create_consent_request.rs

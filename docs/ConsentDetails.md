@@ -19,7 +19,7 @@ Name | Type | Description | Notes
 **identifiers** | Option<[**Vec<crate::models::ConsentedIdentifier>**](ConsentedIdentifier.md)> | Consented identity details. | [optional]
 **documents** | Option<[**Vec<crate::models::ConsentedDocument>**](ConsentedDocument.md)> | List of consented documents. | [optional]
 **medical_records** | Option<[**Vec<crate::models::ConsentedMedicalRecord>**](ConsentedMedicalRecord.md)> | List of consented medical records. | [optional]
-**financial_accounts** | Option<[**Vec<crate::models::ConsentedFinancialAccount>**](ConsentedFinancialAccount.md)> | List of consented financial accounts. | [optional]
+**financial_accounts** | Option<[**Vec<crate::models::ConsentedFinancialAccountField>**](ConsentedFinancialAccountField.md)> | List of consented financial accounts. | [optional]
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

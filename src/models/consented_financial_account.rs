@@ -27,17 +27,6 @@ pub struct ConsentedFinancialAccount {
     /// Financial account identifier.
     #[serde(rename = "identifier")]
     pub identifier: String,
-    /// Financial account field title.
-    #[serde(rename = "fieldTitle")]
-    pub field_title: String,
-    /// Financial account field slug.
-    #[serde(rename = "fieldSlug")]
-    pub field_slug: String,
-    /// Requested financial account details.
-    #[serde(rename = "requestedDetails")]
-    pub requested_details: Vec<crate::models::FinancialAccountDetailsRequired>,
-    #[serde(rename = "transactionPeriod", skip_serializing_if = "Option::is_none")]
-    pub transaction_period: Option<Box<crate::models::ConsentedFinancialAccountTransactionPeriod>>,
     /// Financial account issuer id.
     #[serde(rename = "issuerId")]
     pub issuer_id: String,
@@ -48,17 +37,13 @@ pub struct ConsentedFinancialAccount {
 
 impl ConsentedFinancialAccount {
     /// ConsentedFinancialAccount : Consented financial account details.
-    pub fn new(id: String, name: String, category: crate::models::FinancialAccountCategoryType, sub_category: crate::models::FinancialAccountSubCategoryType, identifier: String, field_title: String, field_slug: String, requested_details: Vec<crate::models::FinancialAccountDetailsRequired>, issuer_id: String, issuer_name: String) -> ConsentedFinancialAccount {
+    pub fn new(id: String, name: String, category: crate::models::FinancialAccountCategoryType, sub_category: crate::models::FinancialAccountSubCategoryType, identifier: String, issuer_id: String, issuer_name: String) -> ConsentedFinancialAccount {
         ConsentedFinancialAccount {
             id,
             name,
             category: Box::new(category),
             sub_category: Box::new(sub_category),
             identifier,
-            field_title,
-            field_slug,
-            requested_details,
-            transaction_period: None,
             issuer_id,
             issuer_name,
         }

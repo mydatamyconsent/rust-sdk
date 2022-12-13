@@ -14,8 +14,8 @@
 
 #[derive(Clone, Debug, PartialEq, Default, Serialize, Deserialize)]
 pub struct SelectedFinancialAccountType {
-    #[serde(rename = "subCategory")]
-    pub sub_category: Box<crate::models::FinancialAccountSubCategoryType>,
+    #[serde(rename = "subCategory", skip_serializing_if = "Option::is_none")]
+    pub sub_category: Option<Box<crate::models::FinancialAccountSubCategoryType>>,
     /// DRNs.
     #[serde(rename = "drns")]
     pub drns: Vec<String>,
@@ -23,9 +23,9 @@ pub struct SelectedFinancialAccountType {
 
 impl SelectedFinancialAccountType {
     /// SelectedFinancialAccountType : Selected financial account type of financial account field of consent request template.
-    pub fn new(sub_category: crate::models::FinancialAccountSubCategoryType, drns: Vec<String>) -> SelectedFinancialAccountType {
+    pub fn new(drns: Vec<String>) -> SelectedFinancialAccountType {
         SelectedFinancialAccountType {
-            sub_category: Box::new(sub_category),
+            sub_category: None,
             drns,
         }
     }
