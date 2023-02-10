@@ -132,6 +132,8 @@ pub mod individual_consent_request_template_details_request_life;
 pub use self::individual_consent_request_template_details_request_life::IndividualConsentRequestTemplateDetailsRequestLife;
 pub mod issued_document;
 pub use self::issued_document::IssuedDocument;
+pub mod issuer_type;
+pub use self::issuer_type::IssuerType;
 pub mod key_value_pair;
 pub use self::key_value_pair::KeyValuePair;
 pub mod life;

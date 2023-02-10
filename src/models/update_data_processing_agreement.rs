@@ -14,24 +14,23 @@
 
 #[derive(Clone, Debug, PartialEq, Default, Serialize, Deserialize)]
 pub struct UpdateDataProcessingAgreement {
-    /// Agreement version.
-    #[serde(rename = "version")]
-    pub version: String,
-    /// Agreement body content.
-    #[serde(rename = "body")]
-    pub body: String,
+    /// Agreement version. Agreement body content.
+    #[serde(rename = "name")]
+    pub name: String,
+    #[serde(rename = "issuerType")]
+    pub issuer_type: crate::models::IssuerType,
     /// Agreement attachment file URL.
-    #[serde(rename = "attachmentUrl")]
-    pub attachment_url: String,
+    #[serde(rename = "agreementUrl")]
+    pub agreement_url: String,
 }
 
 impl UpdateDataProcessingAgreement {
     /// UpdateDataProcessingAgreement : Update data processing agreement details.
-    pub fn new(version: String, body: String, attachment_url: String) -> UpdateDataProcessingAgreement {
+    pub fn new(name: String, issuer_type: crate::models::IssuerType, agreement_url: String) -> UpdateDataProcessingAgreement {
         UpdateDataProcessingAgreement {
-            version,
-            body,
-            attachment_url,
+            name,
+            issuer_type,
+            agreement_url,
         }
     }
 }

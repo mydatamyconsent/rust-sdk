@@ -71,6 +71,7 @@ docs/IndividualConsentRequestTemplateDetailsDataLife.md
 docs/IndividualConsentRequestTemplateDetailsRequestLife.md
 docs/IndividualsApi.md
 docs/IssuedDocument.md
+docs/IssuerType.md
 docs/KeyValuePair.md
 docs/Life.md
 docs/MedicalRecordField.md
@@ -186,6 +187,7 @@ src/models/individual_consent_request_template_details_data_frequency.rs
 src/models/individual_consent_request_template_details_data_life.rs
 src/models/individual_consent_request_template_details_request_life.rs
 src/models/issued_document.rs
+src/models/issuer_type.rs
 src/models/key_value_pair.rs
 src/models/life.rs
 src/models/medical_record_field.rs
