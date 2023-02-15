@@ -20,7 +20,7 @@ use super::{Error, configuration};
 #[serde(untagged)]
 pub enum IssuerIssuedoc1XmlPostError {
     Status400(crate::models::Error),
-    Status403(crate::models::Error),
+    Status401(crate::models::Error),
     Status404(crate::models::Error),
     Status500(crate::models::Error),
     UnknownValue(serde_json::Value),
@@ -31,7 +31,7 @@ pub enum IssuerIssuedoc1XmlPostError {
 #[serde(untagged)]
 pub enum V1IndividualsConsentRequestsGetError {
     Status400(crate::models::Error),
-    Status403(crate::models::Error),
+    Status401(crate::models::Error),
     Status404(crate::models::Error),
     Status500(crate::models::Error),
     UnknownValue(serde_json::Value),
@@ -42,7 +42,7 @@ pub enum V1IndividualsConsentRequestsGetError {
 #[serde(untagged)]
 pub enum V1IndividualsConsentRequestsPostError {
     Status400(crate::models::Error),
-    Status403(crate::models::Error),
+    Status401(crate::models::Error),
     Status404(crate::models::Error),
     Status500(crate::models::Error),
     UnknownValue(serde_json::Value),
@@ -53,7 +53,7 @@ pub enum V1IndividualsConsentRequestsPostError {
 #[serde(untagged)]
 pub enum V1IndividualsConsentRequestsRequestIdCancelPutError {
     Status400(crate::models::Error),
-    Status403(crate::models::Error),
+    Status401(crate::models::Error),
     Status404(crate::models::Error),
     Status500(crate::models::Error),
     UnknownValue(serde_json::Value),
@@ -64,7 +64,7 @@ pub enum V1IndividualsConsentRequestsRequestIdCancelPutError {
 #[serde(untagged)]
 pub enum V1IndividualsConsentRequestsRequestIdGetError {
     Status400(crate::models::Error),
-    Status403(crate::models::Error),
+    Status401(crate::models::Error),
     Status404(crate::models::Error),
     Status500(crate::models::Error),
     UnknownValue(serde_json::Value),
@@ -75,7 +75,7 @@ pub enum V1IndividualsConsentRequestsRequestIdGetError {
 #[serde(untagged)]
 pub enum V1IndividualsConsentTemplatesGetError {
     Status400(crate::models::Error),
-    Status403(crate::models::Error),
+    Status401(crate::models::Error),
     Status404(crate::models::Error),
     Status500(crate::models::Error),
     UnknownValue(serde_json::Value),
@@ -86,7 +86,7 @@ pub enum V1IndividualsConsentTemplatesGetError {
 #[serde(untagged)]
 pub enum V1IndividualsConsentTemplatesTemplateIdGetError {
     Status400(crate::models::Error),
-    Status403(crate::models::Error),
+    Status401(crate::models::Error),
     Status404(crate::models::Error),
     Status500(crate::models::Error),
     UnknownValue(serde_json::Value),
@@ -97,7 +97,7 @@ pub enum V1IndividualsConsentTemplatesTemplateIdGetError {
 #[serde(untagged)]
 pub enum V1IndividualsConsentsConsentIdDocumentsDocumentIdDownloadGetError {
     Status400(crate::models::Error),
-    Status403(crate::models::Error),
+    Status401(crate::models::Error),
     Status404(crate::models::Error),
     Status500(crate::models::Error),
     UnknownValue(serde_json::Value),
@@ -108,7 +108,7 @@ pub enum V1IndividualsConsentsConsentIdDocumentsDocumentIdDownloadGetError {
 #[serde(untagged)]
 pub enum V1IndividualsConsentsConsentIdDocumentsDocumentIdGetError {
     Status400(crate::models::Error),
-    Status403(crate::models::Error),
+    Status401(crate::models::Error),
     Status404(crate::models::Error),
     Status500(crate::models::Error),
     UnknownValue(serde_json::Value),
@@ -119,7 +119,7 @@ pub enum V1IndividualsConsentsConsentIdDocumentsDocumentIdGetError {
 #[serde(untagged)]
 pub enum V1IndividualsConsentsConsentIdDocumentsGetError {
     Status400(crate::models::Error),
-    Status403(crate::models::Error),
+    Status401(crate::models::Error),
     Status404(crate::models::Error),
     Status500(crate::models::Error),
     UnknownValue(serde_json::Value),
@@ -130,7 +130,7 @@ pub enum V1IndividualsConsentsConsentIdDocumentsGetError {
 #[serde(untagged)]
 pub enum V1IndividualsConsentsConsentIdFinancialAccountsAccountIdGetError {
     Status400(crate::models::Error),
-    Status403(crate::models::Error),
+    Status401(crate::models::Error),
     Status404(crate::models::Error),
     Status500(crate::models::Error),
     UnknownValue(serde_json::Value),
@@ -141,7 +141,7 @@ pub enum V1IndividualsConsentsConsentIdFinancialAccountsAccountIdGetError {
 #[serde(untagged)]
 pub enum V1IndividualsConsentsConsentIdFinancialAccountsAccountIdTransactionsGetError {
     Status400(crate::models::Error),
-    Status403(crate::models::Error),
+    Status401(crate::models::Error),
     Status404(crate::models::Error),
     Status500(crate::models::Error),
     UnknownValue(serde_json::Value),
@@ -152,7 +152,7 @@ pub enum V1IndividualsConsentsConsentIdFinancialAccountsAccountIdTransactionsGet
 #[serde(untagged)]
 pub enum V1IndividualsConsentsConsentIdFinancialAccountsGetError {
     Status400(crate::models::Error),
-    Status403(crate::models::Error),
+    Status401(crate::models::Error),
     Status404(crate::models::Error),
     Status500(crate::models::Error),
     UnknownValue(serde_json::Value),
@@ -163,7 +163,7 @@ pub enum V1IndividualsConsentsConsentIdFinancialAccountsGetError {
 #[serde(untagged)]
 pub enum V1IndividualsConsentsConsentIdGetError {
     Status400(crate::models::Error),
-    Status403(crate::models::Error),
+    Status401(crate::models::Error),
     Status404(crate::models::Error),
     Status500(crate::models::Error),
     UnknownValue(serde_json::Value),
@@ -174,7 +174,7 @@ pub enum V1IndividualsConsentsConsentIdGetError {
 #[serde(untagged)]
 pub enum V1IndividualsConsentsConsentIdHealthFhirBundleGetError {
     Status400(crate::models::Error),
-    Status403(crate::models::Error),
+    Status401(crate::models::Error),
     Status404(crate::models::Error),
     Status500(crate::models::Error),
     UnknownValue(serde_json::Value),
@@ -185,7 +185,7 @@ pub enum V1IndividualsConsentsConsentIdHealthFhirBundleGetError {
 #[serde(untagged)]
 pub enum V1IndividualsConsentsGetError {
     Status400(crate::models::Error),
-    Status403(crate::models::Error),
+    Status401(crate::models::Error),
     Status404(crate::models::Error),
     Status500(crate::models::Error),
     UnknownValue(serde_json::Value),
@@ -196,7 +196,7 @@ pub enum V1IndividualsConsentsGetError {
 #[serde(untagged)]
 pub enum V1IndividualsDocumentsIssueIssueRequestIdUploadPostError {
     Status400(crate::models::Error),
-    Status403(crate::models::Error),
+    Status401(crate::models::Error),
     Status404(crate::models::Error),
     Status500(crate::models::Error),
     UnknownValue(serde_json::Value),
@@ -207,7 +207,7 @@ pub enum V1IndividualsDocumentsIssueIssueRequestIdUploadPostError {
 #[serde(untagged)]
 pub enum V1IndividualsDocumentsIssuePostError {
     Status400(crate::models::Error),
-    Status403(crate::models::Error),
+    Status401(crate::models::Error),
     Status404(crate::models::Error),
     Status500(crate::models::Error),
     UnknownValue(serde_json::Value),
@@ -218,7 +218,7 @@ pub enum V1IndividualsDocumentsIssuePostError {
 #[serde(untagged)]
 pub enum V1IndividualsDocumentsIssuedDocumentIdGetError {
     Status400(crate::models::Error),
-    Status403(crate::models::Error),
+    Status401(crate::models::Error),
     Status404(crate::models::Error),
     Status500(crate::models::Error),
     UnknownValue(serde_json::Value),
@@ -229,7 +229,7 @@ pub enum V1IndividualsDocumentsIssuedDocumentIdGetError {
 #[serde(untagged)]
 pub enum V1IndividualsDocumentsIssuedGetError {
     Status400(crate::models::Error),
-    Status403(crate::models::Error),
+    Status401(crate::models::Error),
     Status404(crate::models::Error),
     Status500(crate::models::Error),
     UnknownValue(serde_json::Value),
@@ -240,7 +240,7 @@ pub enum V1IndividualsDocumentsIssuedGetError {
 #[serde(untagged)]
 pub enum V1IndividualsDocumentsTypesGetError {
     Status400(crate::models::Error),
-    Status403(crate::models::Error),
+    Status401(crate::models::Error),
     Status404(crate::models::Error),
     Status500(crate::models::Error),
     UnknownValue(serde_json::Value),

@@ -20,7 +20,7 @@ use super::{Error, configuration};
 #[serde(untagged)]
 pub enum V1SupportedIdentifiersCountryIso2CodeGetError {
     Status400(crate::models::Error),
-    Status403(crate::models::Error),
+    Status401(crate::models::Error),
     Status404(crate::models::Error),
     Status500(crate::models::Error),
     UnknownValue(serde_json::Value),

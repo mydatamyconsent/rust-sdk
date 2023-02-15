@@ -20,7 +20,7 @@ use super::{Error, configuration};
 #[serde(untagged)]
 pub enum V1DataProvidersGetError {
     Status400(crate::models::Error),
-    Status403(crate::models::Error),
+    Status401(crate::models::Error),
     Status404(crate::models::Error),
     Status500(crate::models::Error),
     UnknownValue(serde_json::Value),
@@ -31,7 +31,7 @@ pub enum V1DataProvidersGetError {
 #[serde(untagged)]
 pub enum V1DataProvidersIdGetError {
     Status400(crate::models::Error),
-    Status403(crate::models::Error),
+    Status401(crate::models::Error),
     Status404(crate::models::Error),
     Status500(crate::models::Error),
     UnknownValue(serde_json::Value),

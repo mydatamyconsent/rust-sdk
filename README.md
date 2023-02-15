@@ -29,9 +29,7 @@ Class | Method | HTTP request | Description
 *DataProcessingAgreementsApi* | [**v1_data_agreements_get**](docs/DataProcessingAgreementsApi.md#v1_data_agreements_get) | **GET** /v1/data-agreements | Get paginated data processing agreements.
 *DataProcessingAgreementsApi* | [**v1_data_agreements_id_delete**](docs/DataProcessingAgreementsApi.md#v1_data_agreements_id_delete) | **DELETE** /v1/data-agreements/{id} | Delete a data processing agreement this will not delete a published or a agreement in use with consents.
 *DataProcessingAgreementsApi* | [**v1_data_agreements_id_get**](docs/DataProcessingAgreementsApi.md#v1_data_agreements_id_get) | **GET** /v1/data-agreements/{id} | Get data processing agreement by id.
-*DataProcessingAgreementsApi* | [**v1_data_agreements_id_put**](docs/DataProcessingAgreementsApi.md#v1_data_agreements_id_put) | **PUT** /v1/data-agreements/{id} | Update data processing agreement.
 *DataProcessingAgreementsApi* | [**v1_data_agreements_id_terminate_put**](docs/DataProcessingAgreementsApi.md#v1_data_agreements_id_terminate_put) | **PUT** /v1/data-agreements/{id}/terminate | Terminate a data processing agreement by id.
-*DataProcessingAgreementsApi* | [**v1_data_agreements_post**](docs/DataProcessingAgreementsApi.md#v1_data_agreements_post) | **POST** /v1/data-agreements | Create a data processing agreement.
 *DataProvidersDiscoveryApi* | [**v1_data_providers_get**](docs/DataProvidersDiscoveryApi.md#v1_data_providers_get) | **GET** /v1/data-providers | Discover all data providers in my data my consent by country and filters.
 *DataProvidersDiscoveryApi* | [**v1_data_providers_id_get**](docs/DataProvidersDiscoveryApi.md#v1_data_providers_id_get) | **GET** /v1/data-providers/{id} | Get a data provider details by provider id.
 *IndividualsApi* | [**issuer_issuedoc1_xml_post**](docs/IndividualsApi.md#issuer_issuedoc1_xml_post) | **POST** /issuer/issuedoc/1/xml | Digilocker compatible endpoint to issue document.
@@ -95,7 +93,6 @@ Class | Method | HTTP request | Description
  - [ConsentedIdentifier](docs/ConsentedIdentifier.md)
  - [ConsentedMedicalRecord](docs/ConsentedMedicalRecord.md)
  - [CreateConsentRequest](docs/CreateConsentRequest.md)
- - [CreateDataProcessingAgreement](docs/CreateDataProcessingAgreement.md)
  - [DataConsentStatus](docs/DataConsentStatus.md)
  - [DataProcessingAgreement](docs/DataProcessingAgreement.md)
  - [DataProtectionOfficer](docs/DataProtectionOfficer.md)
@@ -182,7 +179,6 @@ Class | Method | HTTP request | Description
  - [SupportedDocumentType](docs/SupportedDocumentType.md)
  - [SupportedEntityType](docs/SupportedEntityType.md)
  - [SupportedIdentifier](docs/SupportedIdentifier.md)
- - [UpdateDataProcessingAgreement](docs/UpdateDataProcessingAgreement.md)
  - [UploadDocumentResponse](docs/UploadDocumentResponse.md)
  - [UriDetails](docs/UriDetails.md)
 

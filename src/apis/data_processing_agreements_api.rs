@@ -20,7 +20,7 @@ use super::{Error, configuration};
 #[serde(untagged)]
 pub enum V1DataAgreementsGetError {
     Status400(crate::models::Error),
-    Status403(crate::models::Error),
+    Status401(crate::models::Error),
     Status404(crate::models::Error),
     Status500(crate::models::Error),
     UnknownValue(serde_json::Value),
@@ -31,7 +31,7 @@ pub enum V1DataAgreementsGetError {
 #[serde(untagged)]
 pub enum V1DataAgreementsIdDeleteError {
     Status400(crate::models::Error),
-    Status403(crate::models::Error),
+    Status401(crate::models::Error),
     Status404(crate::models::Error),
     Status500(crate::models::Error),
     UnknownValue(serde_json::Value),
@@ -42,18 +42,7 @@ pub enum V1DataAgreementsIdDeleteError {
 #[serde(untagged)]
 pub enum V1DataAgreementsIdGetError {
     Status400(crate::models::Error),
-    Status403(crate::models::Error),
-    Status404(crate::models::Error),
-    Status500(crate::models::Error),
-    UnknownValue(serde_json::Value),
-}
-
-/// struct for typed errors of method [`v1_data_agreements_id_put`]
-#[derive(Debug, Clone, Serialize, Deserialize)]
-#[serde(untagged)]
-pub enum V1DataAgreementsIdPutError {
-    Status400(crate::models::Error),
-    Status403(crate::models::Error),
+    Status401(crate::models::Error),
     Status404(crate::models::Error),
     Status500(crate::models::Error),
     UnknownValue(serde_json::Value),
@@ -64,18 +53,7 @@ pub enum V1DataAgreementsIdPutError {
 #[serde(untagged)]
 pub enum V1DataAgreementsIdTerminatePutError {
     Status400(crate::models::Error),
-    Status403(crate::models::Error),
-    Status404(crate::models::Error),
-    Status500(crate::models::Error),
-    UnknownValue(serde_json::Value),
-}
-
-/// struct for typed errors of method [`v1_data_agreements_post`]
-#[derive(Debug, Clone, Serialize, Deserialize)]
-#[serde(untagged)]
-pub enum V1DataAgreementsPostError {
-    Status400(crate::models::Error),
-    Status403(crate::models::Error),
+    Status401(crate::models::Error),
     Status404(crate::models::Error),
     Status500(crate::models::Error),
     UnknownValue(serde_json::Value),
@@ -178,37 +156,6 @@ pub async fn v1_data_agreements_id_get(configuration: &configuration::Configurat
     }
 }
 
-pub async fn v1_data_agreements_id_put(configuration: &configuration::Configuration, id: &str, update_data_processing_agreement: crate::models::UpdateDataProcessingAgreement) -> Result<crate::models::DataProcessingAgreement, Error<V1DataAgreementsIdPutError>> {
-    let local_var_configuration = configuration;
-
-    let local_var_client = &local_var_configuration.client;
-
-    let local_var_uri_str = format!("{}/v1/data-agreements/{id}", local_var_configuration.base_path, id=crate::apis::urlencode(id));
-    let mut local_var_req_builder = local_var_client.request(reqwest::Method::PUT, local_var_uri_str.as_str());
-
-    if let Some(ref local_var_user_agent) = local_var_configuration.user_agent {
-        local_var_req_builder = local_var_req_builder.header(reqwest::header::USER_AGENT, local_var_user_agent.clone());
-    }
-    if let Some(ref local_var_token) = local_var_configuration.oauth_access_token {
-        local_var_req_builder = local_var_req_builder.bearer_auth(local_var_token.to_owned());
-    };
-    local_var_req_builder = local_var_req_builder.json(&update_data_processing_agreement);
-
-    let local_var_req = local_var_req_builder.build()?;
-    let local_var_resp = local_var_client.execute(local_var_req).await?;
-
-    let local_var_status = local_var_resp.status();
-    let local_var_content = local_var_resp.text().await?;
-
-    if !local_var_status.is_client_error() && !local_var_status.is_server_error() {
-        serde_json::from_str(&local_var_content).map_err(Error::from)
-    } else {
-        let local_var_entity: Option<V1DataAgreementsIdPutError> = serde_json::from_str(&local_var_content).ok();
-        let local_var_error = ResponseContent { status: local_var_status, content: local_var_content, entity: local_var_entity };
-        Err(Error::ResponseError(local_var_error))
-    }
-}
-
 pub async fn v1_data_agreements_id_terminate_put(configuration: &configuration::Configuration, id: &str) -> Result<bool, Error<V1DataAgreementsIdTerminatePutError>> {
     let local_var_configuration = configuration;
 
@@ -234,37 +181,6 @@ pub async fn v1_data_agreements_id_terminate_put(configuration: &configuration::
         serde_json::from_str(&local_var_content).map_err(Error::from)
     } else {
         let local_var_entity: Option<V1DataAgreementsIdTerminatePutError> = serde_json::from_str(&local_var_content).ok();
-        let local_var_error = ResponseContent { status: local_var_status, content: local_var_content, entity: local_var_entity };
-        Err(Error::ResponseError(local_var_error))
-    }
-}
-
-pub async fn v1_data_agreements_post(configuration: &configuration::Configuration, create_data_processing_agreement: crate::models::CreateDataProcessingAgreement) -> Result<crate::models::DataProcessingAgreement, Error<V1DataAgreementsPostError>> {
-    let local_var_configuration = configuration;
-
-    let local_var_client = &local_var_configuration.client;
-
-    let local_var_uri_str = format!("{}/v1/data-agreements", local_var_configuration.base_path);
-    let mut local_var_req_builder = local_var_client.request(reqwest::Method::POST, local_var_uri_str.as_str());
-
-    if let Some(ref local_var_user_agent) = local_var_configuration.user_agent {
-        local_var_req_builder = local_var_req_builder.header(reqwest::header::USER_AGENT, local_var_user_agent.clone());
-    }
-    if let Some(ref local_var_token) = local_var_configuration.oauth_access_token {
-        local_var_req_builder = local_var_req_builder.bearer_auth(local_var_token.to_owned());
-    };
-    local_var_req_builder = local_var_req_builder.json(&create_data_processing_agreement);
-
-    let local_var_req = local_var_req_builder.build()?;
-    let local_var_resp = local_var_client.execute(local_var_req).await?;
-
-    let local_var_status = local_var_resp.status();
-    let local_var_content = local_var_resp.text().await?;
-
-    if !local_var_status.is_client_error() && !local_var_status.is_server_error() {
-        serde_json::from_str(&local_var_content).map_err(Error::from)
-    } else {
-        let local_var_entity: Option<V1DataAgreementsPostError> = serde_json::from_str(&local_var_content).ok();
         let local_var_error = ResponseContent { status: local_var_status, content: local_var_content, entity: local_var_entity };
         Err(Error::ResponseError(local_var_error))
     }
