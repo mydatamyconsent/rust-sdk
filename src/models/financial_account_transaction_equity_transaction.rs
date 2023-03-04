@@ -17,13 +17,28 @@ pub struct FinancialAccountTransactionEquityTransaction {
     pub r#type: String,
     #[serde(rename = "id")]
     pub id: String,
+    #[serde(rename = "amount")]
+    pub amount: String,
+    #[serde(rename = "currency_code")]
+    pub currency_code: String,
+    #[serde(rename = "txn_type")]
+    pub txn_type: crate::models::EquityTransactionsType,
+    #[serde(rename = "units")]
+    pub units: String,
+    #[serde(rename = "transacted_at_utc")]
+    pub transacted_at_utc: String,
 }
 
 impl FinancialAccountTransactionEquityTransaction {
-    pub fn new(r#type: String, id: String) -> FinancialAccountTransactionEquityTransaction {
+    pub fn new(r#type: String, id: String, amount: String, currency_code: String, txn_type: crate::models::EquityTransactionsType, units: String, transacted_at_utc: String) -> FinancialAccountTransactionEquityTransaction {
         FinancialAccountTransactionEquityTransaction {
             r#type,
             id,
+            amount,
+            currency_code,
+            txn_type,
+            units,
+            transacted_at_utc,
         }
     }
 }

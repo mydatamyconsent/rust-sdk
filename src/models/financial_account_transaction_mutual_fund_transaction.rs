@@ -14,82 +14,31 @@
 #[derive(Clone, Debug, PartialEq, Default, Serialize, Deserialize)]
 pub struct FinancialAccountTransactionMutualFundTransaction {
     #[serde(rename = "type")]
-    pub r#type: crate::models::MutualFundTransactionType,
+    pub r#type: String,
     #[serde(rename = "id")]
     pub id: String,
-    #[serde(rename = "amc")]
-    pub amc: String,
-    #[serde(rename = "registrar")]
-    pub registrar: String,
-    #[serde(rename = "scheme_code")]
-    pub scheme_code: String,
-    #[serde(rename = "scheme_plan")]
-    pub scheme_plan: crate::models::MutualFundSchemePlan,
-    #[serde(rename = "isin")]
-    pub isin: String,
-    #[serde(rename = "amfi_code")]
-    pub amfi_code: String,
-    #[serde(rename = "fund_type")]
-    pub fund_type: crate::models::MutualFundFundType,
-    #[serde(rename = "scheme_option")]
-    pub scheme_option: crate::models::MutualFundSchemeOption,
-    #[serde(rename = "scheme_types")]
-    pub scheme_types: crate::models::MutualFundSchemeType,
-    #[serde(rename = "scheme_category")]
-    pub scheme_category: crate::models::MutualFundSchemeCategory,
-    #[serde(rename = "ucc")]
-    pub ucc: String,
     #[serde(rename = "amount")]
     pub amount: String,
-    #[serde(rename = "closing_units")]
-    pub closing_units: String,
-    #[serde(rename = "lien_units")]
-    pub lien_units: String,
-    #[serde(rename = "nav")]
-    pub nav: String,
-    #[serde(rename = "nav_date")]
-    pub nav_date: String,
-    #[serde(rename = "order_date")]
-    pub order_date: String,
-    #[serde(rename = "execution_date")]
-    pub execution_date: String,
-    #[serde(rename = "lockin_flag")]
-    pub lockin_flag: String,
-    #[serde(rename = "lockin_days")]
-    pub lockin_days: String,
-    #[serde(rename = "mode")]
-    pub mode: crate::models::MutualFundHoldingMode,
-    #[serde(rename = "narration")]
-    pub narration: String,
+    #[serde(rename = "currency_code")]
+    pub currency_code: String,
+    #[serde(rename = "txn_type")]
+    pub txn_type: crate::models::MutualFundTransactionType,
+    #[serde(rename = "units")]
+    pub units: String,
+    #[serde(rename = "transacted_at_utc")]
+    pub transacted_at_utc: String,
 }
 
 impl FinancialAccountTransactionMutualFundTransaction {
-    pub fn new(r#type: crate::models::MutualFundTransactionType, id: String, amc: String, registrar: String, scheme_code: String, scheme_plan: crate::models::MutualFundSchemePlan, isin: String, amfi_code: String, fund_type: crate::models::MutualFundFundType, scheme_option: crate::models::MutualFundSchemeOption, scheme_types: crate::models::MutualFundSchemeType, scheme_category: crate::models::MutualFundSchemeCategory, ucc: String, amount: String, closing_units: String, lien_units: String, nav: String, nav_date: String, order_date: String, execution_date: String, lockin_flag: String, lockin_days: String, mode: crate::models::MutualFundHoldingMode, narration: String) -> FinancialAccountTransactionMutualFundTransaction {
+    pub fn new(r#type: String, id: String, amount: String, currency_code: String, txn_type: crate::models::MutualFundTransactionType, units: String, transacted_at_utc: String) -> FinancialAccountTransactionMutualFundTransaction {
         FinancialAccountTransactionMutualFundTransaction {
             r#type,
             id,
-            amc,
-            registrar,
-            scheme_code,
-            scheme_plan,
-            isin,
-            amfi_code,
-            fund_type,
-            scheme_option,
-            scheme_types,
-            scheme_category,
-            ucc,
             amount,
-            closing_units,
-            lien_units,
-            nav,
-            nav_date,
-            order_date,
-            execution_date,
-            lockin_flag,
-            lockin_days,
-            mode,
-            narration,
+            currency_code,
+            txn_type,
+            units,
+            transacted_at_utc,
         }
     }
 }

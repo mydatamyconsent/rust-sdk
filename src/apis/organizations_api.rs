@@ -547,7 +547,7 @@ pub async fn v1_organizations_consents_consent_id_financial_accounts_account_id_
     }
 }
 
-pub async fn v1_organizations_consents_consent_id_financial_accounts_account_id_transactions_get(configuration: &configuration::Configuration, consent_id: &str, account_id: &str, _filters: Option<&str>, _from_date_time: Option<&str>, _to_date_time: Option<&str>, _page_no: Option<i32>, _page_size: Option<i32>) -> Result<crate::models::PaginatedListOfFinancialAccountTransactions, Error<V1OrganizationsConsentsConsentIdFinancialAccountsAccountIdTransactionsGetError>> {
+pub async fn v1_organizations_consents_consent_id_financial_accounts_account_id_transactions_get(configuration: &configuration::Configuration, consent_id: &str, account_id: &str, from_date_time: Option<String>, to_date_time: Option<String>, page_no: Option<i32>, page_size: Option<i32>) -> Result<crate::models::PaginatedListOfFinancialAccountTransactions, Error<V1OrganizationsConsentsConsentIdFinancialAccountsAccountIdTransactionsGetError>> {
     let local_var_configuration = configuration;
 
     let local_var_client = &local_var_configuration.client;
@@ -555,20 +555,17 @@ pub async fn v1_organizations_consents_consent_id_financial_accounts_account_id_
     let local_var_uri_str = format!("{}/v1/organizations/consents/{consent_id}/financial-accounts/{account_id}/transactions", local_var_configuration.base_path, consent_id=crate::apis::urlencode(consent_id), account_id=crate::apis::urlencode(account_id));
     let mut local_var_req_builder = local_var_client.request(reqwest::Method::GET, local_var_uri_str.as_str());
 
-    if let Some(ref local_var_str) = _filters {
-        local_var_req_builder = local_var_req_builder.query(&[("_filters", &local_var_str.to_string())]);
+    if let Some(ref local_var_str) = from_date_time {
+        local_var_req_builder = local_var_req_builder.query(&[("from_date_time", &local_var_str.to_string())]);
     }
-    if let Some(ref local_var_str) = _from_date_time {
-        local_var_req_builder = local_var_req_builder.query(&[("_from_date_time", &local_var_str.to_string())]);
+    if let Some(ref local_var_str) = to_date_time {
+        local_var_req_builder = local_var_req_builder.query(&[("to_date_time", &local_var_str.to_string())]);
     }
-    if let Some(ref local_var_str) = _to_date_time {
-        local_var_req_builder = local_var_req_builder.query(&[("_to_date_time", &local_var_str.to_string())]);
+    if let Some(ref local_var_str) = page_no {
+        local_var_req_builder = local_var_req_builder.query(&[("page_no", &local_var_str.to_string())]);
     }
-    if let Some(ref local_var_str) = _page_no {
-        local_var_req_builder = local_var_req_builder.query(&[("_page_no", &local_var_str.to_string())]);
-    }
-    if let Some(ref local_var_str) = _page_size {
-        local_var_req_builder = local_var_req_builder.query(&[("_page_size", &local_var_str.to_string())]);
+    if let Some(ref local_var_str) = page_size {
+        local_var_req_builder = local_var_req_builder.query(&[("page_size", &local_var_str.to_string())]);
     }
     if let Some(ref local_var_user_agent) = local_var_configuration.user_agent {
         local_var_req_builder = local_var_req_builder.header(reqwest::header::USER_AGENT, local_var_user_agent.clone());

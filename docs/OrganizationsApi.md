@@ -316,7 +316,7 @@ Name | Type | Description  | Required | Notes
 
 ## v1_organizations_consents_consent_id_financial_accounts_account_id_transactions_get
 
-> crate::models::PaginatedListOfFinancialAccountTransactions v1_organizations_consents_consent_id_financial_accounts_account_id_transactions_get(consent_id, account_id, _filters, _from_date_time, _to_date_time, _page_no, _page_size)
+> crate::models::PaginatedListOfFinancialAccountTransactions v1_organizations_consents_consent_id_financial_accounts_account_id_transactions_get(consent_id, account_id, from_date_time, to_date_time, page_no, page_size)
 Get organization consented financial account transactions.
 
 ### Parameters
@@ -326,11 +326,10 @@ Name | Type | Description  | Required | Notes
 ------------- | ------------- | ------------- | ------------- | -------------
 **consent_id** | **String** |  | [required] |
 **account_id** | **String** |  | [required] |
-**_filters** | Option<**String**> |  |  |
-**_from_date_time** | Option<**String**> |  |  |
-**_to_date_time** | Option<**String**> |  |  |
-**_page_no** | Option<**i32**> |  |  |
-**_page_size** | Option<**i32**> |  |  |
+**from_date_time** | Option<**String**> |  |  |
+**to_date_time** | Option<**String**> |  |  |
+**page_no** | Option<**i32**> |  |  |
+**page_size** | Option<**i32**> |  |  |
 
 ### Return type
 

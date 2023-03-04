@@ -12,27 +12,15 @@
 
 
 #[derive(Clone, Debug, PartialEq, Default, Serialize, Deserialize)]
-pub struct SipTransaction {
-    #[serde(rename = "id")]
-    pub id: String,
-    #[serde(rename = "amount")]
-    pub amount: f64,
-    #[serde(rename = "currency_code")]
-    pub currency_code: String,
-    #[serde(rename = "txn_type")]
-    pub txn_type: crate::models::SipTransactionType,
-    #[serde(rename = "transacted_at_utc")]
-    pub transacted_at_utc: String,
+pub struct FinancialAccountTransactionTermDepositTransactionAllOf {
+    #[serde(rename = "type")]
+    pub r#type: String,
 }
 
-impl SipTransaction {
-    pub fn new(id: String, amount: f64, currency_code: String, txn_type: crate::models::SipTransactionType, transacted_at_utc: String) -> SipTransaction {
-        SipTransaction {
-            id,
-            amount,
-            currency_code,
-            txn_type,
-            transacted_at_utc,
+impl FinancialAccountTransactionTermDepositTransactionAllOf {
+    pub fn new(r#type: String) -> FinancialAccountTransactionTermDepositTransactionAllOf {
+        FinancialAccountTransactionTermDepositTransactionAllOf {
+            r#type,
         }
     }
 }

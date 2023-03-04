@@ -11,35 +11,41 @@
 
 /// 
 #[derive(Clone, Copy, Debug, Eq, PartialEq, Ord, PartialOrd, Hash, Serialize, Deserialize)]
-pub enum MutualFundFundType {
-    #[serde(rename = "Equity")]
-    Equity,
-    #[serde(rename = "Debt")]
-    Debt,
-    #[serde(rename = "Hybrid")]
-    Hybrid,
-    #[serde(rename = "SolutionOrientedSchemes")]
-    SolutionOrientedSchemes,
+pub enum EquityTransactionsType {
+    #[serde(rename = "Buy")]
+    Buy,
+    #[serde(rename = "Sell")]
+    Sell,
+    #[serde(rename = "Bonus")]
+    Bonus,
+    #[serde(rename = "Split")]
+    Split,
+    #[serde(rename = "Dividend")]
+    Dividend,
+    #[serde(rename = "Rights")]
+    Rights,
     #[serde(rename = "Others")]
     Others,
 
 }
 
-impl ToString for MutualFundFundType {
+impl ToString for EquityTransactionsType {
     fn to_string(&self) -> String {
         match self {
-            Self::Equity => String::from("Equity"),
-            Self::Debt => String::from("Debt"),
-            Self::Hybrid => String::from("Hybrid"),
-            Self::SolutionOrientedSchemes => String::from("SolutionOrientedSchemes"),
+            Self::Buy => String::from("Buy"),
+            Self::Sell => String::from("Sell"),
+            Self::Bonus => String::from("Bonus"),
+            Self::Split => String::from("Split"),
+            Self::Dividend => String::from("Dividend"),
+            Self::Rights => String::from("Rights"),
             Self::Others => String::from("Others"),
         }
     }
 }
 
-impl Default for MutualFundFundType {
-    fn default() -> MutualFundFundType {
-        Self::Equity
+impl Default for EquityTransactionsType {
+    fn default() -> EquityTransactionsType {
+        Self::Buy
     }
 }
 

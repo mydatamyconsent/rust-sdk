@@ -17,60 +17,61 @@ pub enum FinancialAccountTransaction {
     FinancialAccountTransactionEquityTransaction {
         #[serde(rename = "id")]
         id: String,
+        #[serde(rename = "amount")]
+        amount: String,
+        #[serde(rename = "currency_code")]
+        currency_code: String,
+        #[serde(rename = "txn_type")]
+        txn_type: crate::models::EquityTransactionsType,
+        #[serde(rename = "units")]
+        units: String,
+        #[serde(rename = "transacted_at_utc")]
+        transacted_at_utc: String,
     },
     #[serde(rename="MutualFundTransaction")]
     FinancialAccountTransactionMutualFundTransaction {
         #[serde(rename = "id")]
         id: String,
-        #[serde(rename = "amc")]
-        amc: String,
-        #[serde(rename = "registrar")]
-        registrar: String,
-        #[serde(rename = "scheme_code")]
-        scheme_code: String,
-        #[serde(rename = "scheme_plan")]
-        scheme_plan: crate::models::MutualFundSchemePlan,
-        #[serde(rename = "isin")]
-        isin: String,
-        #[serde(rename = "amfi_code")]
-        amfi_code: String,
-        #[serde(rename = "fund_type")]
-        fund_type: crate::models::MutualFundFundType,
-        #[serde(rename = "scheme_option")]
-        scheme_option: crate::models::MutualFundSchemeOption,
-        #[serde(rename = "scheme_types")]
-        scheme_types: crate::models::MutualFundSchemeType,
-        #[serde(rename = "scheme_category")]
-        scheme_category: crate::models::MutualFundSchemeCategory,
-        #[serde(rename = "ucc")]
-        ucc: String,
         #[serde(rename = "amount")]
         amount: String,
-        #[serde(rename = "closing_units")]
-        closing_units: String,
-        #[serde(rename = "lien_units")]
-        lien_units: String,
-        #[serde(rename = "nav")]
-        nav: String,
-        #[serde(rename = "nav_date")]
-        nav_date: String,
-        #[serde(rename = "order_date")]
-        order_date: String,
-        #[serde(rename = "execution_date")]
-        execution_date: String,
-        #[serde(rename = "lockin_flag")]
-        lockin_flag: String,
-        #[serde(rename = "lockin_days")]
-        lockin_days: String,
-        #[serde(rename = "mode")]
-        mode: crate::models::MutualFundHoldingMode,
-        #[serde(rename = "narration")]
-        narration: String,
+        #[serde(rename = "currency_code")]
+        currency_code: String,
+        #[serde(rename = "txn_type")]
+        txn_type: crate::models::MutualFundTransactionType,
+        #[serde(rename = "units")]
+        units: String,
+        #[serde(rename = "transacted_at_utc")]
+        transacted_at_utc: String,
     },
     #[serde(rename="SipTransaction")]
     FinancialAccountTransactionSipTransaction {
         #[serde(rename = "id")]
         id: String,
+        #[serde(rename = "amount")]
+        amount: f64,
+        #[serde(rename = "currency_code")]
+        currency_code: String,
+        #[serde(rename = "txn_type")]
+        txn_type: crate::models::SipTransactionType,
+        #[serde(rename = "transacted_at_utc")]
+        transacted_at_utc: String,
+    },
+    #[serde(rename="TermDepositTransaction")]
+    FinancialAccountTransactionTermDepositTransaction {
+        #[serde(rename = "id")]
+        id: String,
+        #[serde(rename = "amount")]
+        amount: f64,
+        #[serde(rename = "currency_code")]
+        currency_code: String,
+        #[serde(rename = "narration")]
+        narration: String,
+        #[serde(rename = "txn_type")]
+        txn_type: crate::models::TermDepositTransactionType,
+        #[serde(rename = "mode")]
+        mode: crate::models::TermDepositTransactionMode,
+        #[serde(rename = "transacted_at_utc")]
+        transacted_at_utc: String,
     },
 }
 

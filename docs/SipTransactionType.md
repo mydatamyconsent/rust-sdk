@@ -1,4 +1,4 @@
-# MutualFundHoldingMode
+# SipTransactionType
 
 ## Properties
 

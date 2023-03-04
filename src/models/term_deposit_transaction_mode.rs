@@ -11,29 +11,38 @@
 
 /// 
 #[derive(Clone, Copy, Debug, Eq, PartialEq, Ord, PartialOrd, Hash, Serialize, Deserialize)]
-pub enum MutualFundSchemeOption {
-    #[serde(rename = "Reinvest")]
-    Reinvest,
-    #[serde(rename = "Payout")]
-    Payout,
-    #[serde(rename = "GrowthType")]
-    GrowthType,
+pub enum TermDepositTransactionMode {
+    #[serde(rename = "Cash")]
+    Cash,
+    #[serde(rename = "Atm")]
+    Atm,
+    #[serde(rename = "CardPayment")]
+    CardPayment,
+    #[serde(rename = "Upi")]
+    Upi,
+    #[serde(rename = "Ft")]
+    Ft,
+    #[serde(rename = "Others")]
+    Others,
 
 }
 
-impl ToString for MutualFundSchemeOption {
+impl ToString for TermDepositTransactionMode {
     fn to_string(&self) -> String {
         match self {
-            Self::Reinvest => String::from("Reinvest"),
-            Self::Payout => String::from("Payout"),
-            Self::GrowthType => String::from("GrowthType"),
+            Self::Cash => String::from("Cash"),
+            Self::Atm => String::from("Atm"),
+            Self::CardPayment => String::from("CardPayment"),
+            Self::Upi => String::from("Upi"),
+            Self::Ft => String::from("Ft"),
+            Self::Others => String::from("Others"),
         }
     }
 }
 
-impl Default for MutualFundSchemeOption {
-    fn default() -> MutualFundSchemeOption {
-        Self::Reinvest
+impl Default for TermDepositTransactionMode {
+    fn default() -> TermDepositTransactionMode {
+        Self::Cash
     }
 }
 

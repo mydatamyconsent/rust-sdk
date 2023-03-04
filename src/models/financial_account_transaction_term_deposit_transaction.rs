@@ -12,7 +12,7 @@
 
 
 #[derive(Clone, Debug, PartialEq, Default, Serialize, Deserialize)]
-pub struct FinancialAccountTransactionSipTransaction {
+pub struct FinancialAccountTransactionTermDepositTransaction {
     #[serde(rename = "type")]
     pub r#type: String,
     #[serde(rename = "id")]
@@ -21,20 +21,26 @@ pub struct FinancialAccountTransactionSipTransaction {
     pub amount: f64,
     #[serde(rename = "currency_code")]
     pub currency_code: String,
+    #[serde(rename = "narration")]
+    pub narration: String,
     #[serde(rename = "txn_type")]
-    pub txn_type: crate::models::SipTransactionType,
+    pub txn_type: crate::models::TermDepositTransactionType,
+    #[serde(rename = "mode")]
+    pub mode: crate::models::TermDepositTransactionMode,
     #[serde(rename = "transacted_at_utc")]
     pub transacted_at_utc: String,
 }
 
-impl FinancialAccountTransactionSipTransaction {
-    pub fn new(r#type: String, id: String, amount: f64, currency_code: String, txn_type: crate::models::SipTransactionType, transacted_at_utc: String) -> FinancialAccountTransactionSipTransaction {
-        FinancialAccountTransactionSipTransaction {
+impl FinancialAccountTransactionTermDepositTransaction {
+    pub fn new(r#type: String, id: String, amount: f64, currency_code: String, narration: String, txn_type: crate::models::TermDepositTransactionType, mode: crate::models::TermDepositTransactionMode, transacted_at_utc: String) -> FinancialAccountTransactionTermDepositTransaction {
+        FinancialAccountTransactionTermDepositTransaction {
             r#type,
             id,
             amount,
             currency_code,
+            narration,
             txn_type,
+            mode,
             transacted_at_utc,
         }
     }

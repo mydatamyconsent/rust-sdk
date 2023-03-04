@@ -1,4 +1,4 @@
-# MutualFundFundType
+# TermDepositTransactionMode
 
 ## Properties
 

@@ -11,26 +11,38 @@
 
 /// 
 #[derive(Clone, Copy, Debug, Eq, PartialEq, Ord, PartialOrd, Hash, Serialize, Deserialize)]
-pub enum MutualFundSchemePlan {
-    #[serde(rename = "Direct")]
-    Direct,
-    #[serde(rename = "Regular")]
-    Regular,
+pub enum TermDepositTransactionType {
+    #[serde(rename = "Opening")]
+    Opening,
+    #[serde(rename = "Interest")]
+    Interest,
+    #[serde(rename = "Tds")]
+    Tds,
+    #[serde(rename = "Installment")]
+    Installment,
+    #[serde(rename = "Closing")]
+    Closing,
+    #[serde(rename = "Others")]
+    Others,
 
 }
 
-impl ToString for MutualFundSchemePlan {
+impl ToString for TermDepositTransactionType {
     fn to_string(&self) -> String {
         match self {
-            Self::Direct => String::from("Direct"),
-            Self::Regular => String::from("Regular"),
+            Self::Opening => String::from("Opening"),
+            Self::Interest => String::from("Interest"),
+            Self::Tds => String::from("Tds"),
+            Self::Installment => String::from("Installment"),
+            Self::Closing => String::from("Closing"),
+            Self::Others => String::from("Others"),
         }
     }
 }
 
-impl Default for MutualFundSchemePlan {
-    fn default() -> MutualFundSchemePlan {
-        Self::Direct
+impl Default for TermDepositTransactionType {
+    fn default() -> TermDepositTransactionType {
+        Self::Opening
     }
 }
 

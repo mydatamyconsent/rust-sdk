@@ -1,4 +1,4 @@
-# MutualFundSchemeCategory
+# EquityTransactionsType
 
 ## Properties
 

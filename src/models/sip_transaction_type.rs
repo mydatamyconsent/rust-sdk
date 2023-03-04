@@ -11,26 +11,29 @@
 
 /// 
 #[derive(Clone, Copy, Debug, Eq, PartialEq, Ord, PartialOrd, Hash, Serialize, Deserialize)]
-pub enum MutualFundHoldingMode {
-    #[serde(rename = "Demat")]
-    Demat,
-    #[serde(rename = "Physical")]
-    Physical,
+pub enum SipTransactionType {
+    #[serde(rename = "Buy")]
+    Buy,
+    #[serde(rename = "Sell")]
+    Sell,
+    #[serde(rename = "Others")]
+    Others,
 
 }
 
-impl ToString for MutualFundHoldingMode {
+impl ToString for SipTransactionType {
     fn to_string(&self) -> String {
         match self {
-            Self::Demat => String::from("Demat"),
-            Self::Physical => String::from("Physical"),
+            Self::Buy => String::from("Buy"),
+            Self::Sell => String::from("Sell"),
+            Self::Others => String::from("Others"),
         }
     }
 }
 
-impl Default for MutualFundHoldingMode {
-    fn default() -> MutualFundHoldingMode {
-        Self::Demat
+impl Default for SipTransactionType {
+    fn default() -> SipTransactionType {
+        Self::Buy
     }
 }
 

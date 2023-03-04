@@ -38,6 +38,7 @@ docs/DocumentSubCategoryType.md
 docs/DocumentType.md
 docs/Equity.md
 docs/EquityTransaction.md
+docs/EquityTransactionsType.md
 docs/Error.md
 docs/FhirBundleLessThanAnyGreaterThan.md
 docs/FinancialAccount.md
@@ -59,6 +60,8 @@ docs/FinancialAccountTransactionMutualFundTransactionAllOf.md
 docs/FinancialAccountTransactionPeriod.md
 docs/FinancialAccountTransactionSipTransaction.md
 docs/FinancialAccountTransactionSipTransactionAllOf.md
+docs/FinancialAccountTransactionTermDepositTransaction.md
+docs/FinancialAccountTransactionTermDepositTransactionAllOf.md
 docs/Holder.md
 docs/IdentificationStrategy.md
 docs/Identifier.md
@@ -75,12 +78,6 @@ docs/KeyValuePair.md
 docs/Life.md
 docs/MedicalRecordField.md
 docs/MutualFund.md
-docs/MutualFundFundType.md
-docs/MutualFundHoldingMode.md
-docs/MutualFundSchemeCategory.md
-docs/MutualFundSchemeOption.md
-docs/MutualFundSchemePlan.md
-docs/MutualFundSchemeType.md
 docs/MutualFundTransaction.md
 docs/MutualFundTransactionType.md
 docs/OrganizationConsentRequestDetails.md
@@ -104,10 +101,14 @@ docs/Sip.md
 docs/SipInvestmentInformation.md
 docs/SipPlanInformation.md
 docs/SipTransaction.md
+docs/SipTransactionType.md
 docs/SupportedDocumentType.md
 docs/SupportedEntityType.md
 docs/SupportedIdentifier.md
 docs/SupportedIdentifiersApi.md
+docs/TermDepositTransaction.md
+docs/TermDepositTransactionMode.md
+docs/TermDepositTransactionType.md
 docs/UploadDocumentResponse.md
 docs/UriDetails.md
 src/apis/configuration.rs
@@ -153,6 +154,7 @@ src/models/document_sub_category_type.rs
 src/models/document_type.rs
 src/models/equity.rs
 src/models/equity_transaction.rs
+src/models/equity_transactions_type.rs
 src/models/error.rs
 src/models/fhir_bundle_less_than_any_greater_than.rs
 src/models/financial_account.rs
@@ -174,6 +176,8 @@ src/models/financial_account_transaction_mutual_fund_transaction_all_of.rs
 src/models/financial_account_transaction_period.rs
 src/models/financial_account_transaction_sip_transaction.rs
 src/models/financial_account_transaction_sip_transaction_all_of.rs
+src/models/financial_account_transaction_term_deposit_transaction.rs
+src/models/financial_account_transaction_term_deposit_transaction_all_of.rs
 src/models/holder.rs
 src/models/identification_strategy.rs
 src/models/identifier.rs
@@ -190,12 +194,6 @@ src/models/life.rs
 src/models/medical_record_field.rs
 src/models/mod.rs
 src/models/mutual_fund.rs
-src/models/mutual_fund_fund_type.rs
-src/models/mutual_fund_holding_mode.rs
-src/models/mutual_fund_scheme_category.rs
-src/models/mutual_fund_scheme_option.rs
-src/models/mutual_fund_scheme_plan.rs
-src/models/mutual_fund_scheme_type.rs
 src/models/mutual_fund_transaction.rs
 src/models/mutual_fund_transaction_type.rs
 src/models/organization_consent_request_details.rs
@@ -218,8 +216,12 @@ src/models/sip.rs
 src/models/sip_investment_information.rs
 src/models/sip_plan_information.rs
 src/models/sip_transaction.rs
+src/models/sip_transaction_type.rs
 src/models/supported_document_type.rs
 src/models/supported_entity_type.rs
 src/models/supported_identifier.rs
+src/models/term_deposit_transaction.rs
+src/models/term_deposit_transaction_mode.rs
+src/models/term_deposit_transaction_type.rs
 src/models/upload_document_response.rs
 src/models/uri_details.rs
