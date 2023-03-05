@@ -13,7 +13,7 @@ use reqwest;
 
 use crate::apis::ResponseContent;
 use super::{Error, configuration};
-use crate::models::DataConsentStatus;
+
 
 /// struct for typed errors of method [`v1_organizations_consent_requests_get`]
 #[derive(Debug, Clone, Serialize, Deserialize)]

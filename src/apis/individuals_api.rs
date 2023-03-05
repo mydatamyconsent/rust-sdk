@@ -13,7 +13,7 @@ use reqwest;
 
 use crate::apis::ResponseContent;
 use super::{Error, configuration};
-use crate::models::DataConsentStatus;
+
 
 /// struct for typed errors of method [`issuer_issuedoc1_xml_post`]
 #[derive(Debug, Clone, Serialize, Deserialize)]
