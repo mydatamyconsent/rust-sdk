@@ -52,6 +52,8 @@ docs/FinancialAccountMutualFundAllOf.md
 docs/FinancialAccountSip.md
 docs/FinancialAccountSipAllOf.md
 docs/FinancialAccountSubCategoryType.md
+docs/FinancialAccountTermDeposit.md
+docs/FinancialAccountTermDepositAllOf.md
 docs/FinancialAccountTransaction.md
 docs/FinancialAccountTransactionEquityTransaction.md
 docs/FinancialAccountTransactionEquityTransactionAllOf.md
@@ -106,6 +108,14 @@ docs/SupportedDocumentType.md
 docs/SupportedEntityType.md
 docs/SupportedIdentifier.md
 docs/SupportedIdentifiersApi.md
+docs/TermDeposit.md
+docs/TermDepositAccountDetails.md
+docs/TermDepositAccountType.md
+docs/TermDepositBankInformation.md
+docs/TermDepositCompoundingFrequency.md
+docs/TermDepositInformation.md
+docs/TermDepositInterestComputation.md
+docs/TermDepositInterestPayoutType.md
 docs/TermDepositTransaction.md
 docs/TermDepositTransactionMode.md
 docs/TermDepositTransactionType.md
@@ -168,6 +178,8 @@ src/models/financial_account_mutual_fund_all_of.rs
 src/models/financial_account_sip.rs
 src/models/financial_account_sip_all_of.rs
 src/models/financial_account_sub_category_type.rs
+src/models/financial_account_term_deposit.rs
+src/models/financial_account_term_deposit_all_of.rs
 src/models/financial_account_transaction.rs
 src/models/financial_account_transaction_equity_transaction.rs
 src/models/financial_account_transaction_equity_transaction_all_of.rs
@@ -220,6 +232,14 @@ src/models/sip_transaction_type.rs
 src/models/supported_document_type.rs
 src/models/supported_entity_type.rs
 src/models/supported_identifier.rs
+src/models/term_deposit.rs
+src/models/term_deposit_account_details.rs
+src/models/term_deposit_account_type.rs
+src/models/term_deposit_bank_information.rs
+src/models/term_deposit_compounding_frequency.rs
+src/models/term_deposit_information.rs
+src/models/term_deposit_interest_computation.rs
+src/models/term_deposit_interest_payout_type.rs
 src/models/term_deposit_transaction.rs
 src/models/term_deposit_transaction_mode.rs
 src/models/term_deposit_transaction_type.rs

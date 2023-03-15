@@ -98,6 +98,23 @@ pub enum FinancialAccount {
         #[serde(rename = "transactions")]
         transactions: bool,
     },
+    #[serde(rename="TermDeposit")]
+    FinancialAccountTermDeposit {
+        #[serde(rename = "account_number")]
+        account_number: String,
+        #[serde(rename = "account_type")]
+        account_type: crate::models::TermDepositAccountType,
+        #[serde(rename = "issuer_name")]
+        issuer_name: String,
+        #[serde(rename = "issuer_logo_url")]
+        issuer_logo_url: String,
+        #[serde(rename = "current_value")]
+        current_value: f64,
+        #[serde(rename = "currency_code")]
+        currency_code: String,
+        #[serde(rename = "account_details")]
+        account_details: Box<crate::models::TermDepositAccountDetails>,
+    },
 }
 
 

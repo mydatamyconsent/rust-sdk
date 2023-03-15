@@ -27,6 +27,10 @@ Name | Type | Description | Notes
 **creation_date** | Option<**String**> |  | [optional]
 **plan_info** | [**crate::models::SipPlanInformation**](SipPlanInformation.md) |  | 
 **investment_info** | [**crate::models::SipInvestmentInformation**](SipInvestmentInformation.md) |  | 
+**account_number** | **String** |  | 
+**account_type** | [**crate::models::TermDepositAccountType**](TermDepositAccountType.md) |  | 
+**issuer_logo_url** | **String** |  | 
+**account_details** | [**crate::models::TermDepositAccountDetails**](TermDepositAccountDetails.md) |  | 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 
