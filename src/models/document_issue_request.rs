@@ -20,6 +20,9 @@ pub struct DocumentIssueRequest {
     /// Document identifier.
     #[serde(rename = "identifier")]
     pub identifier: String,
+    /// Document name (Optional).
+    #[serde(rename = "name", skip_serializing_if = "Option::is_none")]
+    pub name: Option<String>,
     /// Document description.
     #[serde(rename = "description")]
     pub description: String,
@@ -47,6 +50,7 @@ impl DocumentIssueRequest {
         DocumentIssueRequest {
             document_type_id,
             identifier,
+            name: None,
             description,
             receiver: Box::new(receiver),
             payment_request: None,

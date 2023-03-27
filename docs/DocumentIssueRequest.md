@@ -6,6 +6,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **document_type_id** | **String** | Document type id. | 
 **identifier** | **String** | Document identifier. | 
+**name** | Option<**String**> | Document name (Optional). | [optional]
 **description** | **String** | Document description. | 
 **receiver** | [**crate::models::DocumentIssueRequestReceiver**](DocumentIssueRequest_receiver.md) |  | 
 **payment_request** | Option<[**crate::models::DocumentIssueRequestPaymentRequest**](DocumentIssueRequest_paymentRequest.md)> |  | [optional]
