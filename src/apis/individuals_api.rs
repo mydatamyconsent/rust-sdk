@@ -12,6 +12,7 @@
 use reqwest;
 
 use crate::apis::ResponseContent;
+use crate::models::DataConsentStatus;
 use super::{Error, configuration};
 
 
@@ -359,7 +360,7 @@ pub async fn v1_individuals_consent_requests_request_id_cancel_put(configuration
 
     let local_var_client = &local_var_configuration.client;
 
-    let local_var_uri_str = format!("{}/v1/individuals/consent-requests/{request_id}/cancel", local_var_configuration.base_path, request_id=crate::apis::urlencode(request_id));
+    let local_var_uri_str = format!("{}/v1/individuals/consent-requests/{request_id}/cancel", local_var_configuration.base_path, request_id = crate::apis::urlencode(request_id));
     let mut local_var_req_builder = local_var_client.request(reqwest::Method::PUT, local_var_uri_str.as_str());
 
     if let Some(ref local_var_user_agent) = local_var_configuration.user_agent {
@@ -389,7 +390,7 @@ pub async fn v1_individuals_consent_requests_request_id_get(configuration: &conf
 
     let local_var_client = &local_var_configuration.client;
 
-    let local_var_uri_str = format!("{}/v1/individuals/consent-requests/{request_id}", local_var_configuration.base_path, request_id=crate::apis::urlencode(request_id));
+    let local_var_uri_str = format!("{}/v1/individuals/consent-requests/{request_id}", local_var_configuration.base_path, request_id = crate::apis::urlencode(request_id));
     let mut local_var_req_builder = local_var_client.request(reqwest::Method::GET, local_var_uri_str.as_str());
 
     if let Some(ref local_var_user_agent) = local_var_configuration.user_agent {
@@ -455,7 +456,7 @@ pub async fn v1_individuals_consent_templates_template_id_get(configuration: &co
 
     let local_var_client = &local_var_configuration.client;
 
-    let local_var_uri_str = format!("{}/v1/individuals/consent-templates/{template_id}", local_var_configuration.base_path, template_id=crate::apis::urlencode(template_id));
+    let local_var_uri_str = format!("{}/v1/individuals/consent-templates/{template_id}", local_var_configuration.base_path, template_id = crate::apis::urlencode(template_id));
     let mut local_var_req_builder = local_var_client.request(reqwest::Method::GET, local_var_uri_str.as_str());
 
     if let Some(ref local_var_user_agent) = local_var_configuration.user_agent {
@@ -485,7 +486,7 @@ pub async fn v1_individuals_consents_consent_id_documents_document_id_download_g
 
     let local_var_client = &local_var_configuration.client;
 
-    let local_var_uri_str = format!("{}/v1/individuals/consents/{consent_id}/documents/{document_id}/download", local_var_configuration.base_path, consent_id=crate::apis::urlencode(consent_id), document_id=crate::apis::urlencode(document_id));
+    let local_var_uri_str = format!("{}/v1/individuals/consents/{consent_id}/documents/{document_id}/download", local_var_configuration.base_path, consent_id = crate::apis::urlencode(consent_id), document_id = crate::apis::urlencode(document_id));
     let mut local_var_req_builder = local_var_client.request(reqwest::Method::GET, local_var_uri_str.as_str());
 
     if let Some(ref local_var_user_agent) = local_var_configuration.user_agent {
@@ -515,7 +516,7 @@ pub async fn v1_individuals_consents_consent_id_documents_document_id_get(config
 
     let local_var_client = &local_var_configuration.client;
 
-    let local_var_uri_str = format!("{}/v1/individuals/consents/{consent_id}/documents/{document_id}", local_var_configuration.base_path, consent_id=crate::apis::urlencode(consent_id), document_id=crate::apis::urlencode(document_id));
+    let local_var_uri_str = format!("{}/v1/individuals/consents/{consent_id}/documents/{document_id}", local_var_configuration.base_path, consent_id = crate::apis::urlencode(consent_id), document_id = crate::apis::urlencode(document_id));
     let mut local_var_req_builder = local_var_client.request(reqwest::Method::GET, local_var_uri_str.as_str());
 
     if let Some(ref local_var_user_agent) = local_var_configuration.user_agent {
@@ -545,7 +546,7 @@ pub async fn v1_individuals_consents_consent_id_documents_get(configuration: &co
 
     let local_var_client = &local_var_configuration.client;
 
-    let local_var_uri_str = format!("{}/v1/individuals/consents/{consent_id}/documents", local_var_configuration.base_path, consent_id=crate::apis::urlencode(consent_id));
+    let local_var_uri_str = format!("{}/v1/individuals/consents/{consent_id}/documents", local_var_configuration.base_path, consent_id = crate::apis::urlencode(consent_id));
     let mut local_var_req_builder = local_var_client.request(reqwest::Method::GET, local_var_uri_str.as_str());
 
     if let Some(ref local_var_user_agent) = local_var_configuration.user_agent {
@@ -575,7 +576,7 @@ pub async fn v1_individuals_consents_consent_id_financial_accounts_account_id_ge
 
     let local_var_client = &local_var_configuration.client;
 
-    let local_var_uri_str = format!("{}/v1/individuals/consents/{consent_id}/financial-accounts/{account_id}", local_var_configuration.base_path, consent_id=crate::apis::urlencode(consent_id), account_id=crate::apis::urlencode(account_id));
+    let local_var_uri_str = format!("{}/v1/individuals/consents/{consent_id}/financial-accounts/{account_id}", local_var_configuration.base_path, consent_id = crate::apis::urlencode(consent_id), account_id = crate::apis::urlencode(account_id));
     let mut local_var_req_builder = local_var_client.request(reqwest::Method::GET, local_var_uri_str.as_str());
 
     if let Some(ref local_var_user_agent) = local_var_configuration.user_agent {
@@ -605,7 +606,7 @@ pub async fn v1_individuals_consents_consent_id_financial_accounts_account_id_tr
 
     let local_var_client = &local_var_configuration.client;
 
-    let local_var_uri_str = format!("{}/v1/individuals/consents/{consent_id}/financial-accounts/{account_id}/transactions", local_var_configuration.base_path, consent_id=crate::apis::urlencode(consent_id), account_id=crate::apis::urlencode(account_id));
+    let local_var_uri_str = format!("{}/v1/individuals/consents/{consent_id}/financial-accounts/{account_id}/transactions", local_var_configuration.base_path, consent_id = crate::apis::urlencode(consent_id), account_id = crate::apis::urlencode(account_id));
     let mut local_var_req_builder = local_var_client.request(reqwest::Method::GET, local_var_uri_str.as_str());
 
     if let Some(ref local_var_str) = from_date_time {
@@ -647,7 +648,7 @@ pub async fn v1_individuals_consents_consent_id_financial_accounts_get(configura
 
     let local_var_client = &local_var_configuration.client;
 
-    let local_var_uri_str = format!("{}/v1/individuals/consents/{consent_id}/financial-accounts", local_var_configuration.base_path, consent_id=crate::apis::urlencode(consent_id));
+    let local_var_uri_str = format!("{}/v1/individuals/consents/{consent_id}/financial-accounts", local_var_configuration.base_path, consent_id = crate::apis::urlencode(consent_id));
     let mut local_var_req_builder = local_var_client.request(reqwest::Method::GET, local_var_uri_str.as_str());
 
     if let Some(ref local_var_user_agent) = local_var_configuration.user_agent {
@@ -677,7 +678,7 @@ pub async fn v1_individuals_consents_consent_id_get(configuration: &configuratio
 
     let local_var_client = &local_var_configuration.client;
 
-    let local_var_uri_str = format!("{}/v1/individuals/consents/{consent_id}", local_var_configuration.base_path, consent_id=crate::apis::urlencode(consent_id));
+    let local_var_uri_str = format!("{}/v1/individuals/consents/{consent_id}", local_var_configuration.base_path, consent_id = crate::apis::urlencode(consent_id));
     let mut local_var_req_builder = local_var_client.request(reqwest::Method::GET, local_var_uri_str.as_str());
 
     if let Some(ref local_var_user_agent) = local_var_configuration.user_agent {
@@ -707,7 +708,7 @@ pub async fn v1_individuals_consents_consent_id_health_fhir_bundle_get(configura
 
     let local_var_client = &local_var_configuration.client;
 
-    let local_var_uri_str = format!("{}/v1/individuals/consents/{consent_id}/health/fhir/bundle", local_var_configuration.base_path, consent_id=crate::apis::urlencode(consent_id));
+    let local_var_uri_str = format!("{}/v1/individuals/consents/{consent_id}/health/fhir/bundle", local_var_configuration.base_path, consent_id = crate::apis::urlencode(consent_id));
     let mut local_var_req_builder = local_var_client.request(reqwest::Method::GET, local_var_uri_str.as_str());
 
     if let Some(ref local_var_user_agent) = local_var_configuration.user_agent {
@@ -782,7 +783,7 @@ pub async fn v1_individuals_documents_issue_issue_request_id_upload_post(configu
 
     let local_var_client = &local_var_configuration.client;
 
-    let local_var_uri_str = format!("{}/v1/individuals/documents/issue/{issue_request_id}/upload", local_var_configuration.base_path, issue_request_id=crate::apis::urlencode(issue_request_id));
+    let local_var_uri_str = format!("{}/v1/individuals/documents/issue/{issue_request_id}/upload", local_var_configuration.base_path, issue_request_id = crate::apis::urlencode(issue_request_id));
     let mut local_var_req_builder = local_var_client.request(reqwest::Method::POST, local_var_uri_str.as_str());
 
     if let Some(ref local_var_user_agent) = local_var_configuration.user_agent {
@@ -846,7 +847,7 @@ pub async fn v1_individuals_documents_issued_document_id_get(configuration: &con
 
     let local_var_client = &local_var_configuration.client;
 
-    let local_var_uri_str = format!("{}/v1/individuals/documents/issued/{document_id}", local_var_configuration.base_path, document_id=crate::apis::urlencode(document_id));
+    let local_var_uri_str = format!("{}/v1/individuals/documents/issued/{document_id}", local_var_configuration.base_path, document_id = crate::apis::urlencode(document_id));
     let mut local_var_req_builder = local_var_client.request(reqwest::Method::GET, local_var_uri_str.as_str());
 
     if let Some(ref local_var_user_agent) = local_var_configuration.user_agent {
