@@ -33,7 +33,7 @@ jobs:
                 rm -rf ./docs
 
             - name: Download OpenAPI Spec
-              run: curl https://api.mydatamyconsent.com/openapi-spec.json --output openapi-spec.json
+              run: curl https://api.mdmc.dev/openapi-spec.json --output openapi-spec.json
             
             - name: Cleanup Spec
               run: |
